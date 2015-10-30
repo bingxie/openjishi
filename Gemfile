@@ -5,36 +5,45 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
+
+# Load environment variables from .env into ENV
+gem 'dotenv-rails'
+
+# Sass-powered version of Bootstrap
+gem 'bootstrap-sass', '~> 3.3.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Slim templates generator
+gem "slim-rails"
+
+#### Functional Gems
+
+# Easily include static pages in your Rails app
+gem 'high_voltage'
+
+# Middleware that displays speed badge for every html page
+gem 'rack-mini-profiler'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # An IRB alternative and runtime developer console
+  gem 'pry'
+  # Causes rails console to open pry
+  gem 'pry-rails'
+  # Pry navigation commands via byebug
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -43,5 +52,25 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Better error page for Rack apps
+  gem "better_errors"
+  gem "binding_of_caller"
+
+  # Supporting gem for Rails Panel
+  gem 'meta_request'
+
+  # Mutes assets pipeline log messages
+  gem 'quiet_assets'
+
+  # Colorized SQL Logging Backport for ActiveRecord
+  gem 'activerecord-colored_log_subscriber'
+
+  # Automatically reload your browser when 'view' files are modified
+  gem "rack-livereload"
+  gem 'guard-livereload', '~> 2.4', require: false
+
+  # A very fast & simple Ruby web server
+  gem "thin"
 end
 
