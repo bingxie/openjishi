@@ -13,7 +13,7 @@
 
 
 ## Bitters:
-/base
+/app/assets/stylesheets/base
 
 ## Static Pages
 
