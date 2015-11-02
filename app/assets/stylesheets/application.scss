@@ -1,2 +1,8 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+// import libraries & frameworks
+@import "normalize-rails";
+@import "bourbon";
+@import "base/base";
+@import "neat";
+
+// import application specific files
+@import "home";

@@ -1,0 +1,24 @@
+$mobile: new-breakpoint(max-width 480px 4);
+
+// demo for autoprefixer
+:fullscreen a {
+  display: flex
+}
+
+//
+button {
+  @include button(#ff0000);
+}
+
+// Demo for neat
+.wrapper {
+  @include outer-container;
+
+  .primary {
+    @include span-columns(8);
+    @include media($mobile) {
+      background-color: gray;
+    }
+  }
+  .secondary { @include span-columns(4); }
+}
