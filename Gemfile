@@ -38,6 +38,9 @@ gem "slim-rails"
 # Easily include static pages in your Rails app
 gem 'high_voltage'
 
+#
+gem "devise", "~> 3.4.1"
+
 # Middleware that displays speed badge for every html page
 gem 'rack-mini-profiler'
 
