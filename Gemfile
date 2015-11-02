@@ -9,8 +9,14 @@ gem 'pg'
 # Load environment variables from .env into ENV
 gem 'dotenv-rails'
 
-# Sass-powered version of Bootstrap
-gem 'bootstrap-sass', '~> 3.3.5'
+
+# A lightweight Sass tool set.
+gem "bourbon"
+#  A lightweight semantic grid framework for Sass and Bourbon
+gem "neat"
+gem "normalize-rails"
+gem "autoprefixer-rails"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

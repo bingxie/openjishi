@@ -48,9 +48,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.5.1)
-      autoprefixer-rails (>= 5.0.0.1)
-      sass (>= 3.3.0)
+    bourbon (4.2.6)
+      sass (~> 3.4)
+      thor (~> 0.19)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -122,9 +122,13 @@ GEM
     mini_portile (0.6.2)
     minitest (5.8.2)
     multi_json (1.11.2)
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     nenv (0.2.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    normalize-rails (3.0.3)
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -234,15 +238,18 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-colored_log_subscriber
+  autoprefixer-rails
   better_errors
   binding_of_caller
-  bootstrap-sass (~> 3.3.5)
+  bourbon
   byebug
   dotenv-rails
   guard-livereload (~> 2.4)
   high_voltage
   jquery-rails
   meta_request
+  neat
+  normalize-rails
   pg
   pry
   pry-byebug
