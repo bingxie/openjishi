@@ -12,8 +12,11 @@ gem 'dotenv-rails'
 
 # A lightweight Sass tool set.
 gem "bourbon"
-#  A lightweight semantic grid framework for Sass and Bourbon
+# A lightweight semantic grid framework for Sass and Bourbon
 gem "neat"
+# Components and patterns built with Bourbon and Neat
+gem 'refills'
+
 gem "normalize-rails"
 gem "autoprefixer-rails"
 
