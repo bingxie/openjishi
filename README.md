@@ -13,7 +13,9 @@
 
 
 ## Bitters:
-/app/assets/stylesheets/base
+Scss: /app/assets/stylesheets/base
+
+Example page: http://localhost:3000/pages/home
 
 ## Static Pages
 
