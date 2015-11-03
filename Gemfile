@@ -43,7 +43,8 @@ gem "slim-rails"
 gem 'high_voltage'
 
 #
-gem "devise", "~> 3.4.1"
+gem 'devise', '~> 3.5', '>= 3.5.2'
+
 
 # Middleware that displays speed badge for every html page
 gem 'rack-mini-profiler'
