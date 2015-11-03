@@ -86,5 +86,8 @@ group :development do
 
   # A very fast & simple Ruby web server
   gem "thin"
+
+  # A web interface for browsing Ruby on Rails sent emails
+  gem 'letter_opener_web', '~> 1.3.0'
 end
 
