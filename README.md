@@ -31,3 +31,8 @@ Example page: http://localhost:3000/pages/home
   > rails generate refills:import Component
 3. Import css or js in application.scss or application.js
 4. Use the html in your code and customize the css and js
+
+
+## Check the Emails on Development Environment
+
+visit: http://127.0.0.1:3000/letter_opener

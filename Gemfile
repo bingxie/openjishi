@@ -6,6 +6,7 @@ gem 'rails', '4.2.4'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x
 # Use postgresql as the database for Active Record
 gem 'pg'
+gem 'delayed_job_active_record'
 
 # Load environment variables from .env into ENV
 gem 'dotenv-rails'
