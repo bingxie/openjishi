@@ -91,3 +91,9 @@ group :development do
   gem 'letter_opener_web', '~> 1.3.0'
 end
 
+group :test do
+  # Create customizable MiniTest output formats
+  gem "minitest-reporters"
+end
+
+
