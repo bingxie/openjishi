@@ -25,5 +25,10 @@ module GcWeb
 
     config.active_job.queue_adapter = :delayed_job
     config.active_job.queue_name_prefix = Rails.env
+
+    config.generators do |g|
+      g.assets false
+      g.helper false
+    end
   end
 end

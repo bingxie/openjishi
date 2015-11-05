@@ -36,3 +36,9 @@ Example page: http://localhost:3000/pages/home
 ## Check the Emails on Development Environment
 
 visit: http://127.0.0.1:3000/letter_opener
+
+## nokogiri installation error fix
+brew install libxml2
+bundle config build.nokogiri "--use-system-libraries --with-xml2-include=/usr/local/opt/libxml2/include/libxml2"
+bundle install
+
