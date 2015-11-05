@@ -41,4 +41,9 @@ Rails.application.configure do
 
   # Add Rack::LiveReload to the bottom of the middleware stack with the default options.
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+
+  config.action_mailer.default_url_options = { host: '127.0.0.1', port: 3000 }
+  config.action_mailer.delivery_method = :letter_opener
+
+  config.i18n.available_locales = ['zh-CN', :en]
 end

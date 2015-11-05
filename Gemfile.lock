@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/svenfuchs/rails-i18n.git
+  revision: 38822a99df7f0a3cd32b575b6eb2537de5c71f3b
+  branch: master
+  specs:
+    rails-i18n (4.0.6)
+      i18n (~> 0.7)
+      railties (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,10 +47,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
+    ansi (1.5.0)
     arel (6.0.3)
     autoprefixer-rails (6.0.3)
       execjs
       json
+    bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -66,6 +78,18 @@ GEM
     columnize (0.9.0)
     daemons (1.2.3)
     debug_inspector (0.0.2)
+    delayed_job (4.0.6)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.0.3)
+      activerecord (>= 3.0, < 5.0)
+      delayed_job (>= 3.0, < 4.1)
+    devise (3.5.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
@@ -105,6 +129,14 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     kgio (2.10.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
+    letter_opener_web (1.3.0)
+      actionmailer (>= 3.2)
+      letter_opener (~> 1.0)
+      railties (>= 3.2)
     listen (3.0.3)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -121,6 +153,11 @@ GEM
     mime-types (2.6.2)
     mini_portile (0.6.2)
     minitest (5.8.2)
+    minitest-reporters (1.1.4)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.11.2)
     neat (1.7.2)
       bourbon (>= 4.0)
@@ -132,6 +169,7 @@ GEM
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    orm_adapter (0.5.0)
     pg (0.18.3)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -183,6 +221,10 @@ GEM
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    refills (0.1.0)
+    responders (2.1.0)
+      railties (>= 4.2.0, < 5)
+    ruby-progressbar (1.7.5)
     sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -227,6 +269,8 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    warden (1.2.3)
+      rack (>= 1.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -243,11 +287,15 @@ DEPENDENCIES
   binding_of_caller
   bourbon
   byebug
+  delayed_job_active_record
+  devise (~> 3.5, >= 3.5.2)
   dotenv-rails
   guard-livereload (~> 2.4)
   high_voltage
   jquery-rails
+  letter_opener_web (~> 1.3.0)
   meta_request
+  minitest-reporters
   neat
   normalize-rails
   pg
@@ -258,6 +306,8 @@ DEPENDENCIES
   rack-livereload
   rack-mini-profiler
   rails (= 4.2.4)
+  rails-i18n!
+  refills
   sass-rails (~> 5.0)
   slim-rails
   spring

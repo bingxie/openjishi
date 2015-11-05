@@ -1,8 +1,17 @@
-<section class="container">
-      <div class="wrapper">
   <h1 id="main">Bitters example page</h1>
 
-  <button>Click</button>
+  <% if user_signed_in? %>
+    <p><%= current_user.name %></p>
+    <%= link_to 'Profile', edit_user_registration_path %>
+    <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Log In', new_user_session_path %>
+    <%= link_to 'Sign Up', new_user_registration_path %>
+  <% end %>
+
+  <p>
+    <button>Click</button>
+  </p>
 
   <p>The purpose of this HTML is to help determine what default settings are with Bitters and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>
 
@@ -150,6 +159,3 @@
       <td>Division 1</td><td>Division 2</td><td>Division 3</td>
     </tr>
   </table>
-</div>
-
-    </section>

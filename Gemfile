@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x
 # Use postgresql as the database for Active Record
 gem 'pg'
+gem 'delayed_job_active_record'
 
 # Load environment variables from .env into ENV
 gem 'dotenv-rails'
@@ -12,8 +13,11 @@ gem 'dotenv-rails'
 
 # A lightweight Sass tool set.
 gem "bourbon"
-#  A lightweight semantic grid framework for Sass and Bourbon
+# A lightweight semantic grid framework for Sass and Bourbon
 gem "neat"
+# Components and patterns built with Bourbon and Neat
+gem 'refills'
+
 gem "normalize-rails"
 gem "autoprefixer-rails"
 
@@ -37,6 +41,10 @@ gem "slim-rails"
 
 # Easily include static pages in your Rails app
 gem 'high_voltage'
+
+#
+gem 'devise', '~> 3.5', '>= 3.5.2'
+
 
 # Middleware that displays speed badge for every html page
 gem 'rack-mini-profiler'
@@ -78,5 +86,14 @@ group :development do
 
   # A very fast & simple Ruby web server
   gem "thin"
+
+  # A web interface for browsing Ruby on Rails sent emails
+  gem 'letter_opener_web', '~> 1.3.0'
 end
+
+group :test do
+  # Create customizable MiniTest output formats
+  gem "minitest-reporters"
+end
+
 
