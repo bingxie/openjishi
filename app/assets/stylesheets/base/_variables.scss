@@ -4,7 +4,7 @@ $heading-font-family: $base-font-family;
 
 // Font Sizes
 $base-font-size: 1em;
-
+$heading-font-size: em(24);
 // Line height
 $base-line-height: 1.5;
 $heading-line-height: 1.2;
@@ -15,11 +15,11 @@ $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
-// Colors
+// COLORS
 $blue: #477dca;
 $dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #ddd;
+$medium-gray: #4A4A4A;
+$light-gray: #f2f2f2;
 
 // Font Colors
 $base-font-color: $dark-gray;

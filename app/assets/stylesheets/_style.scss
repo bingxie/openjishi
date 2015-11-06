@@ -1,0 +1,17 @@
+/* GLOBAL */
+body {
+	background-color: $light-gray;
+}
+
+.clearfix {clear:both;}
+
+/* LOGIN & REGISTRATION */
+.loginpanel {
+	background: #fff;
+	padding: 1em;
+	height: 200px;
+	h1 {
+		text-align: center;
+		color: $medium-gray;
+	}
+}
