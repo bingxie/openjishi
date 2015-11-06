@@ -31,6 +31,9 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+# ClientSideValidations for Ruby on Rails
+gem 'client_side_validations', github: "DavyJonesLocker/client_side_validations", branch: "4-2-stable"
+
 # Use Unicorn as the app server
 gem 'unicorn'
 
