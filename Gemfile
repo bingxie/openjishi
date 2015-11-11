@@ -56,6 +56,11 @@ gem "select2-rails"
 # JQ uploader
 gem "jquery-fileupload-rails"
 
+# For generate friendly url
+gem 'stringex'
+gem 'hashids'
+
+
 # Middleware that displays speed badge for every html page
 gem 'rack-mini-profiler'
 

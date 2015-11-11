@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  @@hashids = Hashids.new("oh my user salt")
+  after_create :set_slug
+
   validates :name, presence: true
 
   # Include default devise modules. Others available are:
@@ -11,5 +14,12 @@ class User < ActiveRecord::Base
   # override Devise's method
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, * args).deliver_later
+  end
+
+  def set_slug
+    hash = @@hashids.encode(id)
+
+    self.slug ||= "#{hash} #{name}".to_url
+    save!
   end
 end
