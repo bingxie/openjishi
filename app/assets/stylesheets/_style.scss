@@ -5,9 +5,71 @@
 /* LOGIN & REGISTRATION */
 .loginpanel {
 	background: #fff;
-	padding: 16px;
+	padding: em(16);
 	h1 {
 		text-align: center;
 		color: $medium-gray;
+	}
+}
+
+
+
+/* Item Grid */
+.bump {
+	label {
+		background:$action-color;
+		font-weight: bold;
+		padding:em(5) em(30);
+		margin: 20px 0;
+		color:#fff;
+		display: inline-block;
+	}
+	ul li.itemblock {
+		font-size: em(14,16);
+		height: 385px;
+		border: 3px solid $light-gray;
+		padding: 7px;
+		@include span-columns(3);
+  		@include omega(4n);
+  		margin-bottom: em(20);
+  		&:hover {
+  			border: 3px solid $dark-gray;
+  		}
+  		.thumbnail{
+  			width: 100%;
+  			margin-bottom: 10px;
+  		}
+  		.userface {
+  			width: 3em;
+  			border-radius:1000px;
+  			display: inline-block;
+  			float: left;
+  			margin-right: 1em;
+  		}
+  		.username {
+			line-height: 3.9;
+		    display: table-cell;
+		    vertical-align: middle;
+		    float: left;
+		    font-size: 0.875em;
+  		}
+  		.prdtitle{
+  			font-size:1em;
+  			padding:20px 0 10px 0;
+  		}
+  		.price {
+  			font-size:em(20, 16);
+  			color:$red;
+  			span{
+  				font-size: 0.7em;
+  				color:$medium-gray;
+  			}
+  		}
+  		.location i {
+  			margin-right: 5px;
+  		}
+  		.condition {
+  			float: right;
+  		}
 	}
 }

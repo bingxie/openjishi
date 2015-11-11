@@ -1,5 +1,3 @@
-//Global
-
 // Typography
 $base-font-family: $helvetica;
 $heading-font-family: $base-font-family;
@@ -18,16 +16,14 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$red:#DF3F3F;
 $blue: #477dca;
-$dark-gray: #58585B;
-$medium-gray: #4a4a4a;
-$light-gray: #f2f2f2;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$font-color-light: $medium-gray;
-$action-color: $red;
+$action-color: $blue;
 
 // Border
 $base-border-color: $light-gray;
