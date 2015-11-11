@@ -1,10 +1,13 @@
+$em-base:14px;
+
 // Typography
 $base-font-family: $helvetica;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: 14px; 
 $heading-font-size: em(24);
+
 // Line height
 $base-line-height: 1.5;
 $heading-line-height: 1.2;
@@ -16,6 +19,7 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // COLORS
+$red:#DF3F3F;
 $blue: #477dca;
 $dark-gray: #333;
 $medium-gray: #4A4A4A;
@@ -23,7 +27,7 @@ $light-gray: #f2f2f2;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: $red;
 
 // Border
 $base-border-color: $light-gray;
@@ -40,3 +44,4 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+

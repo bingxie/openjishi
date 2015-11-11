@@ -33,3 +33,26 @@
     }
   }
 }
+
+
+
+a.sell {
+  color: #fff;
+  background: $red;
+  padding: 8px;
+  border-radius: $base-border-radius;
+  &:hover,
+  &:focus {
+    background-color: shade($action-color, 20%);
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $action-color;
+    }
+  }
+}

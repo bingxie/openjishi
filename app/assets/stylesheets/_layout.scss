@@ -11,7 +11,7 @@ button {
 }
 
 // Demo for neat
-.container {
+.container, .megamenu,.hero-wrapper{
   @include outer-container;
 
   .loginpanel {
@@ -33,3 +33,39 @@ button {
 }
 
 /*-------- GRID LAYOUT -------- */
+.global-nav {
+  width: 100%;
+  background-color: $red;
+  height: 40px;
+  .social-icons {
+    float: right;
+    padding-right: 20px;
+    color: #fff;
+    ul li {
+      float: left;
+    }
+  }
+}
+
+.header {
+  height: 100px;
+  background-color: $light-gray;
+}
+
+.megamenu{
+  padding: 10px 0 0;
+    ul li {
+    float: left;
+    padding:5px 20px;
+  }
+  border-bottom: 4px solid $red;
+}
+
+.hero-wrapper {
+  margin-top: 20px;
+  .hero {
+    @include span-columns(4);
+    height: 200px;
+    background-color: $red;
+  }
+}

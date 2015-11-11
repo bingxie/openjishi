@@ -5,15 +5,16 @@
 // $gutter: 30px;
 // $grid-columns: 12;
 // $max-width: 1200px;
+$max-width: 1088px;
 
 // Neat Breakpoints
-$medium-screen: em(640);
-$laptop-screen: em(1250);
-$large-screen: em(1600);
+// $medium-screen: em(640);
+//$laptop-screen: em(1250);
+//$large-screen: em(1600);
 
-$medium-screen-up: new-breakpoint(min-width $medium-screen);
-$laptop-screen-up: new-breakpoint(min-width $laptop-screen);
-$large-screen-up: new-breakpoint(min-width $large-screen);
+// $medium-screen-up: new-breakpoint(min-width $medium-screen);
+//$laptop-screen-up: new-breakpoint(min-width $laptop-screen);
+//$large-screen-up: new-breakpoint(min-width $large-screen);
 
 // For debug
 $visual-grid: true;
