@@ -5,7 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 bing:
-  name: bing
+  name: 谢小兵
   email: bing@google.com
   encrypted_password: <%= Devise::Encryptor.digest(User, '12345678') %>
   confirmed_at: <%= Time.now %>

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  @@hashids = Hashids.new("oh my user salt")
+  HASHIDS = Hashids.new("oh my user salt")
   after_create :set_slug
 
   validates :name, presence: true
@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
 
   def set_slug
-    hash = @@hashids.encode(id)
+    hash = HASHIDS.encode(id)
 
     self.slug ||= "#{hash} #{name}".to_url
     save!
