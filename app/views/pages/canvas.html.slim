@@ -1,45 +1,64 @@
-.featured-layout1
-	.wrap
-		.left
-			.item
-		.right
-			.item
-			.item
-			.item
-			.item
+.stripdark 
+	.featured-layout-1
+		.wrap
+			.left
+				a.item href="#" 
+					img src="#{image_path('featured/featured-1.png')}" /
+					.label 
+						h1 久经考验的野外装备
+						p 看看大师们的设备都用成了什么样
+						p 
+							|查看详情 
+							i.fa.fa-arrow-circle-right
+			.right
+				a.item href="#"
+					img src="#{image_path('featured/featured-2.png')}" /
+					.label 
+						|尼康10周年纪念款镜头
+				a.item href="#"
+					img src="#{image_path('featured/featured-3.png')}" /
+					.label 
+						|尼康10周年纪念款镜头
+				a.item href="#"
+					img src="#{image_path('featured/featured-4.png')}" /
+					.label 
+						|尼康10周年纪念款镜头
+				a.item href="#"
+					img src="#{image_path('featured/featured-5.png')}" /
+					.label 
+						|尼康10周年纪念款镜头
 
 
+/ .hero-wrapper
+/ 	.grid-items
+/ 	  a.grid-item href="javascript:void(0)"
+/ 	    img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" /
+/ 	  	h1 Grid Item
+/ 	  	p Lorem ipsum dolor sit amet, elit. Rem, illum.
+/ 	  a.grid-item.grid-item-big.grid-item-image href="javascript:void(0)"
+/ 	    img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" /
+/ 	  	h1 Grid Item With an Image
+/ 	  	p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, illum.
+/ 	  a.grid-item href="javascript:void(0)"
+/ 	    img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3.png" /
+/ 	  	h1 Another Wide Item
+/ 	  	p Lorem ipsum consectetur dolor sit amet, consectetur adipisicing elit. Rem, illum.
+/ 	  a.grid-item href="javascript:void(0)"
+/ 	    img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" /
+/ 	  	h1 Last Grid Item
+/ 	  	p Lorem ipsum dolor sit amet, elit. Rem, illum.
+/ 	  a.grid-item href="javascript:void(0)"
+/ 	    img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" /
+/ 	  	h1 Last Grid Item
+/ 	  	p Lorem ipsum dolor sit amet, elit. Rem, illum.
 
-
-.hero-wrapper
-	.grid-items
-	  a.grid-item href="javascript:void(0)"
-	    img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" /
-	  	h1 Grid Item
-	  	p Lorem ipsum dolor sit amet, elit. Rem, illum.
-	  a.grid-item.grid-item-big.grid-item-image href="javascript:void(0)"
-	    img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" /
-	  	h1 Grid Item With an Image
-	  	p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, illum.
-	  a.grid-item href="javascript:void(0)"
-	    img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3.png" /
-	  	h1 Another Wide Item
-	  	p Lorem ipsum consectetur dolor sit amet, consectetur adipisicing elit. Rem, illum.
-	  a.grid-item href="javascript:void(0)"
-	    img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" /
-	  	h1 Last Grid Item
-	  	p Lorem ipsum dolor sit amet, elit. Rem, illum.
-	  a.grid-item href="javascript:void(0)"
-	    img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" /
-	  	h1 Last Grid Item
-	  	p Lorem ipsum dolor sit amet, elit. Rem, illum.
 
 .container
 	label 镜影精选
 	ul
 		- 4.times do
 			li.itemblock4
-				img.thumbnail src="http://placehold.it/300x200" /
+				img.thumbnail src="#{image_path('product-thumbnail-1.png')}" /
 				img.userface src="http://placehold.it/80x80" /
 				span.username
 					a href="#" 凝固的黎明
@@ -61,7 +80,7 @@
 	ul
 		- 8.times do
 			li.itemblock4
-				img.thumbnail src="http://placehold.it/300x200" /
+				img.thumbnail src="#{image_path('product-thumbnail-1.png')}" /
 				img.userface src="http://placehold.it/80x80" /
 				span.username
 					a href="#" 凝固的黎明
@@ -77,6 +96,7 @@
 				span.condition
 					| 二手, 9成新
 				.clearfix
+
 
 .container
 	label 热门品牌

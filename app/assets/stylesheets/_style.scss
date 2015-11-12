@@ -29,31 +29,52 @@ $mobile: new-breakpoint(max-width 480px 4);
 
 
 /* -------- Feature Module --------- */
-.featured-layout1 {
+.featured-layout-1 {
   width: 100%;
   padding: 2em 0;
   .wrap {
+    a.item{
+      @include background(linear-gradient(#aaa, #000) left repeat);
+      margin-bottom: 20px;
+      display: inline-block;
+      position:relative;
+      overflow: hidden;
+      &:hover{
+        img{
+          transition: opacity .3s ease;
+          opacity: 0.7;
+        }
+      }
+      .label {
+        position:absolute;
+        bottom:1em;
+        left: 1em;
+        // background: rgba(0,0,0,0.6)
+        color:#fff;
+      }
+    }
+    a.cta {
+      margin: 0 auto;
+    }
     @include outer-container;
     .left {
       @include span-columns(4);
-      .item {
+      a.item {
+        width:100%;
         height: 420px;
-        background-color: $light-gray;
-        margin-bottom: 20px;
+        }      
       }
-    }
     .right{
       @include span-columns(8);
-      .item {
+      a.item {
         @include span-columns(6);
         @include omega(2n);
         height: 200px;
-        background-color: $light-gray;
-        margin-bottom: 20px;
+        }
       }
     }
   }
-}
+
 
 
 .hero-wrapper {
@@ -179,6 +200,7 @@ $mobile: new-breakpoint(max-width 480px 4);
 		font-size: em(14,16);
 		min-height: em(385);
 		border: 3px solid $light-gray;
+    background:#fff;
 		padding: 7px;
 		@include span-columns(3);
 		@include omega(4n);
