@@ -1,0 +1,29 @@
+h1 用户信息设置
+
+= form_for @user, url: user_setting_path, html: { multipart: true , method: :put} do |f|
+  .field
+    = f.label :name, "用户名"
+    = f.text_field :name
+
+  = f.fields_for :profile do |profile_fields|
+    .field
+      = profile_fields.label :avatar, "头像"
+      = profile_fields.file_field :avatar
+    .field
+      = profile_fields.label :qq, 'QQ号'
+      = profile_fields.text_field :qq
+    .field
+      = profile_fields.label :wechat, '微信号'
+      = profile_fields.text_field :wechat
+    .field
+      = profile_fields.label :mobile, '手机号'
+      = profile_fields.text_field :mobile
+    .field
+      = profile_fields.label :city, '城市'
+      = profile_fields.text_field :city_id
+    .field
+      = profile_fields.label :introduction, '个人简介'
+      = profile_fields.text_area :introduction
+  .actions
+    = f.submit '更新个人信息'
+

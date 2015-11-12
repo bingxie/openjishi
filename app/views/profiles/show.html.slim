@@ -1,0 +1,17 @@
+h1
+  | Profiles#show
+p
+  = @user.profile.qq
+
+p
+  = @user.profile.wechat
+
+p
+  = image_tag @user.profile.avatar.url, alt: 'original'
+  br
+  = image_tag @user.profile.avatar.url(:medium), alt: 'medium'
+  br
+  = image_tag @user.profile.avatar.url(:thumb), alt: 'thumb'
+
+br
+  = link_to "编辑个人信息", user_setting_path(@user.slug)

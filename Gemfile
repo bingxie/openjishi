@@ -60,6 +60,8 @@ gem "jquery-fileupload-rails"
 gem 'stringex'
 gem 'hashids'
 
+# File upload
+gem "paperclip", "~> 4.3"
 
 # Middleware that displays speed badge for every html page
 gem 'rack-mini-profiler'

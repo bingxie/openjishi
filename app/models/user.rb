@@ -2,7 +2,10 @@ class User < ActiveRecord::Base
   HASHIDS = Hashids.new("oh my user salt")
   after_create :set_slug
 
-  validates :name, presence: true
+  has_one :profile, dependent: :destroy
+  accepts_nested_attributes_for :profile
+
+  validates :name, presence: true, length: { in: 2..20 }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
