@@ -62,6 +62,10 @@ gem 'hashids'
 
 # File upload
 gem "paperclip", "~> 4.3"
+gem 'paperclip-qiniu', :github => 'lidaobing/paperclip-qiniu'
+
+# Decorators/View-Models for Rails Applications
+gem 'draper', '~> 1.3'
 
 # Middleware that displays speed badge for every html page
 gem 'rack-mini-profiler'

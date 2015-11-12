@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-
+    @profile = @user.profile.decorate
   end
 
   def edit

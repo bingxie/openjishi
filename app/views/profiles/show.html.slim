@@ -7,11 +7,10 @@ p
   = @user.profile.wechat
 
 p
-  = image_tag @user.profile.avatar.url, alt: 'original'
   br
-  = image_tag @user.profile.avatar.url(:medium), alt: 'medium'
+  = @profile.avatar_img(:medium)
   br
-  = image_tag @user.profile.avatar.url(:thumb), alt: 'thumb'
+  = @profile.avatar_img
 
 br
   = link_to "编辑个人信息", user_setting_path(@user.slug)
