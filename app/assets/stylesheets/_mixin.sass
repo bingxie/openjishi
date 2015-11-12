@@ -1,0 +1,12 @@
+=link-color-fixer($color-fixer)
+  a
+    color: $color-fixer
+    text-decoration: none
+    transition: color $base-duration $base-timing
+    &:active,
+    &:focus,
+    &:hover
+      color: shade($color-fixer, 25%)
+
+
+

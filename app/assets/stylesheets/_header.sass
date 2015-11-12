@@ -1,0 +1,36 @@
+.header
+  height: 100px
+  background-color: $light-gray
+  .brand
+    width: 10em
+    float: left
+    margin-right: 2em
+  .search-bar
+    margin-top: 30px
+    float: left
+    width: 30em
+    position: relative
+    form
+      input
+        border: 3px solid #ddd
+        max-width: 25em
+        float: left
+        margin-right: 1em
+      button
+        height: 3em
+        float: left
+  .action
+    margin-top: em(30)
+    width: 300px
+    float: right
+    a
+      display: inline-block
+      float: right
+      padding: 0.5em 1em
+      margin-left: 1em
+    a.sell
+      background: $red
+      border-radius: $base-border-radius
+      color: #fff
+      &:hover
+        color: #eee

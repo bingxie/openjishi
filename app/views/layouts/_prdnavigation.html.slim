@@ -1,0 +1,35 @@
+.megamenu
+	ul
+		- 8.times do
+			li
+				a href="#"
+					|数码相机
+
+/* Drop down menu*/
+
+.drop-down-menu
+	.upper
+		.subcategory
+			ul
+				- 6.times do
+					li
+						img src="http://placehold.it/80x80"
+						label 单反机身
+		.menuad
+			img src="#{image_path('menuad.png')}" /
+			span.label 富士全线镜头限时购
+
+	.quicklink
+		ul
+			li
+				| 品牌
+			- 6.times do
+				li
+					a href="#" 尼康
+
+		ul
+			li
+				| 热门
+			- 6.times do
+				li
+					a href="#" 索尼

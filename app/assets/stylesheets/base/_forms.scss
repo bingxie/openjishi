@@ -1,6 +1,7 @@
 fieldset {
-  background-color: $secondary-background-color;
-  border: $base-border;
+  // background-color: $secondary-background-color;
+  // border: $base-border;
+  border:0;
   margin: 0 0 $small-spacing;
   padding: $base-spacing;
 }
@@ -14,7 +15,6 @@ select {
 }
 
 label {
-  font-weight: 600;
   margin-bottom: $small-spacing / 2;
 
   &.required::after {
@@ -31,12 +31,12 @@ select[multiple=multiple] {
   background-color: $base-background-color;
   border: $base-border;
   border-radius: $base-border-radius;
-  box-shadow: $form-box-shadow;
+  // box-shadow: $form-box-shadow;
   box-sizing: border-box;
   font-family: $base-font-family;
   font-size: $base-font-size;
   margin-bottom: $small-spacing;
-  padding: $base-spacing / 3;
+  padding: $base-spacing / 2;
   transition: border-color $base-duration $base-timing;
   width: 100%;
 

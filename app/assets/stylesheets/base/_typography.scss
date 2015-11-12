@@ -18,19 +18,31 @@ h6 {
   margin: 0 0 $small-spacing;
 }
 
+h1 {
+  font-size: modular-scale(3, $ms-base, $ms-ratio);
+}
+
+h2 {
+  font-size: modular-scale(2, $ms-base, $ms-ratio);
+}
+
+h3 {
+  font-size: modular-scale(1, $ms-base, $ms-ratio);
+}
+
 p {
   margin: 0 0 $small-spacing;
 }
 
 a {
-  color: $action-color;
+  color: $link-color;
   text-decoration: none;
   transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+    color: shade($link-color, 25%);
   }
 }
 
@@ -46,4 +58,8 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+.smaller {
+  font-size: $smaller-font-size;
 }

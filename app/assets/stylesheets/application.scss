@@ -1,3 +1,7 @@
+
+// Import Mixin
+@import "mixin";
+
 // import libraries & frameworks
 @import "normalize-rails";
 @import "bourbon";
@@ -7,6 +11,13 @@
 @import "refills/flashes";
 @import "refills/grid-items";
 
+
+
+
+
 // import application specific files
 @import "layout";
 @import "style";
+@import "login";
+@import "header";
+@import "footer";

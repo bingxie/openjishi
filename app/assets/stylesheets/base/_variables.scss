@@ -1,11 +1,14 @@
 //Global
+$em-base:14px;
 
 // Typography
-$base-font-family: $helvetica;
+$chinese: Roboto,"Helvetica Neue","Segoe UI",Verdana,Tahoma,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+$base-font-family: $chinese;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: 0.875em;
+$smaller-font-size: 0.875em;
 
 // Line height
 $base-line-height: 1.5;
@@ -18,16 +21,26 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
+$shader: 25%;
+
 $red:#DF3F3F;
-$blue: #477dca;
-$dark-gray: #58585B;
-$medium-gray: #4a4a4a;
+$red-dark:shade ($red, 25%);
+
+$orange:#df873f;
+$orange-dark:shade ($orange, 25%);
+
+$blue:#268686;
+$blue-dark:shade ($blue, $shader);
+
 $light-gray: #f2f2f2;
+$medium-gray: #8c8c8c;
+$dark-gray: #262626;
 
 // Font Colors
 $base-font-color: $dark-gray;
 $font-color-light: $medium-gray;
 $action-color: $red;
+$link-color: $dark-gray;
 
 // Border
 $base-border-color: $light-gray;
@@ -44,3 +57,11 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+// shadow
+$base-box-shadow: 0 1px 3px rgba(#000, 0.06);
+
+// Modulear Scale
+$ms-base: 0.825em;
+$ms-ratio: 1.2;
+

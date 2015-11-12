@@ -14,13 +14,9 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-
+      /*Header*/
+      = render partial: "layouts/header"
+      = render partial: "layouts/prdnavigation"
       = yield
-
-
-      div.container
-      - flash.each do |key, value|
-        div class="flash-#{key}"
-          span
-            = value
+      = render partial: "layouts/footer"
 

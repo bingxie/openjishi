@@ -1,0 +1,34 @@
+.stripred.nopadding
+	.global-nav
+		.social-icons
+			ul
+				li
+				 | 关注我们
+				li
+					a href="#"
+						i.fa.fa-weibo
+				li
+					a href="#"
+						i.fa.fa-wechat
+				li
+					a href="#"
+						i.fa.fa-video-camera
+
+.header
+	.container
+		.brand
+			img src="#{image_path('logo.png')}" /
+			/ = image_tag("logo.png", class: "menu_icon", alt:"123")
+
+		.search-bar
+		  form role="search"
+		    input placeholder=("Enter Search") type="search" /
+		    button type="submit" 搜索
+
+		.action
+			a.login href="#"
+				| 登录/注册
+			a.sell href="#"
+				| 发布商品
+			a.blog href="#"
+				| 镜影博客
