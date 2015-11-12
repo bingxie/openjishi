@@ -28,6 +28,33 @@ $mobile: new-breakpoint(max-width 480px 4);
 }
 
 
+/* -------- Feature Module --------- */
+.featured-layout1 {
+  width: 100%;
+  padding: 2em 0;
+  .wrap {
+    @include outer-container;
+    .left {
+      @include span-columns(4);
+      .item {
+        height: 420px;
+        background-color: $light-gray;
+        margin-bottom: 20px;
+      }
+    }
+    .right{
+      @include span-columns(8);
+      .item {
+        @include span-columns(6);
+        @include omega(2n);
+        height: 200px;
+        background-color: $light-gray;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
 
 .hero-wrapper {
   margin-top: 20px;
@@ -89,7 +116,7 @@ $mobile: new-breakpoint(max-width 480px 4);
 }
 
 .drop-down-menu {
-  // display: none;
+  display: none;
   ul li {
     float: left;
   }
