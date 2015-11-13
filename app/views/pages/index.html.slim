@@ -1,32 +1,31 @@
-.stripdark 
-	.featured-layout-1
-		.wrap
-			.left
-				a.item href="#" 
-					img src="#{image_path('featured/featured-1.png')}" /
-					.label 
-						h1 久经考验的野外装备
-						p 看看大师们的设备都用成了什么样
-						p 
-							|查看详情 
-							i.fa.fa-arrow-circle-right
-			.right
-				a.item href="#"
-					img src="#{image_path('featured/featured-2.png')}" /
-					.label 
-						|尼康10周年纪念款镜头
-				a.item href="#"
-					img src="#{image_path('featured/featured-3.png')}" /
-					.label 
-						|尼康10周年纪念款镜头
-				a.item href="#"
-					img src="#{image_path('featured/featured-4.png')}" /
-					.label 
-						|尼康10周年纪念款镜头
-				a.item href="#"
-					img src="#{image_path('featured/featured-5.png')}" /
-					.label 
-						|尼康10周年纪念款镜头
+.featured-layout-1
+	.wrap
+		.left
+			a.item href="#"
+				img src="#{image_path('featured/featured-1.png')}" /
+				.label
+					h1 久经考验的野外装备
+					p 看看大师们的设备都用成了什么样
+					p
+						|查看详情
+						i.fa.fa-arrow-circle-right
+		.right
+			a.item href="#"
+				img src="#{image_path('featured/featured-2.png')}" /
+				.label
+					|尼康10周年纪念款镜头
+			a.item href="#"
+				img src="#{image_path('featured/featured-3.png')}" /
+				.label
+					|尼康10周年纪念款镜头
+			a.item href="#"
+				img src="#{image_path('featured/featured-4.png')}" /
+				.label
+					|尼康10周年纪念款镜头
+			a.item href="#"
+				img src="#{image_path('featured/featured-5.png')}" /
+				.label
+					|尼康10周年纪念款镜头
 
 
 / .hero-wrapper
@@ -98,12 +97,13 @@
 				.clearfix
 
 
-.container
-	label 热门品牌
-	ul
-		- 6.times do
-			li.itemblock6
-				img src="http://placehold.it/200x80" /
+.brands
+	.wrap
+		h1.label 热门品牌
+		ul
+			- 6.times do
+				li.itemblock6
+					img src="http://placehold.it/200x80" /
 
 
 .container
@@ -129,9 +129,9 @@
 					| 阅读全文
 					i.fa.fa-arrow-circle-right
 
-.striplightgray
-	.container
-		.whyus
+.whyus
+	.wrap
+		section
 			h1 为什么选择镜影汇
 			p 是不是觉得老派的交易论坛实在跟不上时代? 是不是纳闷怎么没有人来做一个专门的摄影器材交易平台? 这不, 我们来了。
 		.benifit

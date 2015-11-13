@@ -20,7 +20,7 @@
         height: 3em
         float: left
   .action
-    margin-top: em(30)
+    margin-top: em(36)
     width: 300px
     float: right
     a
@@ -29,8 +29,4 @@
       padding: 0.5em 1em
       margin-left: 1em
     a.sell
-      background: $red
-      border-radius: $base-border-radius
-      color: #fff
-      &:hover
-        color: #eee
+      +primary-button(0.5em 1em)

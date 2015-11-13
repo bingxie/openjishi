@@ -9,4 +9,14 @@
       color: shade($color-fixer, 25%)
 
 
-
+=primary-button($button-padding)
+  display: inline-block
+  color: #fff
+  border-radius: $base-border-radius
+  background-color: $action-color
+  padding: $button-padding
+  transition: background-color $base-duration $base-timing
+  &:active,
+  &:focus,
+  &:hover
+    background-color: shade($action-color, 25%)

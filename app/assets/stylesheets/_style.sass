@@ -1,0 +1,246 @@
+$mobile: new-breakpoint(max-width 480px 4)
+
+// demo for autoprefixer
+\:fullscreen a
+  display: flex
+
+// Demo for neat
+.container, .megamenu,.hero-wrapper,.bump
+  +outer-container
+  .loginpanel
+    +span-columns(6)
+    +shift(3)
+    +media(min-width 320px max-width 480px, 6)
+      +span-columns(6)
+      +shift(0)
+  .primary
+    +span-columns(8)
+    +media($mobile)
+      background-color: gray
+  .secondary
+    +span-columns(4)
+
+/* -------- Feature Module ---------*/
+.featured-layout-1
+  width: 100%
+  padding: 2em 0 0 0
+  .wrap
+    a.item
+      +background(linear-gradient(white, #dddddd) left repeat)
+      margin-bottom: 20px
+      display: inline-block
+      position: relative
+      overflow: hidden
+      &:hover
+        img
+          transition: opacity .3s ease
+          opacity: 0.9
+      .label
+        position: absolute
+        bottom: 1em
+        left: 1em
+        background: rgba(0, 0, 0, 0.6)
+        padding: 0.5em 1em
+        color: #fff
+    a.cta
+      margin: 0 auto
+    +outer-container
+    .left
+      +span-columns(4)
+      a.item
+        width: 100%
+        height: 420px
+    .right
+      +span-columns(8)
+      a.item
+        +span-columns(6)
+        +omega(2n)
+        height: 200px
+
+.hero-wrapper
+  margin-top: 20px
+  .hero
+    +span-columns(4)
+    height: 200px
+    background-color: $action-color
+
+/*-------- GRID LAYOUT -------- */
+.global-nav
+  +outer-container
+  height: 40px
+  .social-icons
+    line-height: 20px
+    margin-top: 10px
+    color: #fff
+    float: right
+    a
+      color: #fff
+      font-size: 2em
+      &:hover
+        color: shade (white, 25%)
+    ul
+      display: inline-block
+      li
+        float: left
+        color: #fff
+        font-size: 0.8em
+        margin: 0 0 0 10px
+
+.head
+  border: none
+
+.clearfix
+  clear: both
+
+.megamenu
+  padding: 10px 0 0
+  ul li
+    float: left
+    padding: 5px 20px
+    &:hover
+      background: $light-gray
+      .drop-down-menu
+        display: initial
+  border-bottom: 4px solid $action-color
+
+.drop-down-menu
+  display: none
+  ul li
+    float: left
+  background: $light-gray
+  +outer-container
+  .upper
+    +outer-container
+    padding: 1em
+    .subcategory
+      padding-top: 2em
+      +span-columns(9)
+      ul li
+        width: calc(100% / 6)
+        text-align: center
+    .menuad
+      position: relative
+      +span-columns(3)
+      .label
+        position: absolute
+        bottom: 10px
+        right: 0
+        background-color: rgba(0, 0, 0, 0.6)
+        color: #fff
+        padding: 2px 5px
+  .quicklink
+    padding: 0.5em 3em 0
+    background: #ddd
+    ul
+      width: 40%
+      display: inline-block
+      li
+        padding: 0.5em 1em 0.5em 0
+        font-size: 0.875em
+        line-height: 0.5
+
+/* Item Grid */
+.container
+  label
+    background: $action-color
+    font-size: em(16, 14)
+    font-weight: bold
+    padding: em(8) em(40)
+    margin: em(20) 0
+    color: #fff
+    display: inline-block
+  ul li.itemblock4
+    min-height: em(385)
+    border: 3px solid $light-gray
+    background: #fff
+    padding: 7px
+    +span-columns(3)
+    +omega(4n)
+    margin-bottom: em(20)
+    .thumbnail
+      margin-bottom: em(10)
+    .userface
+      width: 3em
+      border-radius: 1000px
+      display: inline-block
+      float: left
+      margin-right: 1em
+    .username
+      line-height: 3.9
+      display: table-cell
+      vertical-align: middle
+      float: left
+    .prdtitle
+      padding: em(20) 0 em(10) 0
+    .price
+      font-size: em(20, 14)
+      color: $red
+      span
+        font-size: 0.7em
+        color: $medium-gray
+    .location i
+      margin-right: em(5)
+    .condition
+      float: right
+  ul li.itemblock6
+    background-color: #ddd
+    height: 60px
+    overflow: hidden
+    +span-columns(2)
+    +omega(6n)
+    margin-bottom: em(20)
+  ul li.itemblock2
+    +span-columns(6)
+    +omega(2n)
+    margin-bottom: em(20)
+    .userface
+      width: em(80)
+      height: em(80)
+      border-radius: 10000px
+      background-color: $red
+      float: left
+      margin: 0 em(20) em(20) 0
+    .article
+      border: 3px solid $light-gray
+      padding: 10px
+      display: inline-block
+      width: calc(100% - 110px)
+      float: left
+      .title
+        font-size: 1.15em
+      .blurb
+
+/* Homepage Brands */
+.brands
+  background-color: $light-gray
+  padding: 2em 0
+  ul li
+    +span-columns(2)
+
+
+
+/* ---- CATEOGRY PAGE -----*/
+.jumbotron
+  background-color: $dark-gray
+  background-image: image-url("login-bg-5.jpg")
+  background-size: cover
+  background-position: 100% 40%
+  height: 200px
+  h1.categoryname
+    color: #fff
+    padding: 1em
+    float: left
+  a.watch
+    float: right
+    +primary-button(1em)
+  .featured
+    margin-top: 20px
+    ul li
+      +span-columns(4)
+      padding: 1em
+
+
+
+
+
+

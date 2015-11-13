@@ -12,6 +12,9 @@ select {
   display: block;
   font-family: $base-font-family;
   font-size: $base-font-size;
+  option {
+    background: $action-color !important;
+  }
 }
 
 label {
@@ -36,7 +39,7 @@ select[multiple=multiple] {
   font-family: $base-font-family;
   font-size: $base-font-size;
   margin-bottom: $small-spacing;
-  padding: $base-spacing / 2;
+  padding: $base-spacing / 2.8;
   transition: border-color $base-duration $base-timing;
   width: 100%;
 
@@ -45,8 +48,8 @@ select[multiple=multiple] {
   }
 
   &:focus {
-    border-color: $action-color;
-    box-shadow: $form-box-shadow-focus;
+    border-color: lighten($action-color, 15%);
+    // box-shadow: $form-box-shadow-focus;
     outline: none;
   }
 

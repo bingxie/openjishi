@@ -50,6 +50,8 @@ gem 'high_voltage'
 #
 gem 'devise', '~> 3.5', '>= 3.5.2'
 
+# Select 2
+gem "select2-rails"
 
 # Middleware that displays speed badge for every html page
 gem 'rack-mini-profiler'

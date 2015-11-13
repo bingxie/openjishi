@@ -1,0 +1,99 @@
+.wrap
+  section.sellform
+    h1 发布新产品
+    fieldset
+      .fieldset-label
+        |商品信息
+      .formgroup
+        h1
+          | 输入您要销售的产品名称，我们会尝试自动识别
+        span
+          | 例如: “尼康 D810 9成新 18000”或 “佳能 70 200 2.8 二代 9成新 广东 深圳”或 淘宝链接
+        input#producttitle name="producttitle" placeholder="" required="" type="text" /
+        button#producttitle name="producttitlebtn"  智能识别
+      .formgroup
+        .main-category
+          label
+            | 主分类
+          select#select-main-category name="select-main-cateogry"
+            option value="1"  数码相机
+            option value="2"  镜头
+        .sub-category
+          label
+            | 子分类
+          select#select-sub-category name="select-main-cateogry"
+            option value="1"  单反机身
+            option value="2"  微单机身
+        .brand.nomargin
+          label
+            | 品牌
+          select#select-brand name="select-main-cateogry"
+            option value="1"  尼康
+            option value="2"  佳能
+        .price
+          label
+            | 价格
+          input#price name="price" placeholder="商品价格" required="" type="text" /
+        .condition
+          label
+            | 成色
+          select#select-condition name="select-condition"
+            option value="1"  全新
+            option value="2"  95成新
+        / .clearfix
+      .formgroup
+        .image-uploader
+          h2
+            |上传图片
+          p
+            |您可以直接拖拽图片之此区域
+          a href="#" 或 从本地电脑选择
+      .formgroup
+        label 请描述您要出售的商品
+        textarea#product-description name="product-description" style="height:10em;"
+
+
+    fieldset
+      .fieldset-label
+        |快递信息
+      .formgroup
+        .city
+          label
+            | 城市
+          input#city name="city" placeholder="城市" required="" type="text" /
+        .address.nomargin
+          label
+            | 地址
+          input#address name="address" placeholder="地址" required="" type="text" /
+        .shipping-methode
+          label
+            | 快递方式
+          .shipping-methode-radio-button
+            span.carrier for="radios-0"
+              input#radios-0 checked="checked" name="radios" type="radio" value="1" /
+              |快递
+              .note
+                i.fa.fa-caret-up
+                h3
+                 | 快递费用
+                span
+                  | 省内
+                  input#shengneikuaidi name="shengneikuaidi" type="text"
+                span
+                  | 省外
+                  input#shengneikuaidi name="shengneikuaidi" type="text"
+            span for="radios-1"
+              input#radios-1 name="radios" type="radio" value="2" /
+              |买家到付
+            span for="radios-2"
+              input#radios-2 name="radios" type="radio" value="3" /
+              |免费
+        .shipping-comment
+          label 快递备注
+          textarea#shipping-comment name="shipping-comment" style="height:10em;"
+
+
+    a.sell-preview href="#" 预览商品
+
+
+  section.sellhelper
