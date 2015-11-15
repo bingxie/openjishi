@@ -1,10 +1,24 @@
 class ProfilesController < ApplicationController
 
   before_action :authenticate_owner!
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :crop, :do_crop]
 
   def show
     @profile = @user.profile.decorate
+  end
+
+  def crop
+    @profile = @user.profile.decorate
+  end
+
+  def do_crop
+    profile_params = params.require(:profile).permit(:avatar, :avatar_crop_x, :avatar_crop_y, :avatar_crop_w, :avatar_crop_h)
+    if @user.profile.update(profile_params)
+      flash[:success] = "成功更新个人信息"
+      redirect_to user_profile_path(@user.slug)
+    else
+      render 'crop'
+    end
   end
 
   def edit
