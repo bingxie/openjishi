@@ -30,6 +30,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
+
+# Rails jQuery file uploads via standard Rails "remote: true" forms
+gem 'remotipart', '~> 1.2'
 
 # ClientSideValidations for Ruby on Rails
 gem 'client_side_validations', github: "DavyJonesLocker/client_side_validations", branch: "4-2-stable"
@@ -55,6 +59,19 @@ gem "select2-rails"
 
 # JQ uploader
 gem "jquery-fileupload-rails"
+
+# For generate friendly url
+gem 'stringex'
+gem 'hashids'
+
+# File upload
+gem "paperclip", "~> 4.3"
+gem 'paperclip-qiniu', :github => 'lidaobing/paperclip-qiniu'
+# An easy extension for Paperclip to crop your image uploads using jCrop
+gem 'papercrop', :github => 'rsantamaria/papercrop' # fix preview image size bug
+
+# Decorators/View-Models for Rails Applications
+gem 'draper', '~> 1.3'
 
 # Middleware that displays speed badge for every html page
 gem 'rack-mini-profiler'

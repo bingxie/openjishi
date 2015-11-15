@@ -11,7 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.remotipart
+//= require jquery.jcrop
+//= require papercrop
 //= require rails.validations
 //= require select2
 //= require jquery-fileupload

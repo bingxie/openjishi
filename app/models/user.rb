@@ -1,5 +1,11 @@
 class User < ActiveRecord::Base
-  validates :name, presence: true
+  HASHIDS = Hashids.new("oh my user salt")
+  after_create :set_slug
+
+  has_one :profile, dependent: :destroy
+  accepts_nested_attributes_for :profile
+
+  validates :name, presence: true, length: { in: 2..20 }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -11,5 +17,12 @@ class User < ActiveRecord::Base
   # override Devise's method
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, * args).deliver_later
+  end
+
+  def set_slug
+    hash = HASHIDS.encode(id)
+
+    self.slug ||= "#{hash} #{name}".to_url
+    save!
   end
 end
