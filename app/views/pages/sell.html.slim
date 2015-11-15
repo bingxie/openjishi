@@ -1,6 +1,6 @@
 .wrap
   section.sellform
-    h1 发布新产品
+    h1 发布新商品
     fieldset
       .fieldset-label
         |商品信息
@@ -42,6 +42,7 @@
             option value="2"  95成新
         / .clearfix
       .formgroup
+        input#fileupload data-url="server/php/" multiple="" name="files[]" type="file" /
         .image-uploader
           h2
             |上传图片
@@ -70,7 +71,7 @@
             | 快递方式
           .shipping-methode-radio-button
             span.carrier for="radios-0"
-              input#radios-0 checked="checked" name="radios" type="radio" value="1" /
+              input#carrier name="radios" type="radio" value="1" /
               |快递
               .note
                 i.fa.fa-caret-up
@@ -79,6 +80,7 @@
                 span
                   | 省内
                   input#shengneikuaidi name="shengneikuaidi" type="text"
+                    i.fa.fa-jpy
                 span
                   | 省外
                   input#shengneikuaidi name="shengneikuaidi" type="text"
@@ -88,6 +90,9 @@
             span for="radios-2"
               input#radios-2 name="radios" type="radio" value="3" /
               |免费
+            span for="radios-3"
+              input#radios-3 name="radios" type="radio" value="3" /
+              |仅限本地交易
         .shipping-comment
           label 快递备注
           textarea#shipping-comment name="shipping-comment" style="height:10em;"

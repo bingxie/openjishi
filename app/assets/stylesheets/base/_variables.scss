@@ -43,7 +43,7 @@ $action-color: $red;
 $link-color: $dark-gray;
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: shade($light-gray, 10%);
 $base-border: 2px solid $base-border-color;
 
 // Background Colors
