@@ -1,10 +1,12 @@
+$em-base: 14px;
+
 // Typography
 $chinese: Roboto,"Helvetica Neue","Segoe UI",Verdana,Tahoma,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
 $base-font-family: $chinese;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: em(14,16);
 $smaller-font-size: 0.875em;
 
 // Line height
@@ -27,7 +29,7 @@ $orange-dark: shade($orange, 20%);
 $blue:#6DBCDB;
 $blue-dark: shade($blue, 20%);
 
-$dark:#4d4d4d;
+$dark:#535353;
 $dark-dark: shade($dark, 20%);
 
 $light:#f2f2f2;
@@ -49,7 +51,7 @@ $dark-gray: #2e303a;
 // Font Colors
 $action-color: $red;
 $base-font-color: $dark;
-$link-color: $blue;
+$link-color: $dark;
 
 // Border
 $base-border-color: shade($light-gray, 10%);
@@ -70,7 +72,7 @@ $base-duration: 150ms;
 $base-timing: ease;
 
 // shadow
-$base-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3);
+$base-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.06);
 
 // Modulear Scale
 $ms-base: 0.825em;

@@ -16,6 +16,7 @@ h6 {
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
+  font-weight: 100;
 }
 
 h1 {
@@ -46,7 +47,9 @@ a {
   &:active,
   &:focus,
   &:hover {
-    color: shade($link-color, 25%);
+    color: $orange-dark;
+    // text-decoration: underline;
+    border-bottom-width: 10px;
   }
 }
 
