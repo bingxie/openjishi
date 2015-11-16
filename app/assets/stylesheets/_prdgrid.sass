@@ -5,13 +5,20 @@ section.prd-grid
   .prd-block-4
     +span-columns(3)
     +omega(4n)
+    +media($mobile)
+      +span-columns(4)
     padding: $base-spacing * 0.5
     border: 3px solid $base-border-color
+    margin-bottom: 2em
   .prd-block-3
     +span-columns(4)
     +omega(3n)
+    +media($mobile)
+      +span-columns(4)
+      margin: 0 1em 2em
     padding: $base-spacing * 0.5
     border: 3px solid $base-border-color
+    margin-bottom: 2em
   .prd-thumbnail
     &:hover
       +lovely-transition
@@ -23,7 +30,7 @@ section.prd-grid
     vertical-align: middle
   .prd-title
     margin-bottom: 1em
-    height: 4em
+    min-height: 4em
     display: block
   .prd-price
     i
