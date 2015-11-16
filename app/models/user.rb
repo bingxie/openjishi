@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   HASHIDS = Hashids.new("oh my user salt")
-  after_create :set_slug
 
   has_one :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
@@ -17,6 +16,10 @@ class User < ActiveRecord::Base
   # override Devise's method
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, * args).deliver_later
+  end
+
+  def after_confirmation  # From Devise
+    set_slug
   end
 
   def set_slug
