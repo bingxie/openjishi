@@ -1,0 +1,77 @@
+<select id="mySelect" style="width: 400px">
+</select>
+
+<script>
+var theData = [{
+    "id": "CEN",
+    "level": "C",
+    "dataid": "EN",
+    "text": "England",
+    "children": [{
+        "id": "RDEF",
+        "level": "R",
+        "dataid": "DEF",
+        "text": "Default Region",
+        "children": [{
+            "id": "D100",
+            "level": "D",
+            "dataid": "100",
+            "text": "Depot 100"
+        }, {
+            "id": "D125",
+            "level": "D",
+            "dataid": "125",
+            "text": "Depot 125"
+        }]
+    }, {
+        "id": "RNORTH",
+        "level": "R",
+        "dataid": "NORTH",
+        "text": "North Region",
+        "children": [{
+            "id": "D999",
+            "level": "D",
+            "dataid": "999",
+            "text": "Depot 999 - Head Office"
+        }]
+    }, {
+        "id": "RWEST",
+        "level": "R",
+        "dataid": "WEST",
+        "text": "West Region",
+        "children": [{
+            "id": "D555",
+            "level": "D",
+            "dataid": "555",
+            "text": "Depot 555"
+        }]
+    }]
+}, {
+    "id": "CNL",
+    "level": "C",
+    "dataid": "NL",
+    "text": "Netherlands",
+    "children": [{
+        "id": "RNORTH",
+        "level": "R",
+        "dataid": "NORTH",
+        "text": "North Region",
+        "children": [{
+            "id": "DNL",
+            "level": "D",
+            "dataid": "NL",
+            "text": "Dutch Depot"
+        }]
+    }]
+}]
+
+$().ready(function(){
+  $("#mySelect").select2({
+    placeholder: "Select Country, Region, Depot",
+    data: theData
+  });
+});
+
+
+
+</script>

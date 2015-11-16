@@ -51,6 +51,8 @@ gem "font-awesome-rails"
 # Easily include static pages in your Rails app
 gem 'high_voltage'
 
+gem 'china_city'
+
 #
 gem 'devise', '~> 3.5', '>= 3.5.2'
 

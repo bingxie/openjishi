@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   end
 
   def crop
-    @profile = @user.profile.decorate
+    @profile = @user.profile
   end
 
   def do_crop
@@ -22,7 +22,6 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @user.build_profile if @user.profile.nil?
   end
 
   def update
@@ -41,7 +40,7 @@ class ProfilesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, profile_attributes: [:id, :city_id, :introduction, :mobile, :qq, :wechat, :avatar])
+    params.require(:user).permit(:name, profile_attributes: [:id, :province_id, :district_id, :city_id, :introduction, :mobile, :qq, :wechat, :avatar])
   end
 
   def authenticate_owner!
