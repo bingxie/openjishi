@@ -1,0 +1,166 @@
+/* --------- GRID --------*/
+hr
+.wrap
+  h1
+    | Grid system based on&nbsp;
+    a href="http://neat.bourbon.io/" target="_blank"
+      |Neat
+  p $max-width: em(1088)
+  p $grid-columns: 12
+  p $column: em(68)
+  p $gutter: em(25)
+
+/* --------- COLOR --------*/
+
+hr
+.wrap
+  h1 Color
+  div.col-4
+    h3 Theme Color
+    div
+      div.colorpad
+        div.themecolor
+        p.themecolor DF3F3F
+      div.colorpad
+        div.themecolor-dark
+        p.themecolor-dark AC0C0C Darken 20% 
+  div.col-4
+    h3 Secondary Color
+    div
+      div.colorpad
+        div.secondarycolor
+        p.secondarycolor FD984E
+      div.colorpad
+        div.secondarycolor-dark
+        p.secondarycolor-dark CA651B Darken 20% 
+  div.col-4
+    h3 Third Color
+    div
+      div.colorpad
+        div.thirdcolor
+        p.thirdcolor 6DBCDB
+      div.colorpad
+        div.thirdcolor-dark
+        p.thirdcolor-dark 3A89A8 Darken 20% 
+  div.col-4
+    h3 Dark Color
+    div
+      div.colorpad
+        div.darkcolor
+        p.darkcolor 4D4D4D
+      div.colorpad
+        div.darkcolor-dark
+        p.darkcolor-dark 1A1A1A Darken 20%
+  div.col-4
+    h3 Light Color
+    div
+      div.colorpad
+        div.lightcolor
+        p.lightcolor F2F2F2
+      div.colorpad
+        div.lightcolor-dark
+        p.lightcolor-dark BFBFBF Darken 20%
+
+/* --------- Typography --------*/
+hr
+.wrap
+  h1 Typography
+  h1 H1标题文字
+  h2 H2标题文字
+  h3 H3标题文字
+  h4 H4标题文字
+  p
+    |亨利·卡蒂尔-布雷松生于法国巴黎近郊的Chanteloup-en-Brie。他是家里五个孩子中的老大。 他的父亲是个较为富裕的纺织厂主，母亲的家族经营着棉花经销的生意，并且是诺曼底地区的地主。
+  blockquote
+    |亨利·卡蒂尔-布雷松生于法国巴黎近郊的Chanteloup-en-Brie。他是家里五个孩子中的老大。 他的父亲是个较为富裕的纺织厂主，母亲的家族经营着棉花经销的生意，并且是诺曼底地区的地主。
+  p.small
+    |亨利·卡蒂尔-布雷松生于法国巴黎近郊的Chanteloup-en-Brie。他是家里五个孩子中的老大。 他的父亲是个较为富裕的纺织厂主，母亲的家族经营着棉花经销的生意，并且是诺曼底地区的地主。
+
+
+
+/* --------- Buttons --------*/
+hr
+.wrap
+  h1 Buttons
+  .col-4
+    h3 Large button
+    p
+      a.largebtn href="#" Large Button
+    p
+      |user mixin <i>large-button</i> to pass in the color value.
+    p
+      a.largebtn-outline href="#" Large Button
+    p
+      |user mixin <i>large-button-outline</i> to pass in the color value.
+  .col-4
+    h3 Small button
+    p
+      a.smallbtn href="#" Small Button
+    p
+      |user mixin <i>small-button</i> to pass in the color value.
+    p
+      a.smallbtn-outline href="#" Small Button
+    p
+      |user mixin <i>small-button-outline</i> to pass in the color value.
+  .col-4
+    h3 Full width button
+    p
+      a.largebtn.fullwidth href="#" Full width Button
+    p
+      a.largebtn-outline.fullwidth href="#" Full width Button
+    p
+      |simply add class .fullwidth
+
+/* --------- Form --------*/
+hr
+.wrap
+  h1 Form
+  div
+    h4 Text input
+    input#textinput name="textinput" placeholder="" required="" type="text" /
+  div
+    h4 Password input
+    input#passwordinput name="passwordinput" placeholder="" required="" type="password" /
+  div
+    h4 Submit input
+    input#submitinput name="submitinput" placeholder="" required="" type="submit" /
+  div
+    h4 Radio input
+    input#radioinput name="radioinput" placeholder="" required="" type="radio" /
+  div
+    h4 Checkbox input
+    input#checkboxinput name="checkboxinput" placeholder="" required="" type="checkbox" /
+  div
+    h4 Button
+    input#buttoninput name="buttoninput" placeholder="Button" required="" type="button"  value="Button"/
+
+
+/* --------- Lists --------*/
+hr
+.wrap
+  h1 List
+  div.col-4
+    h3 Li
+    ul
+      li 尼康
+      li 佳能
+      li 索尼
+      li 宾得
+      li 三星
+      li 富士
+      li 奥林巴斯
+  div.col-4
+    h3 Oi
+    ol
+      li 尼康
+      li 佳能
+      li 索尼
+      li 宾得
+      li 三星
+      li 富士
+      li 奥林巴斯
+  p
+   |All lists have stripped out styles. No bullets, no left padding. Please refer to&nbsp;
+   a href="http://bitters.bourbon.io/" target="_blank"
+    | Bitter
+

@@ -4,7 +4,6 @@ body {
   font-feature-settings: "kern", "liga", "pnum";
   font-size: $base-font-size;
   line-height: $base-line-height;
-  min-width: 960px !important;
 }
 
 h1,
@@ -20,15 +19,19 @@ h6 {
 }
 
 h1 {
-  font-size: modular-scale(3, $ms-base, $ms-ratio);
+  font-size: modular-scale(5, $ms-base, $ms-ratio);
 }
 
 h2 {
-  font-size: modular-scale(2, $ms-base, $ms-ratio);
+  font-size: modular-scale(4, $ms-base, $ms-ratio);
 }
 
 h3 {
-  font-size: modular-scale(1, $ms-base, $ms-ratio);
+  font-size: modular-scale(3, $ms-base, $ms-ratio);
+}
+
+h4 {
+  font-size: modular-scale(2, $ms-base, $ms-ratio);
 }
 
 p {
@@ -59,6 +62,18 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+blockquote {
+  margin-left: 2em;
+  padding: 1em;
+  border-left: $base-border-size * 2 solid $dark;
+  background-color: $light
+}
+
+p.small {
+  font-size: 0.825em;
+  color: $dark;
 }
 
 .smaller {

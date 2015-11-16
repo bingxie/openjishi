@@ -1,13 +1,10 @@
-//Global
-$em-base:14px;
-
 // Typography
 $chinese: Roboto,"Helvetica Neue","Segoe UI",Verdana,Tahoma,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
 $base-font-family: $chinese;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
-$base-font-size: 0.875em;
+$base-font-size: 1em;
 $smaller-font-size: 0.875em;
 
 // Line height
@@ -21,33 +18,47 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$shader: 25%;
-
 $red:#df3f3f;
-$red-dark:shade ($red, 25%);
+$red-dark: shade($red, 20%);
 
-$orange:#df873f;
-$orange-dark:shade ($orange, 25%);
+$orange:#FD984E;
+$orange-dark: shade($orange, 20%);
 
-$blue:#268686;
-$blue-dark:shade ($blue, $shader);
+$blue:#6DBCDB;
+$blue-dark: shade($blue, 20%);
 
+$dark:#4d4d4d;
+$dark-dark: shade($dark, 20%);
+
+$light:#f2f2f2;
+$light-dark: shade($light, 20%);
+
+// COLOR CODE
+$themecolor: $red;
+$secondarycolor:$orange;
+$thirdcolor:$blue;
+
+//CLEARN BELOW
 $light-gray: #f2f2f2;
 $medium-gray: #8c8c8c;
 $dark-gray: #2e303a;
+//CLEARN ABOVE
+
+
 
 // Font Colors
-$base-font-color: $dark-gray;
-$font-color-light: $medium-gray;
 $action-color: $red;
-$link-color: $dark-gray;
+$base-font-color: $dark;
+$link-color: $blue;
 
 // Border
 $base-border-color: shade($light-gray, 10%);
-$base-border: 2px solid $base-border-color;
+$base-border-size: em(2);
+$base-border: $base-border-size solid $base-border-color;
+
 
 // Background Colors
-$base-background-color: #fff;
+$base-background-color: $light;
 $secondary-background-color: tint($base-border-color, 75%);
 
 // Forms

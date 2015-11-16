@@ -1,0 +1,84 @@
+.col-4
+  +span-columns(4)
+  +omega(4n)
+
+//COLOR
+.colorpad
+  +span-columns(2 of 4)
+  div.themecolor
+    width: 100%
+    height: 100px
+    background-color: $red
+  p.themecolor
+    color: $red
+  div.themecolor-dark
+    width: 100%
+    height: 100px
+    background-color: $red-dark
+  p.themecolor-dark
+    color: $red-dark
+  div.secondarycolor
+    width: 100%
+    height: 100px
+    background-color: $orange
+  p.secondarycolor
+    color: $orange
+  div.secondarycolor-dark
+    width: 100%
+    height: 100px
+    background-color: $orange-dark
+  p.secondarycolor-dark
+    color: $orange-dark
+  div.thirdcolor
+    width: 100%
+    height: 100px
+    background-color: $blue
+  p.thirdcolor
+    color: $blue
+  div.thirdcolor-dark
+    width: 100%
+    height: 100px
+    background-color: $blue-dark
+  p.thirdcolor-dark
+    color: $blue-dark
+  div.darkcolor
+    width: 100%
+    height: 100px
+    background-color: $dark
+  p.darkcolor
+    color: $dark
+  div.darkcolor-dark
+    width: 100%
+    height: 100px
+    background-color: $dark-dark
+  p.darkcolor-dark
+    color: $dark-dark
+  div.lightcolor
+    width: 100%
+    height: 100px
+    background-color: $light
+  p.lightcolor
+    color: $light
+  div.lightcolor-dark
+    width: 100%
+    height: 100px
+    background-color: $light-dark
+  p.lightcolor-dark
+    color: $light-dark
+
+//BUTTON
+.largebtn
+  +large-button($themecolor)
+
+.largebtn-outline
+  +large-button-outline($themecolor)
+
+.smallbtn
+  +small-button($themecolor)
+
+.smallbtn-outline
+  +small-button-outline($themecolor)
+
+.fullwidth
+  width: 100%
+  text-align: center
