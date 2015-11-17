@@ -1,5 +1,4 @@
 class ProfilesController < ApplicationController
-
   before_action :authenticate_owner!
   before_action :set_user, only: [:show, :edit, :update, :crop, :do_crop]
 
@@ -12,7 +11,9 @@ class ProfilesController < ApplicationController
   end
 
   def do_crop
-    profile_params = params.require(:profile).permit(:avatar, :avatar_crop_x, :avatar_crop_y, :avatar_crop_w, :avatar_crop_h)
+    profile_params = params.require(:profile)
+                           .permit(:avatar, :avatar_crop_x, :avatar_crop_y,
+                                   :avatar_crop_w, :avatar_crop_h)
     if @user.profile.update(profile_params)
       flash[:success] = "成功更新个人信息"
       redirect_to user_profile_path(@user.slug)
@@ -40,13 +41,16 @@ class ProfilesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, profile_attributes: [:id, :province_id, :district_id, :city_id, :introduction, :mobile, :qq, :wechat, :avatar])
+    params.require(:user)
+          .permit(:name,
+                  profile_attributes: [:id, :province_id, :district_id, :city_id, :introduction,
+                                       :mobile, :qq, :wechat, :avatar])
   end
 
   def authenticate_owner!
-    unless user_signed_in? && current_user.slug == params[:slug]
-      flash[:alert] = "你不能更新该个人信息！"
-      redirect_to root_path
-    end
+    return if user_signed_in? && current_user.slug == params[:slug]
+
+    flash[:alert] = "你不能更新该个人信息！"
+    redirect_to root_path
   end
 end

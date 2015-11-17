@@ -1,12 +1,7 @@
 class LandscapesController < ApplicationController
   respond_to :js, :html
 
-  if Rails::VERSION::MAJOR == 4
-    before_action :set_landscape, :only => [:show, :edit, :update, :crop, :destroy]
-  else
-    before_filter :set_landscape, :only => [:show, :edit, :update, :crop, :destroy]
-  end
-
+  before_action :set_landscape, only: [:show, :edit, :update, :crop, :destroy]
 
   # GET /landscapes
   # GET /landscapes.json
@@ -14,23 +9,19 @@ class LandscapesController < ApplicationController
     @landscapes = Landscape.all
   end
 
-
   # GET /landscapes/1
   # GET /landscapes/1.json
   def show
   end
-
 
   # GET /landscapes/new
   def new
     @landscape = Landscape.new
   end
 
-
   # GET /landscapes/1/edit
   def edit
   end
-
 
   # POST /landscapes
   # POST /landscapes.json
@@ -39,7 +30,7 @@ class LandscapesController < ApplicationController
 
     respond_to do |format|
       if @landscape.save
-        format.js { }
+        format.js {}
         # format.html { render 'crop' }
         # format.json { render action: 'show', status: :created, location: @landscape }
       else
@@ -48,7 +39,6 @@ class LandscapesController < ApplicationController
       end
     end
   end
-
 
   # PATCH/PUT /landscapes/1
   # PATCH/PUT /landscapes/1.json
@@ -65,12 +55,10 @@ class LandscapesController < ApplicationController
     end
   end
 
-
   # POST /landscapes/1/crop
   # POST /landscapes/1/crop.json
   def crop
   end
-
 
   # DELETE /landscapes/1
   # DELETE /landscapes/1.json
@@ -82,27 +70,25 @@ class LandscapesController < ApplicationController
     end
   end
 
-
   private
 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_landscape
+    @landscape = Landscape.find(params[:id])
+  end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_landscape
-      @landscape = Landscape.find(params[:id])
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def landscape_params
+    if Rails::VERSION::MAJOR == 4
+      params.require(:landscape)
+        .permit(:name, :picture, :picture_crop_x, :picture_crop_y,
+                :picture_crop_w, :picture_crop_h)
+    else
+      params[:landscape]
     end
+  end
 
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def landscape_params
-      if Rails::VERSION::MAJOR == 4
-        params.require(:landscape).permit(:name, :picture, :picture_crop_x, :picture_crop_y, :picture_crop_w, :picture_crop_h)
-      else
-        params[:landscape]
-      end
-    end
-
-
-    def model_update_method
-      Rails::VERSION::MAJOR == 4 ? :update : :update_attributes
-    end
+  def model_update_method
+    Rails::VERSION::MAJOR == 4 ? :update : :update_attributes
+  end
 end

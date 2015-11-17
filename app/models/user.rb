@@ -13,13 +13,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
 
-
   # override Devise's method
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, * args).deliver_later
   end
 
-  def after_confirmation  # From Devise
+  # Devise callback
+  def after_confirmation
     set_slug
   end
 

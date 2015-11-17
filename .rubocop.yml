@@ -1,0 +1,21 @@
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/*'
+    - 'Gemfile'
+    - 'Guardfile'
+    - 'Rakefile'
+
+Documentation:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+
+LineLength:
+  Max: 120
+
+Style/MultilineOperationIndentation:
+  Enabled: false

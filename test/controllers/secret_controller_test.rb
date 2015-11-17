@@ -14,5 +14,4 @@ class SecretControllerTest < ActionController::TestCase
     get :show
     assert_response :redirect
   end
-
 end

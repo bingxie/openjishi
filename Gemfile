@@ -10,7 +10,6 @@ gem 'delayed_job_active_record'
 # Load environment variables from .env into ENV
 gem 'dotenv-rails'
 
-
 # A lightweight Sass tool set.
 gem "bourbon"
 # A lightweight semantic grid framework for Sass and Bourbon
@@ -119,6 +118,8 @@ group :development do
 
   # A web interface for browsing Ruby on Rails sent emails
   gem 'letter_opener_web', '~> 1.3.0'
+
+  gem 'rubocop', require: false
 end
 
 group :test do
