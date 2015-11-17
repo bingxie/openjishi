@@ -18,9 +18,15 @@ h1 用户信息设置
     .field
       = profile_fields.label :mobile, '手机号'
       = profile_fields.text_field :mobile
-    .field
+    / .field
+    /   = profile_fields.label :city, '城市'
+    /   = profile_fields.text_field :city_id
+    .filed.city-group
       = profile_fields.label :city, '城市'
-      = profile_fields.text_field :city_id
+      = profile_fields.select :province_id, options_for_select(ChinaCity.list, @user.profile.province_id), { prompt: '--省份--' }, { class: ['city-select'] }
+      = profile_fields.select :city_id, options_for_select(ChinaCity.list(@user.profile.province_id), @user.profile.city_id), { prompt: '--城市--' }, { class: ['city-select'] }
+      = profile_fields.select :district_id, options_for_select(ChinaCity.list(@user.profile.city_id), @user.profile.district_id), { prompt: '--地区--' }, { class: ['city-select'] }
+
     .field
       = profile_fields.label :introduction, '个人简介'
       = profile_fields.text_area :introduction
