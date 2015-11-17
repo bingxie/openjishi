@@ -1,0 +1,29 @@
+<h2>拼音、首字母筛选，智能向上向下展开。</h2>
+<select id="select2-pinyin" style="width: 200px;">
+    <option value="0">马云</option>
+    <option value="1">马化腾</option>
+    <option value="2">李彦宏</option>
+    <option value="3">章子怡</option>
+    <option value="4">撒贝宁</option>
+    <option value="5">刘强东</option>
+    <option value="6">周鸿祎</option>
+    <option value="7">任正非</option>
+    <option value="8">史玉柱</option>
+    <option value="9">姚晨</option>
+    <option value="10">方舟子</option>
+    <option value="11">韩寒</option>
+    <option value="12">韩庚</option>
+    <option value="13">阿信</option>
+    <option value="14">2014年</option>
+    <option value="15">这是汉字This is English1239014</option>
+</select>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $.fn.select2.amd.require(['select2/compat/matcher'], function (oldMatcher) {
+    $("#select2-pinyin").select2({
+      matcher: oldMatcher(matchChinese),
+    })
+  });
+});
+</script>
