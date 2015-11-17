@@ -57,7 +57,8 @@ gem 'china_city'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 
 # Select 2
-gem "select2-rails"
+# gem "select2-rails"
+gem "select2-rails", ">= 4.0.0", github: 'nilbus/select2-rails', branch: 'full' # for new matcher usage
 
 # JQ uploader
 gem "jquery-fileupload-rails"
