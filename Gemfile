@@ -73,7 +73,7 @@ gem 'paperclip-qiniu', :github => 'lidaobing/paperclip-qiniu'
 gem 'papercrop', :github => 'rsantamaria/papercrop' # fix preview image size bug
 
 # Decorators/View-Models for Rails Applications
-gem 'draper', '~> 1.3'
+gem 'draper', '~> 2.1.0'
 
 # Middleware that displays speed badge for every html page
 gem 'rack-mini-profiler'
