@@ -11,6 +11,7 @@ $(document).ready(function() {
    });
 });
 
+
 $().ready(function(){
   $("#select-main-category").select2();
   $("#select-sub-category").select2();

@@ -16,7 +16,7 @@ $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
 $large-screen-up: new-breakpoint(min-width $large-screen 12);
 
 //
-$visual-grid: true;
+$visual-grid: false;
 $visual-grid-color: #eee !default;
 $visual-grid-index: back !default;
 $visual-grid-opacity: 0.4 !default;

@@ -1,5 +1,5 @@
-.stripred.nopadding
-	.global-nav
+.global-nav
+	.wrap
 		.social-icons
 			ul
 				li
@@ -14,21 +14,19 @@
 					a href="#"
 						i.fa.fa-video-camera
 
-nav.header
-	.container
-		.brand
+.header
+	.wrap
+		.logo
 			img src="#{image_path('logo.png')}" /
-			/ = image_tag("logo.png", class: "menu_icon", alt:"123")
-
-		.action
+		.search-bar
+		  form role="search"
+		    input placeholder=("输入搜索条件, 例如: 尼康 70 200 mm, 北京") type="search" /
+		    a href="#" rel="submit-form"
+		    	i.fa.fa-search
+		.action-btn
 			a.login href="#"
 				| 登录/注册
 			a.sell href="#"
 				| 发布商品
 			a.blog href="#"
 				| 镜影博客
-
-		.search-bar
-		  form role="search"
-		    input placeholder=("输入搜索条件, 例如: 尼康 70 200 mm, 北京") type="search" /
-		    button type="submit" 搜索

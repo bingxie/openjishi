@@ -1,4 +1,4 @@
-section.prd-grid
+.prd-grid
   label
     +lovely-label($themecolor, 1em)
   +outer-container
@@ -8,7 +8,7 @@ section.prd-grid
     +media($mobile)
       +span-columns(4)
     padding: $base-spacing * 0.5
-    border: 3px solid $base-border-color
+    border: $base-border
     margin-bottom: 2em
   .prd-block-3
     +span-columns(4)
@@ -17,7 +17,7 @@ section.prd-grid
       +span-columns(4)
       margin: 0 1em 2em
     padding: $base-spacing * 0.5
-    border: 3px solid $base-border-color
+    border: $base-border
     margin-bottom: 2em
   .prd-thumbnail
     &:hover

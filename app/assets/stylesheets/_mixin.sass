@@ -13,7 +13,18 @@
   margin-bottom: 1em
   display: inline-block
 
-
+//Lovealy button
+=lovely-button($button-color, $button-font-color, $button-padding)
+  display: inline-block
+  color: $button-font-color
+  border-radius: $base-border-radius
+  background-color: $button-color
+  padding: $button-padding
+  transition: background-color $base-duration $base-timing
+  &:active,
+  &:focus,
+  &:hover
+    background-color: shade($button-color, 25%)
 
 =link-color-fixer($color-fixer)
   a

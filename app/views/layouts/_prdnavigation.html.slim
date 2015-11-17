@@ -1,35 +1,32 @@
-.megamenu
-	ul
-		- 8.times do
-			li
-				a href="#"
-					|数码相机
-
-/* Drop down menu*/
-
-.drop-down-menu
-	.upper
-		.subcategory
-			ul
-				- 6.times do
-					li
-						img src="http://placehold.it/80x80"
-						label 单反机身
-		.menuad
-			img src="#{image_path('menuad.png')}" /
-			span.label 富士全线镜头限时购
-
-	.quicklink
+.prd-nav
+	.wrap.collapsed-menu
 		ul
 			li
-				| 品牌
-			- 6.times do
+				a.active href="#"
+					i.fa.fa-camera
+					|&nbsp;数码相机
+			- 7.times do
 				li
-					a href="#" 尼康
+					a href="#"
+						i.fa.fa-camera
+						|&nbsp;数码相机
+	.drop-down-menu
+		.wrap
+			.upper
+				.subcategory
+					ul
+						- 6.times do
+							li
+								a href="#"
+									img src="http://placehold.it/80x80"
+									p
+										| 单反机身
+				.menuad
+					img src="#{image_path('menuad.png')}" /
+					span.label 富士全线镜头限时购
 
-		ul
-			li
-				| 热门
-			- 6.times do
-				li
-					a href="#" 索尼
+			.quicklink
+				ul
+					- 6.times do
+						li
+							a href="#" 尼康

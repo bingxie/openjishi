@@ -14,7 +14,7 @@ $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 2px;
+$base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
@@ -26,14 +26,14 @@ $red-dark: shade($red, 20%);
 $orange:#FD984E;
 $orange-dark: shade($orange, 20%);
 
-$blue:#6DBCDB;
+$blue:#007a87;
 $blue-dark: shade($blue, 20%);
 
-$dark:#535353;
+$dark:#565A5C;
 $dark-dark: shade($dark, 20%);
 
-$light:#f2f2f2;
-$light-dark: shade($light, 20%);
+$light:#fff;
+$light-dark: #dce0e0;
 
 // COLOR CODE
 $themecolor: $red;
@@ -47,15 +47,14 @@ $dark-gray: #2e303a;
 //CLEARN ABOVE
 
 
-
 // Font Colors
 $action-color: $red;
 $base-font-color: $dark;
 $link-color: $dark;
 
 // Border
-$base-border-color: shade($light-gray, 10%);
-$base-border-size: em(2);
+$base-border-color: $light-dark;
+$base-border-size: em(1);
 $base-border: $base-border-size solid $base-border-color;
 
 
@@ -64,7 +63,7 @@ $base-background-color: $light;
 $secondary-background-color: tint($base-border-color, 75%);
 
 // Forms
-$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow: inset 0 1px 5px rgba(#000, 0.1);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
 
 // Animations
@@ -72,7 +71,8 @@ $base-duration: 150ms;
 $base-timing: ease;
 
 // shadow
-$base-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.06);
+$inner-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
+$base-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
 
 // Modulear Scale
 $ms-base: 0.825em;

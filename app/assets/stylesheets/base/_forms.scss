@@ -37,7 +37,8 @@ select[multiple=multiple] {
   // box-shadow: $form-box-shadow;
   box-sizing: border-box;
   font-family: $base-font-family;
-  font-size: $base-font-size;
+  // font-size: $base-font-size;
+  font-size: 1em;
   margin-bottom: $small-spacing;
   padding: $base-spacing / 2.8;
   transition: border-color $base-duration $base-timing;
