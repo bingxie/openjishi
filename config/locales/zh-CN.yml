@@ -1,0 +1,12 @@
+zh-CN:
+  hello: '你好'
+  hi: '您好'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              bad_email: "请使用正确的邮箱格式"
+              invalid: "请使用正确的邮箱格式"
+              blank: "请使用正确的邮箱格式"

@@ -4,11 +4,12 @@ doctype html
 html
   = render partial: "shared/html_head"
   body
-      /*Header*/
-      = render partial: "layouts/header"
-      = render partial: "layouts/prdnavigation"
-      / = render partial: "layouts/focus_banner"
-      / = render partial: "layouts/brands"
-      / = render partial: "layouts/prd_grid"
-      = yield
-      = render partial: "layouts/footer"
+    /*Header*/
+    = render partial: "layouts/header"
+    = render partial: "layouts/prdnavigation"
+
+    - flash.each do |key, value|
+      = content_tag(:div, value, class: ["alert", "alert-#{key}"])
+
+    = yield
+    = render partial: "layouts/footer"
