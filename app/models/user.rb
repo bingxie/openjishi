@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   HASHIDS = Hashids.new("oh my user salt")
-  # after_create :set_slug
 
   has_one :profile, dependent: :destroy, autosave: true
   accepts_nested_attributes_for :profile
@@ -20,18 +19,8 @@ class User < ActiveRecord::Base
     devise_mailer.send(notification, self, * args).deliver_later
   end
 
-  # # TODO: use another callback 'after_create' bug
-  # # Devise callback
-  # def after_confirmation
-  #   set_slug
-  # end
-
-  private
-
   def set_slug
-    hash = HASHIDS.encode(id)
-
-    self.slug ||= "#{hash} #{name}".to_url
+    self.slug ||= HASHIDS.encode(id).to_url
     save!
   end
 

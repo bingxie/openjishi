@@ -6,6 +6,6 @@ class UserTest < ActiveSupport::TestCase
 
     bing.send :set_slug
 
-    assert_equal "y751qzm-xie-xiao-bing", bing.slug
+    assert_equal "y751qzm", bing.slug
   end
 end

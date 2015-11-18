@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "pages#show", id: 'index/index'
+  root to: "pages#show", id: 'index/home'
 
   resources :landscapes do
     post 'crop', :on => :member
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'secret/show'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
 
   # User profiles
   get 'profiles/:slug' => 'profiles#show', as: :user_profile
