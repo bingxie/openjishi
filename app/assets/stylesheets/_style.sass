@@ -595,7 +595,7 @@ section
       position:relative
       .panel-left
         +span-columns(6)
-        height: 330px
+        height: em(360)
         // box-shadow: $base-box-shadow
         background: #fff
         padding: 2em 1em
@@ -610,17 +610,17 @@ section
             float: right
             color: lighten($red, 10%)
         &.signup-panel
-          display: none
+          // display: none
         &.signup-success
           padding: 2em 2.5em
-          // display: none
+          display: none
         a.find-password
           float: right
           font-size: 0.875em
       .panel-right
         display: none
         +span-columns(6)
-        height: 330px
+        height: em(360)
         position: relative
         span.author
           position: absolute

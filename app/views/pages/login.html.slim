@@ -9,7 +9,7 @@ section.login
 				    .form-group
 				      label 邮箱地址
 				      label.error 请使用正确的邮箱地址
-				      input#email name="email" placeholder="使用邮箱地址登录" required="" type="text" /
+				      input name="email" placeholder="使用邮箱地址登录" required="" type="text" /
 				    /! Password input
 				    .form-group
 				      label  密码
@@ -17,17 +17,17 @@ section.login
 				      	|用户名或密码错误,
 				      	a.theme href="#"
 				      		|点击这里找回找回密码
-				      input#passwordinput name="passwordinput" placeholder="placeholder" required="" type="password" /
+				      input name="passwordinput" placeholder="placeholder" required="" type="password" /
 				    /! save login status
 				    .form-group
-					    input#keep-login name="" type="checkbox" value="yes"
+					    input name="" type="checkbox" value="yes"
 					    	span.smaller
 					    		|保存我的登录状态
 					    a.find-password href="#"
 					    	|找回密码
 				    /! Button
 				    .form-group
-				      button#loginbtn name="loginbtn"  登录
+				      input name="loginbtn" type="submit" value="登录"
 				    p.bottomlink
 				    	| 没有镜影汇帐号?
 				    	a.theme href="#" 点这里注册
