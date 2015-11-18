@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
     devise_mailer.send(notification, self, * args).deliver_later
   end
 
+  # TODO: use another callback 'after_create' bug
   # Devise callback
   def after_confirmation
     set_slug
