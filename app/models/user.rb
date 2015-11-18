@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
   HASHIDS = Hashids.new("oh my user salt")
+  # after_create :set_slug
 
   has_one :profile, dependent: :destroy, autosave: true
   accepts_nested_attributes_for :profile
   before_create :build_default_profile
 
-  validates :name, presence: true, length: { in: 2..20 }
+  validates :name, length: { maximum: 20 }
   validates :email, email: { message: :bad_email }
 
   # Include default devise modules. Others available are:
@@ -19,11 +20,11 @@ class User < ActiveRecord::Base
     devise_mailer.send(notification, self, * args).deliver_later
   end
 
-  # TODO: use another callback 'after_create' bug
-  # Devise callback
-  def after_confirmation
-    set_slug
-  end
+  # # TODO: use another callback 'after_create' bug
+  # # Devise callback
+  # def after_confirmation
+  #   set_slug
+  # end
 
   private
 
