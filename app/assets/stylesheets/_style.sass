@@ -1,5 +1,10 @@
 
 
+/* Text Promo Block */
+/* Global Nav */
+/* Product Navigation*/
+/* Drop down menu */
+
 /* -------------------------------------- */
 /* GLOBAL ELEMENTS - DONT REPEAT YOURSELF */
 /* -------------------------------------- */
@@ -150,15 +155,15 @@ section
                   color: $light
 
 
-
-
 /* Product Navigation*/
 .prd-nav
   padding: $base-spacing * 0.25 0 0 0
   box-shadow: $inner-shadow
   background: $dark
-  .wrap.collapsed-menu
+  .collapsed-menu
     ul
+      width: em(880)
+      margin: 0 auto
       li
         a
           display: inline-block
@@ -171,12 +176,15 @@ section
             color: #fff
             background-color: lighten($dark, 5%)
             text-decoration: none
-          &:hover + .drop-down-menu
-            display: block !important
+  &:hover
+    .drop-down-menu
+      transition: height 0.4s ease-in-out
+      height: 250px
 
 /* Drop down menu */
 .drop-down-menu
-  display: none
+  height: 0
+  overflow: hidden
   transition: height 0.3s ease-in-out 0s
   a
     color: $light
@@ -255,6 +263,35 @@ section
     position: absolute
     bottom: 1em
     left: 1em
+
+/* Text Promo Block */
+.text-promo-block
+  padding: 1em 0
+  .item
+    +span-columns(3)
+    +omega(4n)
+    padding: 1em
+    p
+      color: lighten($dark, 20%)
+
+/* Tag Cloud and side Ads*/
+.tag-cloud
+  margin-bottom: 1em
+  +span-columns(8)
+  padding: 1em 0
+  .label
+    +lovely-label($red, 1em)
+  a.tag
+    display: inline-block
+    padding: $base-spacing * 0.1 $base-spacing * 0.75
+    margin: 0 0.5em 0.5em 0
+    border-radius: 10000px
+    &:hover
+      color: $red
+
+.homepage-ad
+  +span-columns(4)
+
 
 /* Brands */
 .brands
@@ -544,7 +581,7 @@ section
       color: $light-dark
 
 
-section.category-content
+.category-content
   .left-filter
     ul
       margin-bottom: 1em
@@ -606,7 +643,7 @@ section.category-content
 
 
 /* LOGIN & REGISTRATION */
-section.resetpwd, section.find-password, section.signup, section.login
+.resetpwd, .find-password, .signup, .login
   padding: 4em 0
 
 section
@@ -646,7 +683,7 @@ section
         &.signup-success
           padding: 2em 2.5em
           display: none
-        a.find-password
+        a.find-password-link
           float: right
           font-size: 0.875em
           line-height: 2
@@ -717,6 +754,57 @@ section
     height: 900px
     background: red
 
+/* WHY US */
+.whyus
+  background-color: $light-gray
+  padding: 2em 0
+  .wrap
+    padding: 2em 0
+    section
+      +span-columns(3)
+    .benifit
+      padding: 1em
+      background-color: #fff
+      +span-columns(3)
+      .icon
+        background-color: $action-color
+        color: #fff
+        text-align: center
+        font-size: 2em
+        width: 2em
+        height: 2em
+        border-radius: 10000px
+        line-height: 2em
+        float: left
+        margin-right: 10px
+        margin-bottom: 20px
+      .title
+        font-size: 1.2em
+        font-weight: bold
+        float: left
+        width: calc(100% - 60px;)
+        span
+          font-size: 0.75em
+          font-weight: normal
+      .blurb
+        font-size: em(12, 14)
 
+
+/* FOOTER */
+.footer
+  background-color: $dark-gray
+  padding: 1em 0 8em 0
+  color: $light-gray
+  .brand
+    img
+      width: 140px
+      margin-top: -1em
+    +span-columns(3)
+  .footerlist
+    +span-columns(3)
+    ul li
+      font-size: 0.875em
+      line-height: $base-line-height * 1.5
+      +link-color-fixer($light-gray)
 
 
