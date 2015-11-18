@@ -9,6 +9,10 @@
 .nomargin
   margin: 0 !important
 
+/* --- PADDING MARGIN FIXER --- */
+.padding4em
+  padding: 4em 0
+
 /*------- BOXES ---------*/
 section
   +outer-container
@@ -62,12 +66,13 @@ section
     +outer-container
     height: em(100)
     .logo
-      float: left
-      width: 10em
+      +span-columns(3)
+      a
+        display: inline-block
+        width: 10em
     .search-bar
-      margin: 2.5em 0 0 3em
-      float: left
-      min-width: 35em
+      +span-columns(5)
+      margin-top: 2.5em
       position: relative
       i.fa
         position: absolute
@@ -81,18 +86,71 @@ section
         width: 100%
 
     .action-btn
-      margin-top: 2.5em
-      float: right
-      a
-        padding: $base-spacing * 0.25 $base-spacing * 0.5
+      +span-columns(4)
+      ul.action-btn-group
+        display: inline-block
+        margin-top: 2.5em
         float: right
-        margin-left: 1em
-        &.sell
-          +lovely-button($red, #fff, $base-spacing * 0.25 $base-spacing * 0.5)
-        &.blog
-          +lovely-button($blue, #fff, $base-spacing * 0.25 $base-spacing * 0.5)
-        &.login
-          +lovely-button($orange, #fff, $base-spacing * 0.25 $base-spacing * 0.5)
+        li
+          display: inline-block
+          a
+            float: right
+            padding: $base-spacing * 0.25 $base-spacing * 0.5
+            margin-left: 1em
+            &.sell
+              +lovely-button($red, #fff, $base-spacing * 0.25 $base-spacing * 0.5)
+            &.blog
+              +lovely-button($blue, #fff, $base-spacing * 0.25 $base-spacing * 0.5)
+            &.login
+              +lovely-button($orange, #fff, $base-spacing * 0.25 $base-spacing * 0.5)
+              // display: none
+      .my-avatar
+        float: right
+        padding: $base-spacing 0 $base-spacing $base-spacing
+        position: relative
+        a
+          img
+            width: 4em
+            border-radius: 1000px
+        &:hover
+          .my-avatar-dropdown
+            display: block
+            +lovely-transition
+        .my-avatar-dropdown
+          display: none
+          position: absolute
+          right: 0
+          z-index: 1000
+          width: 20em
+          padding: $base-spacing * 0.25
+          box-shadow: $base-box-shadow
+          background-color: $light
+          border: $base-border
+          li
+            border-bottom: $base-border
+            &:last-child
+              border-bottom: 0
+            a
+              display: block
+              padding: $base-spacing * 0.5 $base-spacing * 0.5
+              i
+                margin-right: 0.5em
+              span.badge
+                font-size: 0.825em
+                padding: $base-spacing * 0.1 $base-spacing
+                background: $light-dark
+                float: right
+                margin-right: 1em
+                border-radius: 100px
+              &:hover
+                +lovely-transition
+                padding: $base-spacing * 0.5 $base-spacing * 0.4 $base-spacing * 0.5 $base-spacing * 0.6
+                span.badge
+                  background: $orange
+                  color: $light
+
+
+
 
 /* Product Navigation*/
 .prd-nav
@@ -522,28 +580,56 @@ section.category-content
 
 
 /* LOGIN & REGISTRATION */
-
-section.login
+section.resetpwd, section.find-password, section.signup, section.login
   padding: 4em 0
+
+section
   .wrap
-    .login-outer-panel
+    .outer-panel
       +span-columns(8)
       +shift(2)
-      .login-panel
+      background-image: image-url("login-side-image.jpg")
+      background-size: cover
+      background-position: 210px 80%
+      border: $base-border
+      position:relative
+      .panel-left
         +span-columns(6)
+        height: 330px
         // box-shadow: $base-box-shadow
         background: #fff
-        padding: 1em
+        padding: 2em 1em
         .bottomlink
-          padding: 2em 0 0 0
+          padding: 1em 0 0 0
           font-size: $smaller-font-size
         button
           margin-top: 1em
-        label.error
+        label
+          float: left
+          &.error
+            float: right
+            color: lighten($red, 10%)
+        &.signup-panel
+          display: none
+        &.signup-success
+          padding: 2em 2.5em
+          // display: none
+        a.find-password
           float: right
-          color: $red
-      .login-panel-right
+          font-size: 0.875em
+      .panel-right
+        display: none
         +span-columns(6)
-        background-color: $red
+        height: 330px
+        position: relative
+        span.author
+          position: absolute
+          bottom: 1em
+          right: 1em
+          background: $dark
+          opacity: 0.5
+          color: $light
+          padding: $base-padding
+
 
 

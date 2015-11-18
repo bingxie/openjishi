@@ -17,16 +17,57 @@
 .header
 	.wrap
 		.logo
-			img src="#{image_path('logo.png')}" /
+			a href="#" alt="logo"
+				img src="#{image_path('logo.png')}" /
 		.search-bar
 		  form role="search"
 		    input placeholder=("输入搜索条件, 例如: 尼康 70 200 mm, 北京") type="search" /
 		    a href="#" rel="submit-form"
 		    	i.fa.fa-search
 		.action-btn
-			a.login href="#"
-				| 登录/注册
-			a.sell href="#"
-				| 发布商品
-			a.blog href="#"
-				| 镜影博客
+			/* --- Not yet login  --- */
+			.my-avatar
+				a href="#"
+					img src="http://placehold.it/80x80"
+				ul.my-avatar-dropdown
+					li
+						a href="#"
+							i.fa.fa-bookmark-o
+							|我关注的商品
+							span.badge
+								|7
+					li
+						a href="#"
+							i.fa.fa-heart-o
+							|愿望清单
+							span.badge
+								|21
+					li
+						a href="#"
+							i.fa.fa-comment-o
+							|站内消息
+							span.badge
+								|315
+					li
+						a href="#"
+							i.fa.fa-jpy
+							|发布新商品
+					li
+						a href="#"
+							i.fa.fa-cogs
+							|帐号设置
+					li
+						a href="#"
+							i.fa.fa-power-off
+							|退出登录
+
+			ul.action-btn-group
+				li
+					a.blog href="#"
+						| 镜影博客
+				li
+					a.sell href="#"
+						| 发布商品
+				/ li
+				/ 	a.login href="#"
+				/ 		| 登录/注册

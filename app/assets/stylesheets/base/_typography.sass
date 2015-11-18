@@ -1,0 +1,81 @@
+body
+  color: $base-font-color
+  font-family: $base-font-family
+  font-feature-settings: "kern", "liga", "pnum"
+  font-size: $base-font-size
+  line-height: $base-line-height
+  min-width: 960px
+  background-color: #f5f5f5
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-family: $heading-font-family
+  font-size: $base-font-size
+  line-height: $heading-line-height
+  margin: 0 0 $small-spacing
+  font-weight: 100
+
+h1
+  font-size: modular-scale(5, $ms-base, $ms-ratio)
+
+h2
+  font-size: modular-scale(4, $ms-base, $ms-ratio)
+
+h3
+  font-size: modular-scale(3, $ms-base, $ms-ratio)
+
+h4
+  font-size: modular-scale(2, $ms-base, $ms-ratio)
+
+p
+  margin: 0 0 $small-spacing
+
+a
+  color: $link-color
+  text-decoration: none
+  transition: color $base-duration $base-timing
+  &:active,
+  &:focus,
+  &:hover
+    color: $blue-dark
+    // text-decoration: underline;
+    border-bottom-width: 10px
+
+hr
+  border-bottom: $base-border
+  border-left: 0
+  border-right: 0
+  border-top: 0
+  margin: $base-spacing 0
+
+img,
+picture
+  margin: 0
+  max-width: 100%
+  &:hover
+    opacity: 0.9
+
+blockquote
+  margin-left: 2em
+  padding: 1em
+  border-left: $base-border-size * 2 solid $dark
+  background-color: $light
+
+p.small
+  font-size: 0.825em
+  color: $dark
+
+.smaller
+  font-size: $smaller-font-size
+
+.theme
+  color: $red
+  &:hover
+    color: $red-dark
+  a
+    color: $blue
+    &:hover
+      color: $red-dark

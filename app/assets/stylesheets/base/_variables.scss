@@ -57,6 +57,9 @@ $base-border-color: $light-dark;
 $base-border-size: em(1);
 $base-border: $base-border-size solid $base-border-color;
 
+// Base Padding
+$base-padding: $base-spacing * 0.25 $base-spacing * 0.5;
+
 
 // Background Colors
 $base-background-color: $light;
