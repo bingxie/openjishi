@@ -144,6 +144,8 @@ GEM
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     eventmachine (1.0.8)
     execjs (2.6.0)
@@ -382,6 +384,7 @@ DEPENDENCIES
   devise (~> 3.5, >= 3.5.2)
   dotenv-rails
   draper (~> 2.1.0)
+  email_validator
   font-awesome-rails
   guard-livereload (~> 2.4)
   hashids

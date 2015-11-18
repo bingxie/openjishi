@@ -37,6 +37,8 @@ gem 'remotipart', '~> 1.2'
 # ClientSideValidations for Ruby on Rails
 gem 'client_side_validations', github: "DavyJonesLocker/client_side_validations", branch: "4-2-stable"
 
+gem 'email_validator'
+
 # Use Unicorn as the app server
 gem 'unicorn'
 

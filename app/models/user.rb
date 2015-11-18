@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   before_create :build_default_profile
 
   validates :name, presence: true, length: { in: 2..20 }
+  validates :email, email: { message: :bad_email }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -18,6 +19,7 @@ class User < ActiveRecord::Base
     devise_mailer.send(notification, self, * args).deliver_later
   end
 
+  # TODO: use another callback 'after_create' bug
   # Devise callback
   def after_confirmation
     set_slug
