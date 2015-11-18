@@ -10,9 +10,9 @@ label,
 select
   display: block
   font-family: $base-font-family
-  font-size: $base-font-size
+  // font-size: $base-font-size
   option
-    background: $action-color !important
+    background: $red !important
 
 label
   margin-bottom: $small-spacing / 2
@@ -26,7 +26,6 @@ select[multiple=multiple]
   background-color: $base-background-color
   border: $base-border
   border-radius: $base-border-radius
-  // box-shadow: $form-box-shadow;
   box-sizing: border-box
   font-family: $base-font-family
   // font-size: $base-font-size;
@@ -37,9 +36,9 @@ select[multiple=multiple]
   transition: border-color $base-duration $base-timing
   width: 100%
   &:hover
-    border-color: shade($base-border-color, 20%)
+    border-color: lighten($dark, 35%)
   &:focus
-    border-color: lighten($action-color, 15%)
+    border-color: lighten($dark, 15%)
     // box-shadow: $form-box-shadow-focus;
     outline: none
   &:disabled

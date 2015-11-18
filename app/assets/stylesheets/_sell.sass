@@ -1,46 +1,36 @@
 fieldset
-  padding-top: 0 !important
   select
     height: 40px
     border-radius: $base-border-radius
     border: $base-border
     width: 100%
 
-section.sellform
+.panel-upper, .panel-lower
+  background-color: $light
+  margin-bottom: 1em
+  .fieldset-label
+    padding: 0.5em 1em
+    +lovely-label($red, 1em)
+    margin-bottom: 2em
+    margin-left: 1em
+
+.sellform
   padding: 1em 0
   +span-columns(8)
-  fieldset
-    border: $base-border
-    .fieldset-label
-      padding: 0.5em 1em
-      background-color: $light-gray
-      display: inline-block
-      margin-bottom: 2em
 
-section.sellhelper
+.sellhelper
   +span-columns(4)
+  background-color: $red
   height: 400px
 
 .formgroup
   +clearfix
-  padding: 1em 0
-  input#producttitle
-    width: 50%
-    float: left
-    margin-right: 1em
-  button#producttitle
-    float: left
-    height: em(44)
+  padding: 1em 0 0 0
   .main-category, .sub-category, .brand,.price, .condition, .city,.shipping-methode
     +span-columns(4)
-    select
-      width: 90%
-  .main-category, .sub-category, .brand,.price, .condition, .city,
-    input
-      width: 90%
   .address, .shipping-comment
     +span-columns(8)
-    +clearfix
+    // +clearfix
 
 .carrier .note
   display: none
@@ -70,28 +60,36 @@ section.sellhelper
 
 
 a.sell-preview
-  +lovely-button($red, $light, $base-padding)
+  +lovely-button($red, $light, $base-spacing * 0.5 $base-spacing * 1.5)
   margin: 1em 0
 
 
 /* Cancel Select 2 style */
 .select2-container
   height: 3em
+  margin-bottom: 1em
   .select2-dropdown--below
     border: $base-border
-    border-color: lighten($action-color, 20%)
     border-top: 0
 
 .select2-container--default
   .select2-selection--single
+    height: 37px
     border: 0
     .select2-selection__rendered
-      color: $dark-gray
-      line-height: 28px
+      // color: $dark
       border: $base-border
-      &:hover,
+      border-radius: $base-border-radius
+      line-height: $base-spacing
+      margin-bottom: $small-spacing
+      padding: $base-spacing / 2.8
+      &:hover
+        border-color: lighten($dark, 35%)
       &:focus
-        border-color: lighten($action-color, 20%)
+        border-color: lighten($dark, 15%)
+    .select2-selection__arrow
+      height: 37px
+      right: 4px
   .select2-search--dropdown
     .select2-search--dropdown
       border: $base-border !important
@@ -101,5 +99,5 @@ a.sell-preview
         border-color: lighten($action-color, 20%)
 
   .select2-results__option--highlighted[aria-selected]
-    background-color: $action-color
+    background-color: $dark
     color: #fff
