@@ -12,15 +12,17 @@ section.signup
 				      	| 此邮箱已经注册过,
 				      	a.theme href="#" 尝试登录
 				      	| ?
-				      input#email name="email" placeholder="使用邮箱地址登录" required="" type="text" /
+				      input name="email" placeholder="使用邮箱地址登录" required="" type="text" /
 				    /! Password input
 				    .form-group
 				      label  密码
 				      label.error 密码太简单, 请输入至少6位字符
-				      input#passwordinput name="passwordinput" placeholder="请输入至少6位字符" required="" type="password" /
+				      input name="passwordinput" placeholder="请输入至少6位字符" required="" type="password" /
 				    /! save login status
 				    .form-group
-					    input#-0 name="" type="checkbox" value="yes" 接收来自镜影汇的新闻
+					    input name="" type="checkbox" value="yes"
+					    span.smaller
+					    	|接收来自镜影汇的新闻
 				    /! Button
 				    .form-group
 				      input name="" type="submit" value="创建新帐号"

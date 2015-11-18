@@ -56,10 +56,28 @@ input[type="search"]
 
 input[type="checkbox"],
 input[type="radio"]
-  display: inline
+  display: inline-block
+  appearance: none
+  height: 1.25em
+  width: 1.25em
+  margin-bottom: 0.2em
+  position: relative
+  vertical-align: middle
   margin-right: $small-spacing / 2
+  border: $base-border
   + label
     display: inline-block
+
+input[type="checkbox"]
+  &:checked
+    &:before
+      content: "\2713"
+      position: absolute
+      font-size: 0.85em
+      left: 1px
+      text-align: center
+      width: 1.25em
+      color: #ff5a5f
 
 input[type="file"]
   margin-bottom: $small-spacing

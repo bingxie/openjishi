@@ -593,9 +593,15 @@ section
       background-position: 210px 80%
       border: $base-border
       position:relative
+      .warning-panel
+        font-size: 0.875em
+        text-align: center
+        background-color: lighten($red, 35%)
+        padding: 1em
+        margin-bottom: 1em
       .panel-left
         +span-columns(6)
-        height: em(360)
+        // height: em(360)
         // box-shadow: $base-box-shadow
         background: #fff
         padding: 2em 1em
@@ -617,10 +623,11 @@ section
         a.find-password
           float: right
           font-size: 0.875em
+          line-height: 2
       .panel-right
         display: none
         +span-columns(6)
-        height: em(360)
+        // height: em(360)
         position: relative
         span.author
           position: absolute
