@@ -1,0 +1,10 @@
+- content_for :title, "镜影汇 - static"
+
+doctype html
+html
+  = render partial: "shared/html_head"
+  body
+      /*Header*/
+      = render partial: "layouts/header"
+      = yield
+      = render partial: "layouts/footer"
