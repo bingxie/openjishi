@@ -36,7 +36,7 @@ section
 
 /* Global Nav */
 .global-nav
-  +linear-gradient($red, darken($red, 3%), $red)
+  +linear-gradient($red, darken($red, 3%))
   .wrap
     +outer-container
     height: 40px
@@ -261,7 +261,7 @@ section
   padding: 0 0 2em 0
   +outer-container
   h2
-    +lovely-label($themecolor, 1em)
+    +lovely-label($red, 1em)
   a
     +span-columns(2)
     +omega(6n)
@@ -274,7 +274,7 @@ section
 /* Product grid */
 .prd-grid
   label
-    +lovely-label($themecolor, 1em)
+    +lovely-label($red, 1em)
   +outer-container
   .prd-block-4
     +span-columns(3)
@@ -317,12 +317,38 @@ section
       font-size: 0.75em
     font-size: 1.2em
     font-weight: bold
-    color: $themecolor
+    color: $red
+  a.watch-btn
+    +lovely-button($light, $dark, $base-padding)
+    float: right
   .prd-location
     font-size: 0.825em
   .prd-condition
     font-size: 0.825em
     float: right
+  .prd-block-vertical-1
+    +span-columns(9)
+    display: block
+    background-color: $light
+    border: $base-border
+    padding: 1em
+    border-radius: $base-border-radius
+    margin-bottom: 1em
+    .prd-thumbnail
+      +span-columns(3)
+    .prd-info-group-1
+      +span-columns(6)
+      padding: 0 1em
+    .prd-info-group-2
+      +span-columns(3)
+      .prd-price
+      .prd-location
+        float: none
+        display: block
+      .prd-condition
+        display: block
+        float: none
+
 
 
 /*-------- GRID LAYOUT -------- */
@@ -627,16 +653,70 @@ section
       .panel-right
         display: none
         +span-columns(6)
-        // height: em(360)
+        height: em(360)
         position: relative
         span.author
           position: absolute
-          bottom: 1em
+          top: 1em
           right: 1em
           background: $dark
-          opacity: 0.5
+          opacity: 0.8
           color: $light
           padding: $base-padding
+
+/* ------ My Account ------ */
+.my-account
+  background: $dark
+  ul
+    li
+      display: inline-block
+      width: 4em
+      text-align: center
+      padding-top: 0.5em
+      margin: 0 2em
+      a
+        width: 4em
+        display: inline-block
+        color: $light
+        .fa
+          font-size: 1.5em
+        &:hover
+          color: $light-dark
+        &.active
+          border-bottom: 3px solid $red
+
+.my-account-container
+  padding: 2em 0
+  .left
+    +span-columns(3)
+    .my-panel
+      border: $base-border
+      background-color: $light
+      margin-bottom: 1em
+      .my-avatar
+        position: relative
+        a.upload-photo
+          display: none
+          +lovely-button($dark, $light, $base-padding)
+          opacity: 0.2
+          position: absolute
+          right: 1em
+          top: 1em
+          &:hover
+            opacity: 0.9
+      .my-information
+        text-align: center
+      padding: 1em
+      .panel-title
+        background-color: $dark
+        padding: $base-padding
+        color: $light
+
+  .right
+    +span-columns(9)
+    height: 900px
+    background: red
+
 
 
 
