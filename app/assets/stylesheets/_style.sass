@@ -4,6 +4,7 @@
 /* Global Nav */
 /* Product Navigation*/
 /* Drop down menu */
+/* Single Product */
 
 /* -------------------------------------- */
 /* GLOBAL ELEMENTS - DONT REPEAT YOURSELF */
@@ -688,7 +689,7 @@ section
 
 
 /* LOGIN & REGISTRATION */
-.resetpwd, .find-password, .signup, .login
+.resetpwd, .find-password, .findpwd, .signup, .login
   padding: 4em 0
 
 section
@@ -806,6 +807,34 @@ section
             +lovely-link($dark, $red, $base-padding)
 
 
+/* Single Product */
+.breadcrumbs
+  padding: 1em 0
+  .back-btn
+    font-size: 0.825em
+    display: inline-block
+    width: 8em
+    margin-right: 1em
+    border-right: $base-border
+  ul
+    display: inline-block
+    li
+      font-size: 0.825em
+      display: inline-block
+      margin-right: 0.5em
+      &:after
+        content: '\f105'
+        font-family: FontAwesome
+        font-weight: normal
+        font-style: normal
+        margin: 0px 0px 0px 2px
+        text-decoration: none
+      &:last-child
+        &:after
+          content: none
+
+.prd-preview-image
+
 
 
 /* WHY US */
@@ -836,7 +865,7 @@ section
         font-size: 1.2em
         font-weight: bold
         float: left
-        width: calc(100% - 60px;)
+        width: calc(100% - 60px)
         span
           font-size: 0.75em
           font-weight: normal

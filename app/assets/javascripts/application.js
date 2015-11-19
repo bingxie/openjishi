@@ -22,4 +22,5 @@
 //= require jquery-fileupload
 //= require 'china_city/jquery.china_city'
 //= require simple-pinyin
+//= require jquery.slick
 //= require_tree .

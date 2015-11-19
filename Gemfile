@@ -31,6 +31,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 
+# Slick
+gem "jquery-slick-rails"
+
 # Rails jQuery file uploads via standard Rails "remote: true" forms
 gem 'remotipart', '~> 1.2'
 
