@@ -5,9 +5,16 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   # end
 
   # POST /resource/confirmation
-  # def create
-  #   super
-  # end
+  def create
+    super do |resource|
+      if successfully_sent?(resource)
+        respond_to do |format|
+          format.js {}
+          return
+        end
+      end
+    end
+  end
 
   # GET /resource/confirmation?confirmation_token=abcdef
   # def show

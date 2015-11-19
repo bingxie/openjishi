@@ -16,4 +16,9 @@ section.signup
             |重新发送&nbsp;
             i.fa.fa-refresh.fa-spin
 
+          = form_for(resource, as: resource_name, url: confirmation_path(resource_name), remote: true, html: { method: :post }) do |f|
+            = f.hidden_field :email, value: resource.email
+            .actions
+              = f.submit "重新发送"
+
       .panel-right
