@@ -10,7 +10,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do |resource|
-      resource.set_slug if resource.persisted?
+      if resource.persisted?
+        resource.set_slug
+        resource.set_name_with_email
+      end
     end
   end
 

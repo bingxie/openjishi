@@ -24,6 +24,11 @@ class User < ActiveRecord::Base
     save!
   end
 
+  def set_name_with_email
+    self.name = email.split('@').first
+    save!
+  end
+
   def build_default_profile
     build_profile
     true
