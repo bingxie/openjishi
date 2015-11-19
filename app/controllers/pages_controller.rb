@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def layout_for_page
     case params[:id]
-    when /my\//
+    when %r{my\/}
       'my'
     else
       'index'

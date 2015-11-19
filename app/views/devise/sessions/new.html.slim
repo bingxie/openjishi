@@ -24,7 +24,7 @@ section.login
                 = f.check_box :remember_me
                 span.smaller
                   |保存我的登录状态
-                a.theme.find-password href="#{new_password_path(resource_name)}"
+                a.theme.find-password-link href="#{new_password_path(resource_name)}"
                   |找回密码
             .form-group
               = f.submit "登录"
