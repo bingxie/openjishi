@@ -1,0 +1,128 @@
+.my-account
+  .wrap
+    ul
+      li
+        a. href="#"
+          .fa.fa-tachometer
+          p
+            |我的主页
+      li
+        a href="#"
+          .fa.fa-comment
+          p
+            |站内消息
+      li
+        a href="#"
+          .fa.fa-cogs
+          p
+            |帐号设置
+      li
+        a href="#"
+          .fa.fa-home
+          p
+            |我的店铺
+
+.my-account-container
+  .wrap
+    .left
+      .my-panel
+        .my-avatar
+          img src="http://placehold.it/400x400" alt=""
+          a.fa.fa-file-image-o.upload-photo href="#"
+            |更新头像
+        .my-information
+          h3
+            |凝固的黎明
+          p.join-date
+            |2015年6月 加入
+          p
+            a href="#"
+              |编辑帐号信息
+      .panel-group
+        .panel-header
+          |板板标题
+        .panel-mid
+          ul
+            - 8.times do
+              li
+                a href="#"
+                  |标题或者是链接
+    .right
+      .panel-group
+        .panel-header
+            |帐号设置
+        .panel-mid.wrap
+          div.my-account-username
+            span.form-label
+              |用户名
+            span.form-input
+              input type="text" placeholder="凝固的黎明"
+              p
+                |用户名可以随便修改
+          div
+            span.form-label
+              |生日
+            span.form-input
+              .form-container
+                select#dob-yy name="province"
+                  option value="1"  广东
+                  option value="2"  山东
+          div.my-location
+            span.form-label
+              |所在城市
+            span.form-input
+              .form-container
+                select#province name="province"
+                  option value="1"  广东
+                  option value="2"  山东
+              .form-container
+                select#city name="city"
+                  option value="1"  深圳
+                  option value="2"  广州
+          div.my-location
+            span.form-label
+              |所在城市
+            span.form-input
+              .form-container
+                select#select-2-1 name="province"
+                  option value="1"  广东
+                  option value="2"  山东
+              .form-container
+                select#select-2-2 name="city"
+                  option value="1"  深圳
+                  option value="2"  广州
+              .form-container
+                select#select-2-3 name="city"
+                  option value="1"  深圳
+                  option value="2"  广州
+          div
+            span.form-label
+              |&nbsp;
+            span.form-submit
+              a.submit-btn href="#"
+                | 保存修改
+      .panel-group.change-password
+        .panel-header
+            |修改密码
+        .panel-mid.wrap
+          div
+            span.form-label
+              |输入当前密码
+            span.form-input
+              input type="password"
+          div
+            span.form-label
+              |输入新密码
+            span.form-input
+              input type="password"
+          div
+            span.form-label
+              |再次输入新密码
+            span.form-input
+              input type="password"
+          div
+            span.form-label
+              |&nbsp;
+            span.form-summit
+              a.submit-btn href="#"
+                |确定修改

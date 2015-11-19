@@ -8,20 +8,19 @@ fieldset
 .panel-upper, .panel-lower
   background-color: $light
   margin-bottom: 1em
+  border: $base-border
+  border-radius: $base-border-radius
+  box-shadow: $base-box-shadow
+  padding: 0 1em
   .fieldset-label
     padding: 0.5em 1em
     +lovely-label($red, 1em)
-    margin-bottom: 2em
     margin-left: 1em
 
 .sellform
   padding: 1em 0
   +span-columns(8)
-
-.sellhelper
-  +span-columns(4)
-  background-color: $red
-  height: 400px
+  +shift(2)
 
 .formgroup
   +clearfix
@@ -33,6 +32,7 @@ fieldset
     // +clearfix
 
 .carrier .note
+  font-size: 0.825em
   display: none
   margin-top: 1em
   max-width: 15em
@@ -42,7 +42,7 @@ fieldset
   i.fa.fa-caret-up
     color: $light-gray
     position: absolute
-    top: -20px
+    top: -15px
     left: 24px
     font-size: 2em
 
@@ -62,42 +62,3 @@ fieldset
 a.sell-preview
   +lovely-button($red, $light, $base-spacing * 0.5 $base-spacing * 1.5)
   margin: 1em 0
-
-
-/* Cancel Select 2 style */
-.select2-container
-  height: 3em
-  margin-bottom: 1em
-  .select2-dropdown--below
-    border: $base-border
-    border-top: 0
-
-.select2-container--default
-  .select2-selection--single
-    height: 37px
-    border: 0
-    .select2-selection__rendered
-      // color: $dark
-      border: $base-border
-      border-radius: $base-border-radius
-      line-height: $base-spacing
-      margin-bottom: $small-spacing
-      padding: $base-spacing / 2.8
-      &:hover
-        border-color: lighten($dark, 35%)
-      &:focus
-        border-color: lighten($dark, 15%)
-    .select2-selection__arrow
-      height: 37px
-      right: 4px
-  .select2-search--dropdown
-    .select2-search--dropdown
-      border: $base-border !important
-    .select2-search__field
-      border: $base-border
-      &:focus
-        border-color: lighten($action-color, 20%)
-
-  .select2-results__option--highlighted[aria-selected]
-    background-color: $dark
-    color: #fff

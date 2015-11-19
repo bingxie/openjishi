@@ -27,6 +27,19 @@
   &:hover
     background-color: shade($button-color, 25%)
 
+//Lovealy link
+=lovely-link($link-font-color, $link-bg-color, $link-padding)
+  display: inline-block
+  color: $link-font-color
+  padding: $link-padding
+  transition: background-color $base-duration $base-timing
+  &:hover
+    color: $red
+  &.active
+    background-color: $link-bg-color
+    color: lighten($link-bg-color, 100%)
+
+
 =link-color-fixer($color-fixer)
   a
     color: $color-fixer

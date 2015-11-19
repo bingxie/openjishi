@@ -60,7 +60,7 @@
           .city
             label
               | 城市
-            input#city name="city" placeholder="城市" required="" type="text" /
+            input name="city" placeholder="城市" required="" type="text" /
           .address.nomargin
             label
               | 地址
@@ -74,15 +74,14 @@
                 |快递
                 .note
                   i.fa.fa-caret-up
-                  h3
+                  p
                    | 快递费用
                   span
                     | 省内
-                    input#shengneikuaidi name="shengneikuaidi" type="text"
-                      i.fa.fa-jpy
+                    input name="" type="number"
                   span
                     | 省外
-                    input#shengneikuaidi name="shengneikuaidi" type="text"
+                    input name="" type="number"
               span for="radios-1"
                 input#radios-1 name="radios" type="radio" value="2" /
                 |买家到付
@@ -98,6 +97,3 @@
 
 
     a.sell-preview href="#" 预览商品
-
-
-  section.sellhelper

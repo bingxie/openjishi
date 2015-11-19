@@ -35,6 +35,21 @@ section
     color: #fff
     display: inline-block
 
+.panel-group
+  margin-bottom: 1em
+  border: $base-border
+  .panel-header
+    color: $dark
+    background-color: lighten($dark, 55%)
+    padding: 1em
+  .panel-mid
+    color: $dark
+    background-color: $light
+    padding: 1em
+    ul
+      li
+        padding: 0 0 0.5em 0
+
 /* -------------------------------------- */
 /*               MODULES                  */
 /* -------------------------------------- */
@@ -364,7 +379,7 @@ section
     font-size: 0.825em
     float: right
   .prd-block-vertical-1
-    +span-columns(9)
+    +span-columns(12)
     display: block
     background-color: $light
     border: $base-border
@@ -385,6 +400,36 @@ section
       .prd-condition
         display: block
         float: none
+
+/* ----- My Account - Profile ----- */
+.form-label
+  +span-columns(2)
+  text-align: right
+  line-height: 2.5
+.form-input, .form-summit
+  +span-columns(10)
+  p
+    font-size: 0.825em
+    color: lighten($dark, 25%)
+
+.my-account
+  select
+    width: 40%
+    margin-right: 5%
+
+.change-password
+  input
+    width: 30%
+
+.submit-btn
+  +lovely-button($red, $light, $base-padding)
+
+.my-location
+  .form-input
+    .form-container
+      display: inline-block
+      width: 10em
+      margin-right: 1em
 
 
 
@@ -690,7 +735,7 @@ section
       .panel-right
         display: none
         +span-columns(6)
-        height: em(360)
+        min-height: em(200)
         position: relative
         span.author
           position: absolute
@@ -735,7 +780,7 @@ section
         a.upload-photo
           display: none
           +lovely-button($dark, $light, $base-padding)
-          opacity: 0.2
+          opacity: 0.1
           position: absolute
           right: 1em
           top: 1em
@@ -751,8 +796,17 @@ section
 
   .right
     +span-columns(9)
-    height: 900px
-    background: red
+    .my-account-menu
+      margin-bottom: 1em
+      ul
+        li
+          display: inline-block
+          margin-right: 1.5em
+          a
+            +lovely-link($dark, $red, $base-padding)
+
+
+
 
 /* WHY US */
 .whyus
