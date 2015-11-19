@@ -1,24 +1,21 @@
-h2
-  | Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name), :validate => true) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :name
-    = f.text_field :name, :validate => true
-  .field
-    = f.label :email
-    = f.email_field :email, :validate => true, autofocus: true
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
-    = f.password_field :password, :validate => true, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+= flash[:alert] if flash[:alert]
+
+section.signup
+  .wrap
+    .outer-panel
+      .panel-left.signup-panel
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), :validate => true) do |f|
+          = devise_error_messages!
+          fieldset
+            h2 注册帐号
+            .form-group
+              = f.label '邮箱地址'
+              = f.email_field :email, validate: true, autofocus: true, placeholder: '使用邮箱地址登录'
+            .form-group
+              = f.label '密码'
+              = f.password_field :password, validate: { presence: true, confirmation: false}, autocomplete: "off", placeholder: "请输入至少#{@minimum_password_length}位字符"
+            .form-group
+              = f.submit "创建新帐号"
+            p.bottomlink
+              | 已有镜影汇帐号?
+              a.theme href="#{new_session_path(resource_name)}" 点这里登录

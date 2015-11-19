@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :profile
   before_create :build_default_profile
 
-  validates :name, presence: true, length: { in: 2..20 }
+  validates :name, length: { maximum: 20 }
   validates :email, email: { message: :bad_email }
 
   # Include default devise modules. Others available are:
@@ -19,18 +19,13 @@ class User < ActiveRecord::Base
     devise_mailer.send(notification, self, * args).deliver_later
   end
 
-  # TODO: use another callback 'after_create' bug
-  # Devise callback
-  def after_confirmation
-    set_slug
+  def set_slug
+    self.slug ||= HASHIDS.encode(id).to_url
+    save!
   end
 
-  private
-
-  def set_slug
-    hash = HASHIDS.encode(id)
-
-    self.slug ||= "#{hash} #{name}".to_url
+  def set_name_with_email
+    self.name = email.split('@').first
     save!
   end
 
