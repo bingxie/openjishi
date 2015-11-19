@@ -833,7 +833,59 @@ section
         &:after
           content: none
 
-.prd-preview-image
+.prd-preview-image-panel
+  +span-columns(8)
+
+.slick-slider
+  position:relative
+  button
+    &.slick-arrow
+      position: absolute
+      top: 40px
+      font-size: 0
+      width: 20px
+      height: 20px
+      box-shadow: $base-box-shadow
+      border-radius: 100%
+      padding: 0
+      z-index: 100
+      background: $dark
+      opacity: 0.2
+      &:hover
+        opacity: 0.9
+    &.slick-prev
+      left: 5px
+    &.slick-next
+      right: 5px
+
+.slick-dots
+  width: 90px
+  margin: 0 auto
+  li
+    display: inline-block
+    margin: 0 10px
+    button
+      font-size: 0
+      line-height: 0
+      display: block
+      width: 8px
+      height: 8px
+      cursor: pointer
+      color: transparent
+      border: $base-border
+      outline: none
+      border-radius: 100%
+      background: $light
+      &:hover
+        background-color: $red
+.prd-preview-image-thumbnail
+  margin-top: 10px
+  .slick-list
+    .slick-slide
+      width: 110px !important
+
+
+
 
 
 

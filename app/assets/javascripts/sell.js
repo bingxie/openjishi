@@ -11,6 +11,25 @@ $(document).ready(function() {
    });
 });
 
+$(document).ready(function(){
+    $('.prd-preview-image-large').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.prd-preview-image-thumbnail'
+    });
+    $('.prd-preview-image-thumbnail').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.prd-preview-image-large',
+      dots: true,
+      centerMode: true,
+      focusOnSelect: true
+    });
+  });
+
+
 
 $().ready(function(){
   $("#select-main-category").select2();
