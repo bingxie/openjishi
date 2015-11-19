@@ -1,0 +1,19 @@
+section.signup
+  .wrap
+    .outer-panel
+      .panel-left.signup-success
+        h2 注册成功
+        p
+          | 欢迎加入镜影汇 为了确保交易的安全性和未来我们能给为您提供更好的服务, 请验证您的邮箱
+        p
+          a.theme href="#" = @current_user.email
+        p
+          | 验证邮件已经发送到上边的邮箱, 请查收后点击邮件内的激活按钮或链接
+        P.smaller
+          | 没有收到? 是不是被当成了垃圾邮件?
+        p
+          button
+            |重新发送&nbsp;
+            i.fa.fa-refresh.fa-spin
+
+      .panel-right

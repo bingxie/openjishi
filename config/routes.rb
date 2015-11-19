@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'secret/show'
 
   devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_scope :user do
+    get 'users/sign_up_success', to: "users/registrations#success", as: 'sign_up_success'
+  end
 
   # User profiles
   get 'profiles/:slug' => 'profiles#show', as: :user_profile
