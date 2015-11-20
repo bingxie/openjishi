@@ -1,0 +1,24 @@
+section.resetpwd
+  .wrap
+    .outer-panel
+      .panel-left
+        = form_for(resource, as: resource_name, url: password_path(resource_name), validate: true, html: { method: :put }) do |f|
+          = devise_error_messages!
+
+          = f.hidden_field :reset_password_token
+          fieldset
+            h2 重设密码
+            .form-group
+              = f.label :password, "请输入新的密码"
+              = f.password_field :password, placeholder: "请输入新的密码", autofocus: true, autocomplete: "off", validate: { presence: true, confirmation: false}
+            .form-group
+              = f.label :password_confirmation, "请再次输入新的密码"
+              label.error.confirmation
+                | 两次输入的密码不一致
+              = f.password_field :password_confirmation, placeholder: "请输入新的密码", autocomplete: "off"
+            .form-group
+              = f.submit "确定"
+    .panel-right
+        span.author
+          |照片作者: 凝固的黎明
+
