@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get 'secret/show'
 
-  devise_for :users, controllers: { registrations: "users/registrations", confirmations: 'users/confirmations' }
+  devise_for :users, controllers: { registrations: 'users/registrations',
+                                    confirmations: 'users/confirmations',
+                                    passwords: 'users/passwords' }
 
   devise_scope :user do
     get 'users/sign_up_success', to: "users/registrations#success", as: 'sign_up_success'
