@@ -6,7 +6,9 @@ section.findpwd
           fieldset
             h2 找回密码
             .form-group
-              = f.label '请输入您注册用的邮箱地址', id: 'prompt'
+              = f.label '请输入您注册用的邮箱地址'
+              label.error.unregistered
+                | 此邮箱没有注册过帐号
               = f.text_field :email, autofocus: true, placeholder: "邮箱地址", validate: { uniqueness: false, presence: true }
             .form-group
               = f.submit "发送重设密码链接到我邮箱"

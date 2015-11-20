@@ -2,8 +2,8 @@
   $('input[type="submit"]').prop('value', "发送成功");
   $('input[type="submit"]').prop('disabled', true);
 <%- else %>
-  $('#prompt').append("<label class='error server'><%= resource.errors[:email][0] %></label>");
+  $('label.error.unregistered').show();
   $('#user_email').focus(function(){
-    $('.error.server').hide();
+    $('label.error.unregistered').hide();
   });
 <%- end %>
