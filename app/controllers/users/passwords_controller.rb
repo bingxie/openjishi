@@ -7,7 +7,7 @@ module Users
 
     # POST /resource/password
     def create
-      super do |resource|
+      super do
         respond_to do |format|
           format.js {}
           return
