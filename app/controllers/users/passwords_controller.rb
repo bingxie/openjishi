@@ -6,9 +6,14 @@ module Users
     # end
 
     # POST /resource/password
-    # def create
-    #   super
-    # end
+    def create
+      super do |resource|
+        respond_to do |format|
+          format.js {}
+          return
+        end
+      end
+    end
 
     # GET /resource/password/edit?reset_password_token=abcdef
     # def edit

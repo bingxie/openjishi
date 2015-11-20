@@ -55,7 +55,7 @@ zh-CN:
       already_confirmed: "已经确认，请重新登录。"
       confirmation_period_expired: "请在%{period}内确认注册, 请重新注册。"
       expired: "邮件确认已过期，请重新注册。"
-      not_found: "没有找到。"
+      not_found: "此邮箱没有注册过帐号。"
       not_locked: "未锁定。"
       not_saved:
         one: "因为1个错误导致此%{resource}保存失败:"
