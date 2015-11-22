@@ -2,7 +2,7 @@ section.resetpwd
   .wrap
     .outer-panel
       .panel-left
-        = form_for(resource, as: resource_name, url: password_path(resource_name), validate: true, html: { method: :put }) do |f|
+        = form_for(resource, as: resource_name, url: password_path(resource_name), validate: true, html: { id: 'reset_password', method: :put }) do |f|
           = devise_error_messages!
 
           = f.hidden_field :reset_password_token
