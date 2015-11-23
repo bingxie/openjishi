@@ -11,6 +11,11 @@
 
 5. visit: http://localhost:3000
 
+## Test
+
+### Feature test:
+
+
 
 ## Bitters:
 Scss: /app/assets/stylesheets/base

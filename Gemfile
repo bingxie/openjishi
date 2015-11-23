@@ -132,6 +132,15 @@ end
 group :test do
   # Create customizable MiniTest output formats
   gem "minitest-reporters"
+
+  gem 'capybara'
+  gem "connection_pool"
+  gem "launchy"
+  gem "selenium-webdriver"
+
+  gem "mocha"
+  gem "poltergeist"
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
 end
 
 
