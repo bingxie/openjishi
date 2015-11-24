@@ -9,9 +9,11 @@ bing:
   email: bing@google.com
   encrypted_password: <%= Devise::Encryptor.digest(User, '12345678') %>
   confirmed_at: <%= Time.now %>
+  slug: bing
 
 alex:
   name: alex
   email: alex@google.com
   encrypted_password: <%= Devise::Encryptor.digest(User, '12345678') %>
   confirmed_at: <%= Time.now %>
+  slug: alex

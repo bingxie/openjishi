@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def set_slug
-    self.slug ||= HASHIDS.encode(id).to_url
+    self.slug = HASHIDS.encode(id).to_url
     save!
   end
 
