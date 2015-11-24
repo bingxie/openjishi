@@ -15,5 +15,3 @@ class Person {
 
 let blake = new Person("Blake", "Williams");
 blake.name = "Blake Anderson";
-
-console.log(blake.name);
