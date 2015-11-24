@@ -282,7 +282,8 @@ section
 
 /* Text Promo Block */
 .text-promo-block
-  padding: 1em 0
+  padding: 2em 0
+  background-color: $light-dark
   .item
     +span-columns(3)
     +omega(4n)
@@ -292,27 +293,27 @@ section
 
 /* Tag Cloud and side Ads*/
 .tag-cloud
-  margin-bottom: 1em
-  +span-columns(8)
-  padding: 1em 0
   .label
     +lovely-label($red, 1em)
-  a.tag
-    display: inline-block
-    padding: $base-spacing * 0.1 $base-spacing * 0.75
-    margin: 0 0.5em 0.5em 0
-    border-radius: 10000px
-    &:hover
-      color: $red
+  padding: 2em 0
+  background-color: $light-dark
+  .tag-cloud-container
+    +span-columns(8)
+    a.tag
+      display: inline-block
+      padding: $base-spacing * 0.1 $base-spacing * 0.75
+      margin: 0 0.5em 0.5em 0
+      border-radius: 10000px
+      &:hover
+        color: $red
 
-.homepage-ad
-  +span-columns(4)
+  .homepage-ad
+    +span-columns(4)
 
 
 /* Brands */
 .brands
-  padding: 0 0 2em 0
-  +outer-container
+  padding: 2em 0
   h2
     +lovely-label($red, 1em)
   a
@@ -329,17 +330,18 @@ section
   label
     +lovely-label($red, 1em)
   +outer-container
+  padding: 2em 0
   .prd-block-4
     +span-columns(3)
     +omega(4n)
     +media($mobile)
       +span-columns(4)
     padding: $base-spacing * 0.5
-    // border-radius: $base-border-radius
+    border-radius: $base-border-radius
     border: $base-border
     margin-bottom: 2em
     background-color: $light
-    // box-shadow: $base-box-shadow
+    box-shadow: $base-box-shadow
   .prd-block-3
     +span-columns(4)
     +omega(3n)
@@ -372,8 +374,15 @@ section
     font-weight: bold
     color: $red
   a.watch-btn
-    +lovely-button($light, $dark, $base-padding)
+    +lovely-button($red, $light, $base-padding)
+    border-bottom: 0
     float: right
+    // display: none
+  a.unwatch-btn
+    +lovely-button($light, $dark, $base-padding)
+    border-bottom: 0
+    float: right
+    display: none
   .prd-location
     font-size: 0.825em
   .prd-condition
@@ -425,12 +434,12 @@ section
 .submit-btn
   +lovely-button($red, $light, $base-padding)
 
-.my-location
-  .form-input
-    .form-container
-      display: inline-block
-      width: 10em
-      margin-right: 1em
+
+.form-input
+  .form-container
+    display: inline-block
+    width: 10em
+    margin-right: 1em
 
 
 
@@ -541,7 +550,8 @@ section
       ul li
         +span-columns(4)
         +omega(3n)
-        background-color: #fff
+        a
+          display: inline-block
 
 /* Tag Filter */
 
@@ -810,6 +820,18 @@ section
           a
             +lovely-link($dark, $red, $base-padding)
 
+.lightbox-hidder
+  position: absolute
+  height: 1px
+  width: 1px
+  overflow: hidden
+
+.user-photo-uploader
+  width: em(600)
+  .image-loader
+    width: 80%
+
+
 
 /* Single Product */
 .breadcrumbs
@@ -888,9 +910,71 @@ section
     .slick-slide
       width: 110px !important
 
+.prd-description-panel
+  background-color: $light
+  border: $base-border
+  padding: 1em
+  margin-bottom: 1em
 
+.product-status
+  li
+    display: inline-block
+    margin-right: 1em
+  margin-bottom: 1em
 
+.prd-right-panel
+  +span-columns(4)
+  .panel-group
+    background-color: $light
+    border: $base-border
+  .panel-mid
+    span
+      font-weight: bold
+      margin-left: 1em
+    a.taobao-link
+      +lovely-button($red, $light, $base-spacing * 0.25 $base-spacing * 0.5)
+      // width: 100%
+      text-align: center
 
+  .contact-panel
+    background-color: $light-dark
+    margin: 1em 0
+    padding: 1em
+
+  .watch-btn, .wishlist-btn
+    +span-columns(6)
+    +lovely-button($light, $dark, $base-padding)
+    border-radius: 1000px
+    border: $base-border
+    &:hover
+      background-color: $red
+      color: $light
+
+.seller-information
+  .seller-icon
+    +span-columns(5)
+    img
+      border-radius: 1000px
+    width: em(80)
+  .seller-name
+    +span-columns(7)
+    padding: 1em
+  .seller-badge
+    ul
+      li
+        display: inline-block
+        margin-right: 0.5em
+    img
+      width: em(40)
+      border-radius: 10000px
+  .seller-rating
+    ul
+      li
+        font-size: 2em
+        color: $orange
+        display: inline-block
+  a.contact-seller
+    +lovely-button($red, $light, $base-padding)
 
 
 /* WHY US */
@@ -921,13 +1005,19 @@ section
         font-size: 1.2em
         font-weight: bold
         float: left
-        width: calc(100% - 60px)
         span
           font-size: 0.75em
           font-weight: normal
       .blurb
         font-size: em(12, 14)
 
+/* News Letter */
+.news-letter
+  background-color: $light-dark
+  padding: 2em 0
+  .content
+    +span-columns(6)
+    +shift(3)
 
 /* FOOTER */
 .footer

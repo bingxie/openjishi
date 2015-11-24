@@ -27,7 +27,16 @@ $(document).ready(function(){
       centerMode: true,
       focusOnSelect: true
     });
+    $('.watch-btn').click(function() {
+          $(this).css('display', 'none');
+          $(this).parent().find('.unwatch-btn').css('display', 'inline-block');
+        });
+    $('.unwatch-btn').click(function() {
+          $(this).css('display', 'none');
+          $(this).parent().find('.watch-btn').css('display', 'inline-block');
+        });
   });
+
 
 
 
@@ -37,6 +46,6 @@ $().ready(function(){
   $("#select-brand").select2();
   $("#select-condition").select2();
   $("#province").select2();
-  $("#city").select2();
+  $("#city,#gender,#dob-yy,#dob-mm,#dob-dd").select2();
   $("#select-2-demo,#select-2-1,#select-2-2,#select-2-3").select2();
 })
