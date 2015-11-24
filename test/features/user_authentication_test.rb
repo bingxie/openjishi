@@ -6,6 +6,8 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
   end
 
   test 'user can sign up with email and password' do
+    Capybara.reset_sessions!
+
     visit new_user_registration_path
 
     assert_content "注册帐号"
@@ -23,6 +25,25 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
 
     test_confirm_email
 
+  end
+
+  test 'user can sign in with email and password' do
+    visit new_user_session_path
+
+    assert_content '使用已有帐号登录'
+
+    user = users(:bing)
+
+    within '#new_user' do
+      fill_in 'user[email]', with: user.email
+      fill_in 'user[password]', with: '12345678'
+
+      click_button '登录'
+    end
+
+    assert_content user.name
+
+    assert_equal root_path, page.current_path
   end
 
   private
