@@ -1,3 +1,130 @@
+.my-account
+  .wrap
+    ul
+      li
+        a. href="#"
+          .fa.fa-tachometer
+          p
+            |我的主页
+      li
+        a href="#"
+          .fa.fa-comment
+          p
+            |站内消息
+      li
+        a href="#"
+          .fa.fa-cogs
+          p
+            |帐号设置
+      li
+        a href="#"
+          .fa.fa-home
+          p
+            |我的店铺
+
+.my-account-container
+  .wrap
+    .left
+      .my-panel
+        .my-avatar
+          img src="http://placehold.it/400x400" alt=""
+          a.fa.fa-file-image-o.upload-photo href="#" data-featherlight=".user-photo-uploader"
+            |更新头像
+        .my-information
+          h3
+            |凝固的黎明
+          p.join-date
+            |2015年6月 加入
+          p
+            a href="#{user_setting_path(current_user.slug)}"
+              |编辑帐号信息
+      .panel-group
+        .panel-header
+          |板板标题
+        .panel-mid
+          ul
+            - 8.times do
+              li
+                a href="#"
+                  |标题或者是链接
+    .right
+      .panel-group
+        .panel-header
+            |帐号设置
+        .panel-mid.wrap
+          div.my-account-username
+            span.form-label
+              |用户名
+            span.form-input
+              .form-container
+                input type="text" placeholder="凝固的黎明"
+              p
+                |用户名可以随便修改
+          div
+            span.form-label
+              |性别
+            span.form-input
+              .form-container
+                select#gender name="gender"
+                  option value="1" 男
+                  option value="2" 女
+          div.my-dob
+            span.form-label
+              |生日
+            span.form-input
+              .form-container
+                select#dob-yy name="province"
+                  option value="1"  1981
+                  option value="2"  1982
+              .form-container
+                select#dob-mm name="province"
+                  option value="1"  1月
+                  option value="2"  2月
+              .form-container
+                select#dob-dd name="province"
+                  option value="1"  1日
+                  option value="2"  2日
+          div.my-location
+            span.form-label
+              |所在城市
+            span.form-input
+              .form-container
+                select#province name="province"
+                  option value="1"  广东
+                  option value="2"  山东
+              .form-container
+                select#city name="city"
+                  option value="1"  深圳
+                  option value="2"  广州
+          div
+            span.form-label
+              |&nbsp;
+            span.form-submit
+              a.submit-btn href="#"
+                | 保存修改
+      .panel-group.change-password
+        .panel-header
+            |修改密码
+        .panel-mid.wrap
+          #change_password_form
+
+/* Lightbox for user photo uploading */
+.lightbox-hidder
+  .user-photo-uploader
+    .formgroup
+      input#fileupload data-url="server/php/" multiple="" name="files[]" type="file" /
+      .image-uploader
+        h2
+          |上传头像图片
+        p
+          |您可以直接拖拽图片至此区域
+        a href="#" 或 从本地电脑选择
+    p.image-loader
+      img src="https://images.unsplash.com/photo-1440339738560-7ea831bf5244?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=eba9942410f4ced1e4b6f884e325ecc7" alt="剪切头像"
+    button type="button"
+      |确定
+
+
 h1 用户信息设置
 
 = form_for @user, url: user_setting_path, html: { multipart: true , method: :put} do |f|

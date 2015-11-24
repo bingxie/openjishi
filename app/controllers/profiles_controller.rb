@@ -23,6 +23,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    render layout: 'my'
   end
 
   def update

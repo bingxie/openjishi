@@ -17,4 +17,12 @@ $().ready(() => {
       matcher: oldMatcher(matchChinese)
     });
   });
+
+  load_change_password();
 });
+
+function load_change_password() {
+  $('#change_password_form').load('/users/edit', () => {
+    $('#change_password').enableClientSideValidations();
+  });
+}
