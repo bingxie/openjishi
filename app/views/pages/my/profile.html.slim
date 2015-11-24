@@ -111,22 +111,27 @@
               |输入当前密码
             span.form-input
               input type="password"
+              label.error
+                |当前密码不正确, 请重新输入
           div
             span.form-label
               |输入新密码
             span.form-input
               input type="password"
+              label.error
+                |新密码太短, 请输入至少6位字符
           div
             span.form-label
               |再次输入新密码
             span.form-input
               input type="password"
+              label.error
+                |两次输入密码不匹配, 请重新输入
           div
             span.form-label
               |&nbsp;
             span.form-summit
-              a.submit-btn href="#"
-                |确定修改
+              input.submit-btn type="submit" href="#" value="确定修改"
 
 /* Lightbox for user photo uploading */
 .lightbox-hidder

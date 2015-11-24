@@ -412,24 +412,29 @@ section
         float: none
 
 /* ----- My Account - Profile ----- */
+
 .form-label
   +span-columns(2)
   text-align: right
   line-height: 2.5
-.form-input, .form-summit
+.form-input
   +span-columns(10)
   p
     font-size: 0.825em
     color: lighten($dark, 25%)
+  input[type=password]
+    float: left
+    width: 30%
+
+  label.error
+    margin-left: 1em
+    color: $red
+    line-height: em(37)
 
 .my-account
   select
     width: 40%
     margin-right: 5%
-
-.change-password
-  input
-    width: 30%
 
 .submit-btn
   +lovely-button($red, $light, $base-padding)

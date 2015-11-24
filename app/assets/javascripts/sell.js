@@ -27,17 +27,7 @@ $(document).ready(function(){
       centerMode: true,
       focusOnSelect: true
     });
-    $('.watch-btn').click(function() {
-          $(this).css('display', 'none');
-          $(this).parent().find('.unwatch-btn').css('display', 'inline-block');
-        });
-    $('.unwatch-btn').click(function() {
-          $(this).css('display', 'none');
-          $(this).parent().find('.watch-btn').css('display', 'inline-block');
-        });
   });
-
-
 
 
 $().ready(function(){
