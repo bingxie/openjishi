@@ -36,6 +36,9 @@ gem 'jquery-turbolinks'
 # Slick
 gem "jquery-slick-rails"
 
+# Featherlight.js
+gem 'featherlight'
+
 # Rails jQuery file uploads via standard Rails "remote: true" forms
 gem 'remotipart', '~> 1.2'
 
