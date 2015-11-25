@@ -43,7 +43,7 @@
           |板板标题
         .panel-mid
           ul
-            - 8.times do
+            - 5.times do
               li
                 a href="#"
                   |标题或者是链接
@@ -52,7 +52,7 @@
         .panel-header
             |帐号设置
         .panel-mid.wrap
-          = form_for @user, url: user_setting_path, html: { multipart: true , method: :put} do |f|
+          = form_for @profile, url: user_setting_path, html: { multipart: true , method: :put} do |f|
             div.my-account-username
               span.form-label
                 |用户名
@@ -61,23 +61,23 @@
                   = f.text_field :name
                 p
                   |用户名可以随便修改
-            = f.fields_for :profile do |profile_fields|
-              div.my-location.city-group
-                span.form-label
-                  |所在城市
-                span.form-input
+            div.my-location
+              span.form-label
+                |所在城市
+              span.form-input
+                .city-group
                   .form-container
-                    = profile_fields.select :province_id, options_for_select(ChinaCity.list, @user.profile.province_id), { prompt: '--省份--' }, { class: ['city-select'] }
+                    = f.select :province_id, options_for_select(ChinaCity.list, @profile.province_id), { prompt: '--省份--' }, { class: ['city-select', 'city-province'] }
                   .form-container
-                    = profile_fields.select :city_id, options_for_select(ChinaCity.list(@user.profile.province_id), @user.profile.city_id), { prompt: '--城市--' }, { class: ['city-select'] }
+                    = f.select :city_id, options_for_select(ChinaCity.list(@profile.province_id), @profile.city_id), { prompt: '--城市--' }, { class: ['city-select', 'city-city'] }
                   .form-container
-                    = profile_fields.select :district_id, options_for_select(ChinaCity.list(@user.profile.city_id), @user.profile.district_id), { prompt: '--地区--' }, { class: ['city-select'] }
+                    = f.select :district_id, options_for_select(ChinaCity.list(@profile.city_id), @profile.district_id), { prompt: '--地区--' }, { class: ['city-select', 'city-district'] }
             div
               span.form-label
                 |&nbsp;
               span.form-submit
-                a.submit-btn href="#"
-                  | 保存修改
+                = f.submit '保存修改'
+
       .panel-group.change-password
         .panel-header
             |修改密码
@@ -101,38 +101,22 @@
       |确定
 
 
-h1 用户信息设置
+/ h1 用户信息设置
 
-= form_for @user, url: user_setting_path, html: { multipart: true , method: :put} do |f|
-  .field
-    = f.label :name, "用户名"
+/ = form_for @profile, url: user_setting_path, html: { multipart: true , method: :put} do |f|
+/   .field
+/     = f.label :name, "用户名"
 
 
-  = f.fields_for :profile do |profile_fields|
-    .field
-      = profile_fields.label :avatar, "头像"
-      = profile_fields.file_field :avatar
-    .field
-      = profile_fields.label :qq, 'QQ号'
-      = profile_fields.text_field :qq
-    .field
-      = profile_fields.label :wechat, '微信号'
-      = profile_fields.text_field :wechat
-    .field
-      = profile_fields.label :mobile, '手机号'
-      = profile_fields.text_field :mobile
-    / .field
-    /   = profile_fields.label :city, '城市'
-    /   = profile_fields.text_field :city_id
-    .filed.city-group
-      = profile_fields.label :city, '城市'
-      = profile_fields.select :province_id, options_for_select(ChinaCity.list, @user.profile.province_id), { prompt: '--省份--' }, { class: ['city-select'] }
-      = profile_fields.select :city_id, options_for_select(ChinaCity.list(@user.profile.province_id), @user.profile.city_id), { prompt: '--城市--' }, { class: ['city-select'] }
-      = profile_fields.select :district_id, options_for_select(ChinaCity.list(@user.profile.city_id), @user.profile.district_id), { prompt: '--地区--' }, { class: ['city-select'] }
-
-    .field
-      = profile_fields.label :introduction, '个人简介'
-      = profile_fields.text_area :introduction
-  .actions
-    = f.submit '更新个人信息'
+/   = f.fields_for :profile do |profile_fields|
+/     .field
+/       = profile_fields.label :avatar, "头像"
+/       = profile_fields.file_field :avatar
+/     .filed.city-group
+/       = profile_fields.label :city, '城市'
+/       = profile_fields.select :province_id, options_for_select(ChinaCity.list, @profile.province_id), { prompt: '--省份--' }, { class: ['city-select'] }
+/       = profile_fields.select :city_id, options_for_select(ChinaCity.list(@profile.province_id), @profile.city_id), { prompt: '--城市--' }, { class: ['city-select'] }
+/       = profile_fields.select :district_id, options_for_select(ChinaCity.list(@profile.city_id), @profile.district_id), { prompt: '--地区--' }, { class: ['city-select'] }
+/   .actions
+/     = f.submit '更新个人信息'
 

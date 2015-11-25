@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   end
 
   # User profiles
-  get 'profiles/:slug' => 'profiles#show', as: :user_profile
   get 'profiles/:slug/edit' => 'profiles#edit', as: :user_setting
   get 'profiles/:slug/crop' => 'profiles#crop', as: :avatar_crop
 

@@ -1,22 +1,17 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_owner!
-  before_action :set_user, only: [:show, :edit, :update, :crop, :do_crop]
-
-  def show
-    @profile = @user.profile.decorate
-  end
+  before_action :set_profile, only: [:edit, :update, :crop, :do_crop]
 
   def crop
-    @profile = @user.profile
   end
 
   def do_crop
     profile_params = params.require(:profile)
                            .permit(:avatar, :avatar_crop_x, :avatar_crop_y,
                                    :avatar_crop_w, :avatar_crop_h)
-    if @user.profile.update(profile_params)
+    if @profile.update(profile_params)
       flash[:success] = "成功更新个人信息"
-      redirect_to user_profile_path(@user.slug)
+      redirect_to user_profile_path(current_user.slug)
     else
       render 'crop'
     end
@@ -27,9 +22,9 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    if @profile.update(profile_params)
       flash[:success] = "成功更新个人信息"
-      redirect_to user_profile_path(@user.slug)
+      redirect_to user_setting_path(current_user.slug)
     else
       render 'edit'
     end
@@ -37,15 +32,13 @@ class ProfilesController < ApplicationController
 
   private
 
-  def set_user
-    @user = User.find_by_slug(params[:slug])
+  def set_profile
+    @profile = current_user.profile
   end
 
-  def user_params
-    params.require(:user)
-          .permit(:name,
-                  profile_attributes: [:id, :province_id, :district_id, :city_id, :introduction,
-                                       :mobile, :qq, :wechat, :avatar])
+  def profile_params
+    params.require(:profile)
+          .permit(:name, :province_id, :district_id, :city_id)
   end
 
   def authenticate_owner!

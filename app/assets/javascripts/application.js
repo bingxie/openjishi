@@ -20,7 +20,6 @@
 //= require select2.full
 //= require select2_locale_zh-CN
 //= require jquery-fileupload
-//= require 'china_city/jquery.china_city'
 //= require simple-pinyin
 //= require jquery.slick
 //= require featherlight

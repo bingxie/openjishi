@@ -1,21 +1,29 @@
 $().ready(() => {
   $.fn.select2.amd.require(['select2/compat/matcher'], oldMatcher => {
-    $("#user_profile_attributes_province_id").select2({
+    $("#profile_province_id").select2({
       width: 'resolve',
       language: "zh-CN",
       matcher: oldMatcher(matchChinese)
     });
 
-    $("#user_profile_attributes_city_id").select2({
+    $("#profile_city_id").select2({
       width: 'resolve',
       language: "zh-CN",
       matcher: oldMatcher(matchChinese)
     });
 
-    $("#user_profile_attributes_district_id").select2({
+    $("#profile_district_id").select2({
       language: "zh-CN",
       matcher: oldMatcher(matchChinese)
     });
+  });
+
+  $( "#profile_city_id").on('china_city:load_data_completed',() => {
+    $("#profile_city_id").trigger('change');
+  });
+
+  $( "#profile_district_id").on('china_city:load_data_completed',() => {
+    $("#profile_district_id").trigger('change');
   });
 
   load_change_password();

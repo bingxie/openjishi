@@ -423,6 +423,7 @@ DEPENDENCIES
   capybara
   china_city
   client_side_validations!
+  coffee-rails
   connection_pool
   delayed_job_active_record
   devise (~> 3.5, >= 3.5.2)
