@@ -117,22 +117,11 @@ section.category-content
 
 
   .prd-grid
-    ul
-      - 9.times do
-        li.prd-block-3
-          img.thumbnail src="#{image_path('product-thumbnail-1.png')}" /
-          a href="#"
-            img.user-icon src="http://placehold.it/80x80" /
-            |凝固的黎明
-          p 近全新, 尼康顶级金圈超广14-28/f2.8, 入手不足三个月, 从来没出家门
-          p.price
-            span
-              |(可议)
-          span.location
-            i.fa.fa-map-marker
-            |  广东, 深圳
-          span.condition
-            | 二手, 9成新
+    .wrap
+      ul
+        - 16.times do
+          li.block-4
+            = render partial:'pages/pattern/prd_block'
 
     .pagination-buttons-container
       .results_count

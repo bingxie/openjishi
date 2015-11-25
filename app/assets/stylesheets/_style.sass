@@ -51,6 +51,51 @@ section
       li
         padding: 0 0 0.5em 0
 
+
+.panel-2
+  +span-columns(2)
+.panel-3
+  +span-columns(3)
+.panel-4
+  +span-columns(4)
+.panel-5
+  +span-columns(5)
+.panel-6
+  +span-columns(6)
+.panel-7
+  +span-columns(7)
+.panel-8
+  +span-columns(8)
+.panel-9
+  +span-columns(9)
+.panel-10
+  +span-columns(10)
+
+li.block-2
+  +span-columns(6)
+  +omega(2n)
+
+li.block-3
+  +span-columns(4)
+  +omega(3n)
+
+li.block-4
+  +span-columns(3)
+  +omega(4n)
+
+li.block-6
+  +span-columns(2)
+  +omega(6n)
+
+
+h2.panel-heading
+  color: $light
+  background-color: $red
+  padding: 0.75em 2em
+  font-size: 1em
+  font-weight: normal
+  display: inline-block
+
 /* -------------------------------------- */
 /*               MODULES                  */
 /* -------------------------------------- */
@@ -325,91 +370,9 @@ section
     display: inline-block
 
 
-/* Product grid */
-.prd-grid
-  label
-    +lovely-label($red, 1em)
-  +outer-container
-  padding: 2em 0
-  .prd-block-4
-    +span-columns(3)
-    +omega(4n)
-    +media($mobile)
-      +span-columns(4)
-    padding: $base-spacing * 0.5
-    border-radius: $base-border-radius
-    border: $base-border
-    margin-bottom: 2em
-    background-color: $light
-    box-shadow: $base-box-shadow
-  .prd-block-3
-    +span-columns(4)
-    +omega(3n)
-    +media($mobile)
-      +span-columns(4)
-      margin: 0 1em 2em
-    padding: $base-spacing * 0.5
-    border-radius: $base-border-radius
-    border: $base-border
-    margin-bottom: 2em
-    background-color: $light
-    // box-shadow: $base-box-shadow
-  .prd-thumbnail
-    &:hover
-      +lovely-transition
-      opacity: 0.9
-  .user-icon
-    width: 3em
-    border-radius: 10000px
-    margin: 0.5em 0.5em 0.5em 0
-    vertical-align: middle
-  .prd-title
-    margin-bottom: 1em
-    min-height: 4em
-    display: block
-  .prd-price
-    i
-      font-size: 0.75em
-    font-size: 1.2em
-    font-weight: bold
-    color: $red
-  a.watch-btn
-    +lovely-button($red, $light, $base-padding)
-    border-bottom: 0
-    float: right
-    // display: none
-  a.unwatch-btn
-    +lovely-button($light, $dark, $base-padding)
-    border-bottom: 0
-    float: right
-    display: none
-  .prd-location
-    font-size: 0.825em
-  .prd-condition
-    font-size: 0.825em
-    float: right
-  .prd-block-vertical-1
-    +span-columns(12)
-    display: block
-    background-color: $light
-    border: $base-border
-    padding: 1em
-    border-radius: $base-border-radius
-    margin-bottom: 1em
-    .prd-thumbnail
-      +span-columns(3)
-    .prd-info-group-1
-      +span-columns(6)
-      padding: 0 1em
-    .prd-info-group-2
-      +span-columns(3)
-      .prd-price
-      .prd-location
-        float: none
-        display: block
-      .prd-condition
-        display: block
-        float: none
+
+/* ----- Product Grid ----- */
+
 
 /* ----- My Account - Profile ----- */
 

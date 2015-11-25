@@ -41,31 +41,22 @@
           i.fa.fa-arrow-circle-right
 
 .prd-grid
-  label 镜影精选
-  ul
-    - 4.times do
-      li.prd-block-4
-        a href="#"
-          img.prd-thumbnail src="#{image_path('product-thumbnail-1.png')}" /
-        .prd-info-group-1
-          a href="#"
-            img.user-icon src="http://placehold.it/80x80" /
-            |凝固的黎明
-          a.prd-title href="#"
-            | 95新 佳能 ★★北京顺诚相机行★★ 97新 佳能100-300/5.6l （1462d) 附件：前后盖
-        .prd-info-group-2
-          p
-            span.prd-price
-              i.fa.fa-jpy
-              |  1300
-            a.fa.fa-plus.watch-btn href="#"
-              | &nbsp;关注
-          p
-            span.prd-location
-              i.fa.fa-map-marker
-              |  广东, 深圳
-            span.prd-condition
-              | 二手, 9成新
+  .wrap
+    h2.panel-heading 横排2个有图片
+    ul
+      - 4.times do
+        li.block-2
+          = render partial:'pages/pattern/prd_block_ho'
+
+.prd-grid
+  .wrap
+    h2.panel-heading 横排2个没图片
+    ul
+      - 4.times do
+        li.block-2
+          = render partial:'pages/pattern/prd_block_ho_no_img'
+
+
 
 .tag-cloud
   .wrap
@@ -81,37 +72,50 @@
         img src="http://placehold.it/360x180"
 
 .prd-grid
-  label 镜影精选
-  ul
-    - 12.times do
-      li.prd-block-4
-        a href="#"
-          img.prd-thumbnail src="#{image_path('product-thumbnail-1.png')}" /
-        .prd-info-group-1
-          a href="#"
-            img.user-icon src="http://placehold.it/80x80" /
-            |凝固的黎明
-          a.prd-title href="#"
-            | 95新 佳能 ★★北京顺诚相机行★★ 97新 佳能100-300/5.6l （1462d) 附件：前后盖
-        .prd-info-group-2
-          p
-            span.prd-price
-              i.fa.fa-jpy
-              |  1300
-            a.fa.fa-plus.watch-btn href="javascript:void(0)"
-              | &nbsp;关注
-            a.fa.fa-remove.unwatch-btn href="javascript:void(0)"
-              | &nbsp;取消关注
-          p
-            span.prd-location
-              i.fa.fa-map-marker
-              |  广东, 深圳
-            span.prd-condition
-              | 二手, 9成新
+  .wrap
+    h2.panel-heading 横排4个产品模块
+    ul
+      - 8.times do
+        li.block-4
+          = render partial:'pages/pattern/prd_block'
+
+  .wrap
+    h2.panel-heading 横排2个产品长条模块
+    ul
+      - 8.times do
+        li.block-4
+          = render partial:'pages/pattern/prd_block'
+
+.prd-grid
+  .wrap
+    .panel-2
+      img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGvGkrBRWoxzYMiwdE7vtaX9ZPDj0wQjjVZOxKrOPjANC-HJ1k"
+      h3
+        |尼康
+      p
+        |精选尼康摄影器材
+    .panel-10
+      ul
+        - 4.times do
+          li.block-4
+            = render partial:'pages/pattern/prd_block'
+  .wrap
+    .panel-2
+      img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGvGkrBRWoxzYMiwdE7vtaX9ZPDj0wQjjVZOxKrOPjANC-HJ1k"
+      h3
+        |尼康
+      p
+        |精选尼康摄影器材
+    .panel-10
+      ul
+        - 4.times do
+          li.block-4
+            = render partial:'pages/pattern/prd_block'
+
 
 .brands
   .wrap
-    h2 热门品牌
+    h2.panel-heading 热门品牌
   .wrap
     a.nikon href="#" alt="尼康"
       img src="http://placehold.it/180x90"

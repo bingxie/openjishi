@@ -52,6 +52,7 @@
         .panel-header
             |帐号设置
         .panel-mid.wrap
+<<<<<<< HEAD
           = form_for @profile, url: user_setting_path, validate: true, html: { multipart: true , method: :put} do |f|
             div.my-account-username
               span.form-label
@@ -78,6 +79,50 @@
               span.form-submit
                 = f.submit '保存修改'
 
+=======
+          div.my-account-username
+            span.form-label
+              |用户名
+            span.form-input
+              .form-container
+                input type="text" placeholder="凝固的黎明"
+              p
+                |用户名可以随便修改
+          div.my-dob
+            span.form-label
+              |生日
+            span.form-input
+              .form-container
+                select#dob-yy name="province"
+                  option value="1"  1981
+                  option value="2"  1982
+              .form-container
+                select#dob-mm name="province"
+                  option value="1"  1月
+                  option value="2"  2月
+              .form-container
+                select#dob-dd name="province"
+                  option value="1"  1日
+                  option value="2"  2日
+          div.my-location
+            span.form-label
+              |所在城市
+            span.form-input
+              .form-container
+                select#province name="province"
+                  option value="1"  广东
+                  option value="2"  山东
+              .form-container
+                select#city name="city"
+                  option value="1"  深圳
+                  option value="2"  广州
+          div
+            span.form-label
+              |&nbsp;
+            span.form-submit
+              a.submit-btn href="#"
+                | 保存修改
+>>>>>>> update product grid
       .panel-group.change-password
         .panel-header
             |修改密码
