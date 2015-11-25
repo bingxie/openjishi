@@ -52,56 +52,32 @@
         .panel-header
             |帐号设置
         .panel-mid.wrap
-          div.my-account-username
-            span.form-label
-              |用户名
-            span.form-input
-              .form-container
-                input type="text" placeholder="凝固的黎明"
-              p
-                |用户名可以随便修改
-          div
-            span.form-label
-              |性别
-            span.form-input
-              .form-container
-                select#gender name="gender"
-                  option value="1" 男
-                  option value="2" 女
-          div.my-dob
-            span.form-label
-              |生日
-            span.form-input
-              .form-container
-                select#dob-yy name="province"
-                  option value="1"  1981
-                  option value="2"  1982
-              .form-container
-                select#dob-mm name="province"
-                  option value="1"  1月
-                  option value="2"  2月
-              .form-container
-                select#dob-dd name="province"
-                  option value="1"  1日
-                  option value="2"  2日
-          div.my-location
-            span.form-label
-              |所在城市
-            span.form-input
-              .form-container
-                select#province name="province"
-                  option value="1"  广东
-                  option value="2"  山东
-              .form-container
-                select#city name="city"
-                  option value="1"  深圳
-                  option value="2"  广州
-          div
-            span.form-label
-              |&nbsp;
-            span.form-submit
-              a.submit-btn href="#"
-                | 保存修改
+          = form_for @user, url: user_setting_path, html: { multipart: true , method: :put} do |f|
+            div.my-account-username
+              span.form-label
+                |用户名
+              span.form-input
+                .form-container
+                  = f.text_field :name
+                p
+                  |用户名可以随便修改
+            = f.fields_for :profile do |profile_fields|
+              div.my-location.city-group
+                span.form-label
+                  |所在城市
+                span.form-input
+                  .form-container
+                    = profile_fields.select :province_id, options_for_select(ChinaCity.list, @user.profile.province_id), { prompt: '--省份--' }, { class: ['city-select'] }
+                  .form-container
+                    = profile_fields.select :city_id, options_for_select(ChinaCity.list(@user.profile.province_id), @user.profile.city_id), { prompt: '--城市--' }, { class: ['city-select'] }
+                  .form-container
+                    = profile_fields.select :district_id, options_for_select(ChinaCity.list(@user.profile.city_id), @user.profile.district_id), { prompt: '--地区--' }, { class: ['city-select'] }
+            div
+              span.form-label
+                |&nbsp;
+              span.form-submit
+                a.submit-btn href="#"
+                  | 保存修改
       .panel-group.change-password
         .panel-header
             |修改密码
@@ -130,7 +106,7 @@ h1 用户信息设置
 = form_for @user, url: user_setting_path, html: { multipart: true , method: :put} do |f|
   .field
     = f.label :name, "用户名"
-    = f.text_field :name
+
 
   = f.fields_for :profile do |profile_fields|
     .field

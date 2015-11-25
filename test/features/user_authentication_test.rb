@@ -11,16 +11,19 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
 
     assert_content "注册帐号"
 
+    email = 'test_user@gmail.com'
+
     within '#new_user' do
-      fill_in 'user[email]', with: 'test_user@gmail.com'
+      fill_in 'user[email]', with: email
       fill_in 'user[password]', with: 'abcd1234'
 
       click_button '创建新帐号'
     end
 
     assert_equal sign_up_success_path, page.current_path
+    assert_equal User.find_by(email: email).profile.name, 'test_user'
 
-    assert_content "test_user@gmail.com"
+    assert_content email
 
     test_confirm_email
 
@@ -40,7 +43,7 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
       click_button '登录'
     end
 
-    assert_content user.name
+    assert_content user.profile.name
 
     assert_equal root_path, page.current_path
   end
@@ -79,7 +82,7 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
       click_button '确定'
     end
 
-    assert_content user.name
+    assert_content user.profile.name
 
     assert_equal root_path, page.current_path
   end

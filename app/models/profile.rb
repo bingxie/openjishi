@@ -16,4 +16,5 @@ class Profile < ActiveRecord::Base
 
   validates_attachment :avatar, content_type: { content_type: %r{\Aimage\/.*\Z} },
                                 size: { in: 0..1.megabytes }
+  validates :name, length: { maximum: 20 }
 end

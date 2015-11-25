@@ -10,9 +10,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "#set_name_with_email" do
-    user = users(:bing)
+    user = User.create(email: 'test_user@gmail.com', password: '12345678')
     user.set_name_with_email
 
-    assert_equal "bing", user.name
+    assert_equal "test_user", user.profile.name
   end
 end

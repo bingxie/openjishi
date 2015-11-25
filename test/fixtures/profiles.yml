@@ -1,17 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id:
+  user: bing
+  name: 'bing'
   city_id: 1
-  mobile: MyString
-  introduction: MyText
-  qq: MyString
-  wechat: MyString
 
 two:
-  user_id:
+  user: alex
   city_id: 1
-  mobile: MyString
-  introduction: MyText
-  qq: MyString
-  wechat: MyString
+  name: alex
+
