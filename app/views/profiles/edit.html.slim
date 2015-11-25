@@ -27,14 +27,14 @@
     .left
       .my-panel
         .my-avatar
-          img src="http://placehold.it/400x400" alt=""
+          = @profile.decorate.avatar_img(:medium)
           a.fa.fa-file-image-o.upload-photo href="#" data-featherlight=".user-photo-uploader"
             |更新头像
         .my-information
           h3
-            |凝固的黎明
+            = @profile.name
           p.join-date
-            |2015年6月 加入
+            = "#{@profile.user.created_at.strftime('%Y年%m月')} 加入"
           p
             a href="#{user_setting_path(current_user.slug)}"
               |编辑帐号信息
@@ -48,6 +48,20 @@
                 a href="#"
                   |标题或者是链接
     .right
+      .panel-group
+        .panel-header
+          |更新头像
+        .panel-mid
+            .user-photo-uploader
+              i.fa.fa-caret-left
+              = form_for @profile, url: avatar_upload_path, remote: true, html: { multipart: true , method: :post} do |f|
+                .formgroup
+                  = f.file_field :avatar
+                  = f.submit '确定上传'
+
+                / p.image-loader
+                /   img src="https://images.unsplash.com/photo-1440339738560-7ea831bf5244?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=eba9942410f4ced1e4b6f884e325ecc7" alt="剪切头像"
+              .crop_image_form
       .panel-group
         .panel-header
             |帐号设置
@@ -84,39 +98,11 @@
         .panel-mid.wrap
           #change_password_form
 
-/* Lightbox for user photo uploading */
-.lightbox-hidder
-  .user-photo-uploader
-    .formgroup
-      input#fileupload data-url="server/php/" multiple="" name="files[]" type="file" /
-      .image-uploader
-        h2
-          |上传头像图片
-        p
-          |您可以直接拖拽图片至此区域
-        a href="#" 或 从本地电脑选择
-    p.image-loader
-      img src="https://images.unsplash.com/photo-1440339738560-7ea831bf5244?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=eba9942410f4ced1e4b6f884e325ecc7" alt="剪切头像"
-    button type="button"
-      |确定
+  /* Lightbox for user photo uploading */
+  .lightbox-hidder
 
 
-/ h1 用户信息设置
-
-/ = form_for @profile, url: user_setting_path, html: { multipart: true , method: :put} do |f|
-/   .field
-/     = f.label :name, "用户名"
 
 
-/   = f.fields_for :profile do |profile_fields|
-/     .field
-/       = profile_fields.label :avatar, "头像"
-/       = profile_fields.file_field :avatar
-/     .filed.city-group
-/       = profile_fields.label :city, '城市'
-/       = profile_fields.select :province_id, options_for_select(ChinaCity.list, @profile.province_id), { prompt: '--省份--' }, { class: ['city-select'] }
-/       = profile_fields.select :city_id, options_for_select(ChinaCity.list(@profile.province_id), @profile.city_id), { prompt: '--城市--' }, { class: ['city-select'] }
-/       = profile_fields.select :district_id, options_for_select(ChinaCity.list(@profile.city_id), @profile.district_id), { prompt: '--地区--' }, { class: ['city-select'] }
-/   .actions
-/     = f.submit '更新个人信息'
+
 

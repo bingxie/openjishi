@@ -5,7 +5,7 @@ class Profile < ActiveRecord::Base
   belongs_to :user
 
   has_attached_file :avatar,
-                    styles: { thumb: "100x100>", medium: "300x300>" },
+                    styles: { thumb: "100x100>", medium: "400x400>" },
                     path: DEV_FILE_PATH,
                     url: DEV_FILE_URL if Rails.env.development? || Rails.env.test?
 

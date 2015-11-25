@@ -17,9 +17,9 @@ Rails.application.routes.draw do
 
   # User profiles
   get 'profiles/:slug/edit' => 'profiles#edit', as: :user_setting
-  get 'profiles/:slug/crop' => 'profiles#crop', as: :avatar_crop
+  post 'profiles/:slug/upload' => 'profiles#upload', as: :avatar_upload
 
-  match 'profiles/:slug/crop' => 'profiles#do_crop', via: [:put, :patch]
+  match 'profiles/:slug/crop' => 'profiles#crop', as: :avatar_crop, via: [:put, :patch]
   match 'profiles/:slug/edit' => 'profiles#update', via: [:put, :patch]
 
   get "/pages/*id" => 'pages#show', as: :page, format: false
