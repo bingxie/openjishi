@@ -20,6 +20,11 @@ zh-CN:
               invalid: '你输入的密码不正确'
             password_confirmation:
               confirmation: 两次输入的密码不一致
+        profile:
+          attributes:
+            name:
+              too_long:
+                other: 用户名太长（最长为 %{count} 个字符）
 
 
 
