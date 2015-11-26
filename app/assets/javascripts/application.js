@@ -23,4 +23,5 @@
 //= require jquery.slick
 //= require featherlight
 //= require cropper
+//= require 'refills/modal'
 //= require_tree .

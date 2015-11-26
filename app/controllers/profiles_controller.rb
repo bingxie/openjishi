@@ -4,9 +4,12 @@ class ProfilesController < ApplicationController
 
   def crop
     profile_params = params.require(:profile)
-                           .permit(:avatar, :avatar_crop_x, :avatar_crop_y,
-                                   :avatar_crop_w, :avatar_crop_h)
+                           .permit(:crop_x, :crop_y,
+                :crop_width, :crop_height)
+
     if @profile.update(profile_params)
+      @profile.avatar.reprocess!
+
       flash[:success] = "成功更新个人信息"
       redirect_to user_setting_path(current_user.slug)
     else

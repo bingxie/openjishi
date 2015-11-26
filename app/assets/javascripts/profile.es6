@@ -34,3 +34,18 @@ function load_change_password() {
     $('#change_password').enableClientSideValidations();
   });
 }
+
+function load_avatar_cropper() {
+  $('#avatar-cropbox').cropper({
+    modal: false,
+    zoomable: false,
+    background: false,
+    aspectRatio: 1 / 1,
+    crop: function(e) {
+      $('#crop_x').val(e.x);
+      $('#crop_y').val(e.y);
+      $('#crop_width').val(e.width);
+      $('#crop_height').val(e.height);
+    }
+  });
+}

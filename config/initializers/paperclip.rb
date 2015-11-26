@@ -33,9 +33,9 @@ module Paperclip
 
     def transformation_command
       # Don't cropper the original picture
-      original_size = "\"" + target.picture.styles[:original].geometry + "\""
+      original_size = "\"" + @attachment.styles[:original].geometry + "\""
 
-      crop_command = (!super.include?(original_size) && target.cropping?) ? [
+      crop_command = (target.cropping? && !super.include?(original_size)) ? [
         "-crop",
         "#{target.crop_width}x" \
           "#{target.crop_height}+" \

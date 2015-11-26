@@ -1,3 +1,17 @@
+.modal
+  label for="modal-1"
+    .modal-trigger Click for Modal
+  input#modal-1.modal-state type="checkbox" /
+  .modal-window
+    .modal-inner
+      label.modal-close for="modal-1"
+      .user-photo-uploader
+        = form_for @profile, url: avatar_upload_path, remote: true, html: { multipart: true , method: :post} do |f|
+          .formgroup
+            = f.file_field :avatar
+            = f.submit '确定上传'
+        .crop_image_form
+
 .my-account
   .wrap
     ul
@@ -43,25 +57,11 @@
           |板板标题
         .panel-mid
           ul
-            - 5.times do
+            - 6.times do
               li
                 a href="#"
                   |标题或者是链接
     .right
-      .panel-group
-        .panel-header
-          |更新头像
-        .panel-mid
-            .user-photo-uploader
-              i.fa.fa-caret-left
-              = form_for @profile, url: avatar_upload_path, remote: true, html: { multipart: true , method: :post} do |f|
-                .formgroup
-                  = f.file_field :avatar
-                  = f.submit '确定上传'
-
-                / p.image-loader
-                /   img src="https://images.unsplash.com/photo-1440339738560-7ea831bf5244?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=eba9942410f4ced1e4b6f884e325ecc7" alt="剪切头像"
-              .crop_image_form
       .panel-group
         .panel-header
             |帐号设置
@@ -100,6 +100,7 @@
 
   /* Lightbox for user photo uploading */
   .lightbox-hidder
+
 
 
 

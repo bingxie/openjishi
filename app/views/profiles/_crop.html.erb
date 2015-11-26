@@ -1,10 +1,14 @@
+<div class="croparea">
+  <%=image_tag @profile.avatar.url(:original), :id => "avatar-cropbox" %>
+</div>
 <%= form_for(@profile, url: avatar_crop_path, html: { method: :put}) do |f| %>
-  <div class="field">
-    <%= f.cropbox :avatar, width: 300 %>
-    <%= f.crop_preview :avatar, width: 150 %>
-  </div>
-
+  <%= f.hidden_field :crop_x, :id => :crop_x, value: 1%>
+  <%= f.hidden_field :crop_y, :id => :crop_y, value: 1 %>
+  <%= f.hidden_field :crop_width, :id => :crop_width, value: 200 %>
+  <%= f.hidden_field :crop_height, :id => :crop_height, value: 200 %>
   <div class="actions">
     <%= f.submit 'Crop image' %>
   </div>
 <% end %>
+
+
