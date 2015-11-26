@@ -1,6 +1,7 @@
 <%= form_for(@profile, url: avatar_crop_path, html: { method: :put}) do |f| %>
   <div class="field">
     <%= f.cropbox :avatar, width: 300 %>
+    <%= f.crop_preview :avatar, width: 150 %>
   </div>
 
   <div class="actions">

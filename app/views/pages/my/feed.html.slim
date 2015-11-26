@@ -1,0 +1,37 @@
+.feed-nav
+  .wrap
+    ul
+      li
+        a.active href="#"
+          p
+            |关注队列
+      li
+        a href="#"
+          p
+            |愿望清单
+      li
+        a href="#"
+          p
+            |最近查看
+.feed
+  .wrap
+    a.feed-manage-btn href="#"
+      i.fa.fa-cog
+      |&nbsp;管理关注条件
+  .wrap
+    .feed-manage-panel
+      ul
+        - 4.times do
+          li
+            i.fa.fa-search
+            a href="#"
+              |尼康 镜头
+            a.remove href="#"
+              |&nbsp;删除
+  .wrap
+    ul
+      - 18.times do
+        li.block-4
+          = render partial:'pages/pattern/prd_block'
+
+
