@@ -45,6 +45,8 @@ class LandscapesController < ApplicationController
   def update
     respond_to do |format|
       if @landscape.send model_update_method, landscape_params
+        @landscape.picture.reprocess!
+
         format.js {}
         format.html { redirect_to @landscape, notice: 'Landscape was successfully updated.' }
         format.json { head :no_content }
@@ -81,8 +83,8 @@ class LandscapesController < ApplicationController
   def landscape_params
     if Rails::VERSION::MAJOR == 4
       params.require(:landscape)
-        .permit(:name, :picture, :picture_crop_x, :picture_crop_y,
-                :picture_crop_w, :picture_crop_h)
+        .permit(:name, :picture, :crop_x, :crop_y,
+                :crop_width, :crop_height)
     else
       params[:landscape]
     end

@@ -22,6 +22,5 @@
 //= require simple-pinyin
 //= require jquery.slick
 //= require featherlight
-//= require jquery.jcrop
-//= require papercrop
+//= require cropper
 //= require_tree .

@@ -19,3 +19,31 @@ Paperclip::Attachment.default_options[:use_timestamp] = false
 Paperclip::Attachment.default_options[:qiniu_host] =
   'http://7xo995.com1.z0.glb.clouddn.com'
 
+module Paperclip
+  class Cropper < Thumbnail
+    def initialize(file, options = {}, attachment = nil)
+      super
+      @current_geometry.width  = target.crop_width
+      @current_geometry.height = target.crop_height
+    end
+
+    def target
+      @attachment.instance
+    end
+
+    def transformation_command
+      # Don't cropper the original picture
+      original_size = "\"" + target.picture.styles[:original].geometry + "\""
+
+      crop_command = (!super.include?(original_size) && target.cropping?) ? [
+        "-crop",
+        "#{target.crop_width}x" \
+          "#{target.crop_height}+" \
+          "#{target.crop_x}+" \
+          "#{target.crop_y}",
+        "+repage"
+      ] : []
+      crop_command + super
+    end
+  end
+end

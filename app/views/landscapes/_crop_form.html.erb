@@ -1,12 +1,15 @@
 <%= form_for(@landscape, remote: true) do |f| %>
+  <%= f.hidden_field :crop_x, :id => :crop_x, value: 1%>
+  <%= f.hidden_field :crop_y, :id => :crop_y, value: 1 %>
+  <%= f.hidden_field :crop_width, :id => :crop_width, value: 200 %>
+  <%= f.hidden_field :crop_height, :id => :crop_height, value: 200 %>
 
   <div class="landscape-crop-preview">
     <% # Will show a preview box with width=100, height is calculated by the aspect ratio. see model Landscape %>
-    <%= f.crop_preview :picture, width: 150 %>
+
   </div>
   <div class="landscape-crop-area">
-    <% # Crop area. Mantains original image proportions. Crop area takes the aspect ratio  %>
-    <%= f.cropbox :picture, width: 300 %>
+    <%=image_tag @landscape.picture.url(:original), :id => "landscape-cropbox" %>
   </div>
   <div class="clear"></div>
 
@@ -14,3 +17,25 @@
     <%= f.submit 'Crop image' %>
   </div>
 <% end %>
+
+<script>
+$().ready(function(){
+  $('#landscape-cropbox').cropper({
+    aspectRatio: 1 / 1,
+    crop: function(e) {
+      // Output the result data for cropping image.
+      $('#crop_x').val(e.x);
+      $('#crop_y').val(e.y);
+      $('#crop_width').val(e.width);
+      $('#crop_height').val(e.height);
+      console.log(e.x);
+      console.log(e.y);
+      console.log(e.width);
+      console.log(e.height);
+      // console.log(e.rotate);
+      // console.log(e.scaleX);
+      // console.log(e.scaleY);
+    }
+  });
+});
+</script>
