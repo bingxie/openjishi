@@ -26,7 +26,6 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
     assert_content email
 
     test_confirm_email
-
   end
 
   test 'user can sign in with email and password' do

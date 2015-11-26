@@ -19,13 +19,13 @@ class User < ActiveRecord::Base
   end
 
   def set_slug
-    self.slug = HASHIDS.encode(id).to_url
-    save!
+    slug = HASHIDS.encode(id).to_url
+    update_attributes(slug: slug)
   end
 
   def set_name_with_email
-    self.profile.name = email.split('@').first
-    self.profile.save!
+    profile.name = email.split('@').first
+    profile.save!
   end
 
   def build_default_profile

@@ -5,15 +5,15 @@ class ProfilesController < ApplicationController
   def crop
     profile_params = params.require(:profile)
                            .permit(:crop_x, :crop_y,
-                :crop_width, :crop_height)
+                                   :crop_width, :crop_height)
 
     if @profile.update(profile_params)
       @profile.avatar.reprocess!
 
-      flash[:success] = "成功更新个人信息"
+      flash[:success] = "成功更新头像"
       redirect_to user_setting_path(current_user.slug)
     else
-      # render 'crop'
+      flash[:alert] = "更新头像失败"
     end
   end
 
@@ -28,6 +28,7 @@ class ProfilesController < ApplicationController
       if @profile.update(profile_params)
         format.js {}
       else
+        flash[:alert] = "上传图片失败"
       end
     end
   end

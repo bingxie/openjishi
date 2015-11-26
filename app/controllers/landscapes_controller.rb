@@ -48,11 +48,6 @@ class LandscapesController < ApplicationController
         @landscape.picture.reprocess!
 
         format.js {}
-        format.html { redirect_to @landscape, notice: 'Landscape was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @landscape.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -1,6 +1,10 @@
 <h1>Cropper</h1>
-<div>
-  <%= image_tag("menuad.png", id: "image") %>
+<a href="#" data-featherlight="#testcrop">Open element in lightbox</a>
+
+<div id='lightboxhide' style="display: none;">
+  <div id="testcrop">
+    <%= image_tag("menuad.png", id: "image") %>
+  </div>
 </div>
 
 <script>
@@ -8,14 +12,6 @@ $().ready(function(){
   $('#image').cropper({
     aspectRatio: 1 / 1,
     crop: function(e) {
-      // Output the result data for cropping image.
-      console.log(e.x);
-      console.log(e.y);
-      console.log(e.width);
-      console.log(e.height);
-      console.log(e.rotate);
-      console.log(e.scaleX);
-      console.log(e.scaleY);
     }
   });
 });
