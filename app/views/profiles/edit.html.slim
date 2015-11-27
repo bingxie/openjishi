@@ -1,20 +1,4 @@
-/ .modal
-/   label for="modal-1"
-/     .modal-trigger Click for Modal
 
-/   input#modal-1.modal-state type="checkbox" /
-
-/   .modal-window
-/     .modal-inner
-/       label.modal-close for="modal-1"
-
-
-/       .user-photo-uploader
-/         = form_for @profile, url: avatar_upload_path, validate: true, remote: true, html: { multipart: true , method: :post} do |f|
-/           .formgroup
-/             = f.file_field :avatar
-/             = f.submit '确定上传'
-/         .crop_image_form
 
 .my-account
   .wrap
@@ -47,7 +31,6 @@
         .my-avatar
           = @profile.decorate.avatar_img(:medium)
 
-
           .modal.upload-photo
             label for="photo-uploader"
               div
@@ -59,7 +42,7 @@
               .modal-inner
                 label.modal-close for="photo-uploader"
                 .user-photo-uploader
-                  = form_for @profile, url: avatar_upload_path, validate: true, remote: true, html: { multipart: true , method: :post} do |f|
+                  = form_for @profile, url: avatar_upload_path, validate: true, remote: true, html: { id: 'avatar_upload', multipart: true , method: :post} do |f|
                     .formgroup
                       .drop-zone
                         h3
@@ -67,12 +50,10 @@
 
                         p.smaller
                           |图片体积需小于1M, 支持Jpg, Gif, Png格式
-                        span
-                          i.fa.fa-refresh.fa-spin
-                          |&nbsp;上传中
+                        = content_tag(:span, fa_icon("refresh spin", text: "上传中"), class: "saving-icon")
                         = f.file_field :avatar
                       = f.submit '确定上传'
-                  .crop_image_form
+                  #crop_image_form
 
         .my-information
           h3

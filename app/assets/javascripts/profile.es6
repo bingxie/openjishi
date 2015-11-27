@@ -28,6 +28,7 @@ $().ready(() => {
 
   init_form("#change_password");
   init_form("#edit_profile_info");
+  init_form("#avatar_upload");
 });
 
 function init_form(formId) {

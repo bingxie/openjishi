@@ -1,21 +1,14 @@
 <div class="croparea">
   <%=image_tag @profile.avatar.url(:original), :id => "avatar-cropbox" %>
 </div>
-<%= form_for(@profile, url: avatar_crop_path, html: { method: :put}) do |f| %>
+<%= form_for(@profile, url: avatar_crop_path, html: { id: 'avatar_crop', method: :put}) do |f| %>
   <%= f.hidden_field :crop_x, :id => :crop_x, value: 1%>
   <%= f.hidden_field :crop_y, :id => :crop_y, value: 1 %>
   <%= f.hidden_field :crop_width, :id => :crop_width, value: 200 %>
   <%= f.hidden_field :crop_height, :id => :crop_height, value: 200 %>
   <div class="actions">
     <%= f.submit '保存' %>
-    <span class="saving-icon">
-      <i class="fa fa-refresh fa-spin"></i>
-      保存中
-    </span>
-    <span class="saving-icon">
-      <i class="fa fa-check"></i>
-      保存成功
-    </span>
+    <%= content_tag(:span, fa_icon("refresh spin", text: "保存中"), class: "saving-icon") %>
   </div>
 <% end %>
 
