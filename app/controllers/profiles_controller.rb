@@ -25,11 +25,8 @@ class ProfilesController < ApplicationController
     profile_params = params.require(:profile)
                            .permit(:avatar)
     respond_to do |format|
-      if @profile.update(profile_params)
-        format.js {}
-      else
-        flash[:alert] = "上传图片失败"
-      end
+      @profile.update(profile_params)
+      format.js {}
     end
   end
 

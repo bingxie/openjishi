@@ -1,2 +1,6 @@
-$('.crop_image_form').html('<%= escape_javascript(render :partial => 'crop') %>');
-load_avatar_cropper();
+<% unless @profile.errors.empty? %>
+  alert("<%= @profile.errors[:avatar][0] %>")
+<% else %>
+  $('.crop_image_form').html('<%= escape_javascript(render :partial => 'crop') %>');
+  load_avatar_cropper();
+<% end %>

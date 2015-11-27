@@ -37,9 +37,9 @@ function load_change_password() {
 
 function load_avatar_cropper() {
   $('#avatar-cropbox').cropper({
-    modal: false,
+    // modal: false,
     zoomable: false,
-    background: false,
+    // background: false,
     aspectRatio: 1 / 1,
     crop: function(e) {
       $('#crop_x').val(e.x);

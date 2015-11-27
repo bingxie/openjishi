@@ -14,8 +14,10 @@ class Profile < ActiveRecord::Base
   # has_attached_file :avatar, :path => ":class/:attachment/:id_partition/:hash.:extension",
   #   hash_secret: '<get_use_rake_secret>' if Rails.env.staging? || Rails.env.production?
 
-  validates_attachment :avatar, content_type: { content_type: %r{\Aimage\/.*\Z} },
-                                size: { in: 0..1.megabytes }
+  validates_attachment_presence :avatar
+  validates_attachment_content_type :avatar, content_type: %r{\Aimage\/.*\Z}
+  validates_attachment_size :avatar, less_than: 1.megabytes
+
   validates :name, length: { maximum: 20 }
 
   attr_accessor :crop_x, :crop_y, :crop_width, :crop_height

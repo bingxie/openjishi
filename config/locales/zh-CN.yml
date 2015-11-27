@@ -25,6 +25,8 @@ zh-CN:
             name:
               too_long:
                 other: 用户名太长（最长为 %{count} 个字符）
+            avatar:
+              less_than: 用户图像图片必须小于 %{count}
 
 
 

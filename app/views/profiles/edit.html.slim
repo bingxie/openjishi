@@ -6,7 +6,7 @@
     .modal-inner
       label.modal-close for="modal-1"
       .user-photo-uploader
-        = form_for @profile, url: avatar_upload_path, remote: true, html: { multipart: true , method: :post} do |f|
+        = form_for @profile, url: avatar_upload_path, validate: true, remote: true, html: { multipart: true , method: :post} do |f|
           .formgroup
             = f.file_field :avatar
             = f.submit '确定上传'
