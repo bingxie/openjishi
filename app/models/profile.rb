@@ -6,6 +6,7 @@ class Profile < ActiveRecord::Base
 
   has_attached_file :avatar,
                     styles: { thumb: "100x100>", medium: "400x400>", original: "600x600" },
+                    :default_url => "/assets/uploads/default_avatar.png",
                     path: DEV_FILE_PATH,
                     url: (DEV_FILE_URL if Rails.env.development? || Rails.env.test?),
                     processors: [:cropper]

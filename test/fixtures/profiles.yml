@@ -2,11 +2,9 @@
 
 one:
   user: bing
-  name: 'bing'
-  city_id: 1
+  name: '大兵'
 
 two:
   user: alex
-  city_id: 1
   name: alex
 
