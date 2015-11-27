@@ -14,14 +14,14 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.remotipart
-//= require jquery.jcrop
-//= require papercrop
+
 //= require rails.validations
 //= require select2.full
 //= require select2_locale_zh-CN
 //= require jquery-fileupload
-//= require 'china_city/jquery.china_city'
 //= require simple-pinyin
 //= require jquery.slick
 //= require featherlight
+//= require cropper
+//= require 'refills/modal'
 //= require_tree .

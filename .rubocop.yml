@@ -7,6 +7,7 @@ AllCops:
     - 'Gemfile'
     - 'Guardfile'
     - 'Rakefile'
+    - 'test/test_helper.rb'
 
 Documentation:
   Enabled: false
@@ -18,4 +19,11 @@ LineLength:
   Max: 120
 
 Style/MultilineOperationIndentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 12
+
+Lint/AmbiguousRegexpLiteral:
   Enabled: false

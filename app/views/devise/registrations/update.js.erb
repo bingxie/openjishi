@@ -1,0 +1,8 @@
+<% if resource.errors.empty? %>
+  show_done("#change_password");
+<% else %>
+  $('#change_password_form').empty().append("<%= j render('edit') %>");
+  $('#change_password').enableClientSideValidations();
+
+  init_form("#change_password");
+<% end %>

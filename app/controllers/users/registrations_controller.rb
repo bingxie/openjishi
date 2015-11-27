@@ -2,7 +2,12 @@ module Users
   class RegistrationsController < Devise::RegistrationsController
     # before_filter :configure_sign_up_params, only: [:create]
     # before_filter :configure_account_update_params, only: [:update]
-    before_action :authenticate_scope!, only: [:success]
+
+    # override
+    before_action :authenticate_scope!, only: [:success, :edit, :update]
+
+    before_action :error_message_down, only: [:edit, :update]
+    before_action :error_message_on, only: [:new]
 
     # GET /resource/sign_up
     # def new
@@ -20,14 +25,25 @@ module Users
     end
 
     # GET /resource/edit
-    # def edit
-    #   super
-    # end
+    def edit
+      render partial: 'edit'
+    end
 
     # PUT /resource
-    # def update
-    #   super
-    # end
+    def update
+      super do |resource|
+        if resource.errors.empty?
+          sign_in resource_name, resource, bypass: true
+        else
+          clean_up_passwords resource
+        end
+
+        respond_to do |format|
+          format.js {}
+          return
+        end
+      end
+    end
 
     # DELETE /resource
     # def destroy

@@ -24,15 +24,6 @@ GIT
       thor (~> 0.14)
 
 GIT
-  remote: git://github.com/rsantamaria/papercrop.git
-  revision: 2344a8d6feac4a51b5de32ed177e8a5b6371364a
-  specs:
-    papercrop (0.3.0)
-      jquery-rails
-      paperclip (>= 3.4)
-      rails (>= 3.1)
-
-GIT
   remote: git://github.com/svenfuchs/rails-i18n.git
   revision: b638e933c827f2f751cf2f5582cc9b5606a42dfe
   branch: master
@@ -43,6 +34,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
@@ -304,6 +296,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.4)
       sprockets-rails
+    rails-assets-cropper (2.0.1)
+      rails-assets-jquery (>= 1.9.1)
+    rails-assets-jquery (2.1.4)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -423,6 +418,7 @@ DEPENDENCIES
   capybara
   china_city
   client_side_validations!
+  coffee-rails
   connection_pool
   delayed_job_active_record
   devise (~> 3.5, >= 3.5.2)
@@ -447,7 +443,6 @@ DEPENDENCIES
   normalize-rails
   paperclip (~> 4.3)
   paperclip-qiniu!
-  papercrop!
   pg
   phantomjs
   poltergeist
@@ -458,6 +453,7 @@ DEPENDENCIES
   rack-livereload
   rack-mini-profiler
   rails (= 4.2.4)
+  rails-assets-cropper!
   rails-i18n!
   refills
   remotipart (~> 1.2)

@@ -1,6 +1,7 @@
-.focus-banner
+/* --- Focus Banner --- */
+section.focus-banner
   .wrap
-    .left-1-3
+    .panel-4
       a.item href="#"
         img src="#{image_path('featured/featured-1.png')}" /
         .copy-layer
@@ -9,7 +10,7 @@
           p.theme
             |查看详情
             i.fa.fa-arrow-circle-right
-    .right-2-3
+    .panel-8
       a.item href="#"
         img src="#{image_path('featured/featured-2.png')}" /
         .copy-layer
@@ -26,48 +27,34 @@
         img src="#{image_path('featured/featured-5.png')}" /
         .copy-layer
           |尼康10周年纪念款镜头
+/* --- End Focus Banner --- */
 
-
-.text-promo-block
+/* --- Text Promotion Blocks --- */
+section.text-promo-block
   .wrap
-    - 4.times do
-      .item
-        h3
-          |文字标题H3占地方
-        p
-          |段落文字不超过200段落文字不超过200段落文字不超过200段落文字不超过
-        a href="#"
-          |了解更多
-          i.fa.fa-arrow-circle-right
-
-.prd-grid
-  label 镜影精选
-  ul
-    - 4.times do
-      li.prd-block-4
-        a href="#"
-          img.prd-thumbnail src="#{image_path('product-thumbnail-1.png')}" /
-        .prd-info-group-1
+    ul
+      - 4.times do
+        li.block-4
+          h3
+            |文字标题H3占地方
+          p
+            |段落文字不超过200段落文字不超过200段落文字不超过200段落文字不超过
           a href="#"
-            img.user-icon src="http://placehold.it/80x80" /
-            |凝固的黎明
-          a.prd-title href="#"
-            | 95新 佳能 ★★北京顺诚相机行★★ 97新 佳能100-300/5.6l （1462d) 附件：前后盖
-        .prd-info-group-2
-          p
-            span.prd-price
-              i.fa.fa-jpy
-              |  1300
-            a.fa.fa-plus.watch-btn href="#"
-              | &nbsp;关注
-          p
-            span.prd-location
-              i.fa.fa-map-marker
-              |  广东, 深圳
-            span.prd-condition
-              | 二手, 9成新
+            |了解更多&nbsp;
+            i.fa.fa-arrow-circle-right
+/* --- End Text Promotion Blocks --- */
 
-.tag-cloud
+
+section.prd-grid
+  .wrap
+    h2.panel-heading
+      |镜影汇推荐
+    ul
+      - 4.times do
+        li.block-4
+          = render partial:'pages/pattern/prd_block'
+
+section.tag-cloud
   .wrap
     div
       .label 热门标签
@@ -80,38 +67,35 @@
       a href="#"
         img src="http://placehold.it/360x180"
 
-.prd-grid
-  label 镜影精选
-  ul
-    - 12.times do
-      li.prd-block-4
-        a href="#"
-          img.prd-thumbnail src="#{image_path('product-thumbnail-1.png')}" /
-        .prd-info-group-1
-          a href="#"
-            img.user-icon src="http://placehold.it/80x80" /
-            |凝固的黎明
-          a.prd-title href="#"
-            | 95新 佳能 ★★北京顺诚相机行★★ 97新 佳能100-300/5.6l （1462d) 附件：前后盖
-        .prd-info-group-2
-          p
-            span.prd-price
-              i.fa.fa-jpy
-              |  1300
-            a.fa.fa-plus.watch-btn href="javascript:void(0)"
-              | &nbsp;关注
-            a.fa.fa-remove.unwatch-btn href="javascript:void(0)"
-              | &nbsp;取消关注
-          p
-            span.prd-location
-              i.fa.fa-map-marker
-              |  广东, 深圳
-            span.prd-condition
-              | 二手, 9成新
-
-.brands
+section.prd-grid
   .wrap
-    h2 热门品牌
+    .panel-2
+      img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGvGkrBRWoxzYMiwdE7vtaX9ZPDj0wQjjVZOxKrOPjANC-HJ1k"
+      h3
+        |尼康
+      p
+        |精选尼康摄影器材
+    .panel-10
+      ul
+        - 4.times do
+          li.block-4
+            = render partial:'pages/pattern/prd_block'
+  .wrap
+    .panel-2
+      img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGvGkrBRWoxzYMiwdE7vtaX9ZPDj0wQjjVZOxKrOPjANC-HJ1k"
+      h3
+        |尼康
+      p
+        |精选尼康摄影器材
+    .panel-10
+      ul
+        - 4.times do
+          li.block-4
+            = render partial:'pages/pattern/prd_block'
+
+section.brands
+  .wrap
+    h2.panel-heading 热门品牌
   .wrap
     a.nikon href="#" alt="尼康"
       img src="http://placehold.it/180x90"
@@ -126,12 +110,12 @@
     a.nikon href="#" alt="尼康"
       img src="http://placehold.it/180x90"
 
-.whyus
+section.whyus
   .wrap
-    section
+    .panel-3
       h2 为什么选择镜影汇
       p 是不是觉得老派的交易论坛实在跟不上时代? 是不是纳闷怎么没有人来做一个专门的摄影器材交易平台? 这不, 我们来了。
-    ul
+    ul.panel-9
       li.benifit
         .icon
           i.fa.fa-camera
@@ -160,7 +144,7 @@
         .clearfix
         p 镜影汇的每一个员工都热爱摄影，更热爱折腾摄影器材。我们尽自己的力量让大家折腾起来更简单!
 
-.news-letter
+section.news-letter
   .wrap
     .content
       h2
@@ -169,4 +153,4 @@
         |每周我们都会将最新的文章、评测、器材报告和精选产品发送到你指定的邮箱, 不要错过任何精彩内容.
       input type="text" placeholder="请输入您常用的邮件地址"
       button type="button"
-        |提交
+        |订阅

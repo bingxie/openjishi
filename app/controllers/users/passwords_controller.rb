@@ -1,5 +1,7 @@
 module Users
   class PasswordsController < Devise::PasswordsController
+    before_action :error_message_on
+
     # GET /resource/password/new
     # def new
     #   super

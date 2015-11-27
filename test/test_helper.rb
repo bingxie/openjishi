@@ -10,6 +10,10 @@ Minitest::Reporters.use!(
   ENV,
   Minitest.backtrace_filter)
 
+# Stub user login for feature test
+include Warden::Test::Helpers
+Warden.test_mode!
+
 # Capybara and poltergeist integration
 require "capybara/rails"
 require "capybara/poltergeist"

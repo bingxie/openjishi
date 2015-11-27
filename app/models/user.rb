@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :profile
   before_create :build_default_profile
 
-  validates :name, length: { maximum: 20 }
   validates :email, email: { message: :bad_email }
 
   # Include default devise modules. Others available are:
@@ -20,13 +19,13 @@ class User < ActiveRecord::Base
   end
 
   def set_slug
-    self.slug ||= HASHIDS.encode(id).to_url
-    save!
+    slug = HASHIDS.encode(id).to_url
+    update_attributes(slug: slug)
   end
 
   def set_name_with_email
-    self.name = email.split('@').first
-    save!
+    profile.name = email.split('@').first
+    profile.save!
   end
 
   def build_default_profile

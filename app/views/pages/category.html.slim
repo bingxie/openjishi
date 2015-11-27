@@ -3,17 +3,13 @@
   .wrap
     h1.categoryname
       | 数码相机
+    a.unwatch href="#"
+      i.fa.fa-remove
+      |&nbsp;取消关注此分类
     a.watch href="#"
-      | 关注此分类
-  .wrap
-    .featured
-      ul
-        - 3.times do
-          li
-            a href="#"
-              img src="http://placehold.it/360x140" alt="#"
-
-section.tag-filter
+      i.fa.fa-plus
+      |&nbsp;关注此分类
+.wrap.tag-filter
   span
     |已选标签
   ul
@@ -24,136 +20,125 @@ section.tag-filter
           i.fa.fa-times
 
 /* --------- FILTER BAR ----------*/
-section.filter-bar
-  .btn-group
-    a.active href="#"
-      i.fa.fa-th
-    a href="#"
-      i.fa.fa-bars
-  .sort
-    |排序
-    select#sort
-      option value="recent"
-        |最新添加
-      option value="price-high-to-low"
-        |价格由低到高
-      option value="price-low-to-high"
-        |价格由高到低
-  .price-range
-    span
-      |价格区间
-    span
-      input#price-min type="text" pattern="[0-9\.\,]*"
-      i.fa.fa-jpy
-    span
-      |至
-    span
-      input#pice-max type="text" pattern="[0-9\.\,]*"
-      i.fa.fa-jpy
-    input type="submit" value="确定" name="submit"
-  .btn-group
-    a href="#"
-      |全部
-    a.active href="#"
-      |二手
-    a href="#"
-      |全新
+.wrap
+  .filter-bar
+    .btn-group
+      a.active href="#"
+        i.fa.fa-th
+      a href="#"
+        i.fa.fa-bars
+    .sort
+      |排序
+      select#sort
+        option value="recent"
+          |最新添加
+        option value="price-high-to-low"
+          |价格由低到高
+        option value="price-low-to-high"
+          |价格由高到低
+    .price-range
+      span
+        |价格区间
+      span
+        input#price-min type="text" pattern="[0-9\.\,]*"
+        i.fa.fa-jpy
+      span
+        |至
+      span
+        input#pice-max type="text" pattern="[0-9\.\,]*"
+        i.fa.fa-jpy
+      input type="submit" value="确定" name="submit"
+    .btn-group
+      a href="#"
+        |全部
+      a.active href="#"
+        |二手
+      a href="#"
+        |全新
 
-
-section.category-content
-  .left-filter
-    ul
-      li
-        .title
-          |产品分类
-      li.open
-        a href="#"
-          |数码相机
-          span.badge
-              |64
-      li.sub-category
-        a href="#"
-          |单反机身
-          span.badge
-              |64
-      li.sub-category
-        a href="#"
-          |微电机身
-          span.badge
-              |64
-      - 6.times do
-        li
-          a href="#"
-            |数码相机
-            span.badge
-              |64
-    ul.with-checkbox
-      li
-        .title
-          |品牌
-      - 6.times do
-        li
-          a href="#"
-            input#nikon type="checkbox" name="nikon"
-            label for="nikon"
-              span
-            |尼康
-            span.badge
-              |64
-
-    ul.with-checkbox
-      li
-        .title
-          |更多选项
-      - 3.times do
-        li
-          a href="#"
-            input#nikon type="checkbox" name="nikon"
-            label for="nikon"
-              span
-            |个人卖家
-            span.badge
-              |64
-
-
-  .prd-grid
-    ul
-      - 9.times do
-        li.prd-block-3
-          img.thumbnail src="#{image_path('product-thumbnail-1.png')}" /
-          a href="#"
-            img.user-icon src="http://placehold.it/80x80" /
-            |凝固的黎明
-          p 近全新, 尼康顶级金圈超广14-28/f2.8, 入手不足三个月, 从来没出家门
-          p.price
-            span
-              |(可议)
-          span.location
-            i.fa.fa-map-marker
-            |  广东, 深圳
-          span.condition
-            | 二手, 9成新
-
-    .pagination-buttons-container
-      .results_count
-        p
-          | 第1 – 第9 共 103 个商品
-      .pagination
-        ul.list-unstyled
-          li.active
-            a href="#" rel="start" target="1"  1
+section
+  .wrap
+    .category-content
+      .left-filter
+        ul
           li
-            a href="#" rel="next" target="2"  2
+            .title
+              |产品分类
+          li.open
+            a href="#"
+              |数码相机
+              span.badge
+                  |64
+          li.sub-category
+            a href="#"
+              |单反机身
+              span.badge
+                  |64
+          li.sub-category
+            a href="#"
+              |微电机身
+              span.badge
+                  |64
+          - 6.times do
+            li
+              a href="#"
+                |数码相机
+                span.badge
+                  |64
+        ul.with-checkbox
           li
-            a href="#" target="3"  3
+            .title
+              |品牌
+          - 6.times do
+            li
+              a href="#"
+                input#nikon type="checkbox" name="nikon"
+                label for="nikon"
+                  span
+                |尼康
+                span.badge
+                  |64
+
+        ul.with-checkbox
           li
-            a href="#" target="6"  4
-          li
-            a href="#" target="6"  5
-          li.next.next_page
-            a href="#" rel="next" target="2"
-              span
-                i.fa.fa-caret-right
+            .title
+              |更多选项
+          - 3.times do
+            li
+              a href="#"
+                input#nikon type="checkbox" name="nikon"
+                label for="nikon"
+                  span
+                |个人卖家
+                span.badge
+                  |64
+      .prd-grid
+        .wrap
+          ul
+            - 15.times do
+              li.block-3
+                = render partial:'pages/pattern/prd_block'
+
+          .pagination-buttons-container
+            .results_count
+              p
+                | 第1 – 第9 共 103 个商品
+            .pagination
+              ul.list-unstyled
+                li.active
+                  a href="#" rel="start" target="1"  1
+                li
+                  a href="#" rel="next" target="2"  2
+                li
+                  a href="#" target="3"  3
+                li
+                  a href="#" target="6"  4
+                li
+                  a href="#" target="6"  5
+                li.next.next_page
+                  a href="#" rel="next" target="2"
+                    span
+                      i.fa.fa-caret-right
 
 
 

@@ -1,0 +1,9 @@
+<% unless @profile.errors.empty? %>
+  alert("<%= @profile.errors[:avatar][0] %>")
+  $('#avatar_upload .saving-icon').hide();
+<% else %>
+  $('#avatar_upload').hide();
+  $('#crop_image_form').html('<%= escape_javascript(render :partial => 'crop') %>');
+  load_avatar_cropper();
+  init_form("#avatar_crop");
+<% end %>

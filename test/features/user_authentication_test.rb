@@ -1,6 +1,9 @@
 require 'test_helper'
+require_relative './modules/user_authentication'
 
 class UserAuthenticationTest < ActionDispatch::IntegrationTest
+  include Modules::UserAuthentication
+
   setup do
     ActionMailer::Base.deliveries.clear
     Capybara.reset_sessions!
@@ -11,38 +14,25 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
 
     assert_content "注册帐号"
 
+    email = 'test_user@gmail.com'
+
     within '#new_user' do
-      fill_in 'user[email]', with: 'test_user@gmail.com'
+      fill_in 'user[email]', with: email
       fill_in 'user[password]', with: 'abcd1234'
 
       click_button '创建新帐号'
     end
 
     assert_equal sign_up_success_path, page.current_path
+    assert_equal User.find_by(email: email).profile.name, 'test_user'
 
-    assert_content "test_user@gmail.com"
+    assert_content email
 
     test_confirm_email
-
   end
 
   test 'user can sign in with email and password' do
-    visit new_user_session_path
-
-    assert_content '使用已有帐号登录'
-
-    user = users(:bing)
-
-    within '#new_user' do
-      fill_in 'user[email]', with: user.email
-      fill_in 'user[password]', with: '12345678'
-
-      click_button '登录'
-    end
-
-    assert_content user.name
-
-    assert_equal root_path, page.current_path
+    login_user_with_password(users(:bing), '12345678')
   end
 
   test 'user can find password by email address' do
@@ -79,7 +69,7 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
       click_button '确定'
     end
 
-    assert_content user.name
+    assert_content user.profile.name
 
     assert_equal root_path, page.current_path
   end

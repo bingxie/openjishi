@@ -1,8 +1,8 @@
   <h1 id="main">Bitters example page123</h1>
 
   <% if user_signed_in? %>
-    <p><%= current_user.name %></p>
-    <%= link_to 'Profile', edit_user_registration_path %>
+    <p><%= current_user.profile.name %></p>
+    <%= link_to 'Profile', user_setting_path(current_user.slug) %>
     <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to 'Log In', new_user_session_path %>

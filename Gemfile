@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+source "https://rails-assets.org" do
+  gem 'rails-assets-cropper'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x
@@ -19,6 +23,8 @@ gem 'refills'
 
 gem "normalize-rails"
 gem "autoprefixer-rails"
+
+gem 'coffee-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -79,8 +85,6 @@ gem 'hashids'
 # File upload
 gem "paperclip", "~> 4.3"
 gem 'paperclip-qiniu', :github => 'lidaobing/paperclip-qiniu'
-# An easy extension for Paperclip to crop your image uploads using jCrop
-gem 'papercrop', :github => 'rsantamaria/papercrop' # fix preview image size bug
 
 # Decorators/View-Models for Rails Applications
 gem 'draper', '~> 2.1.0'
