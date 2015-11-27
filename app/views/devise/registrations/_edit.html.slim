@@ -19,3 +19,5 @@
       |&nbsp;
     span.form-summit
       = f.submit "确定修改"
+    = content_tag(:span, fa_icon("refresh spin", text: "保存中"), class: "saving-icon")
+    = content_tag(:span, fa_icon("check", text: "保存成功"), class: "save-done")

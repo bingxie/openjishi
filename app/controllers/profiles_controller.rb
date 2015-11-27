@@ -31,11 +31,9 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if @profile.update(profile_params)
-      flash[:success] = "成功更新个人信息"
-      redirect_to user_setting_path(current_user.slug)
-    else
-      render 'edit'
+    @profile.update(profile_params)
+    respond_to do |format|
+      format.js {}
     end
   end
 

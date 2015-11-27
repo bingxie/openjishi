@@ -96,44 +96,12 @@
         .panel-header
             |帐号设置
         .panel-mid.wrap
-          = form_for @profile, url: user_setting_path, validate: true, html: { id: 'edit_profile_info', multipart: true , method: :put} do |f|
-            div.my-account-username
-              span.form-label
-                |用户名
-              span.form-input
-                .wrap
-                  = f.text_field :name
-                p
-                  |用户名可以随便修改
-            div.my-location
-              span.form-label
-                |所在城市
-              span.form-input
-                ul.city-group
-                  li.block-4
-                    = f.select :province_id, options_for_select(ChinaCity.list, @profile.province_id), { prompt: '--省份--' }, { class: ['city-select', 'city-province'] }
-                  li.block-4
-                    = f.select :city_id, options_for_select(ChinaCity.list(@profile.province_id), @profile.city_id), { prompt: '--城市--' }, { class: ['city-select', 'city-city'] }
-                  li.block-4
-                    = f.select :district_id, options_for_select(ChinaCity.list(@profile.city_id), @profile.district_id), { prompt: '--地区--' }, { class: ['city-select', 'city-district'] }
-            div
-              span.form-label
-                |&nbsp;
-              span.form-submit
-                = f.submit '保存修改'
+          #user_setting_form
+            = render partial: 'setting'
 
       .panel-group.change-password
         .panel-header
             |修改密码
         .panel-mid.wrap
           #change_password_form
-
-  /* Lightbox for user photo uploading */
-  .lightbox-hidder
-
-
-
-
-
-
-
+            = render partial: 'devise/registrations/edit', locals:{ resource: current_user, resource_name: :user}
