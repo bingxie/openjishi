@@ -28,8 +28,6 @@ class UserProfileTest < ActionDispatch::IntegrationTest
     end
 
     # wait_for_ajax
-
-    # assert_content '密码修改成功'
     logout(:user)
 
     login_user_with_password(@user, '87654321')
