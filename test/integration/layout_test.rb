@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class LayoutTest < ActionDispatch::IntegrationTest
+  setup do
+    Capybara.reset_sessions!
+  end
+
   test 'home page with index layout' do
     visit("/")
 
