@@ -101,7 +101,7 @@
               span.form-label
                 |用户名
               span.form-input
-                .form-container
+                .wrap
                   = f.text_field :name
                 p
                   |用户名可以随便修改
@@ -109,12 +109,12 @@
               span.form-label
                 |所在城市
               span.form-input
-                .city-group
-                  .form-container
+                ul.city-group
+                  li.block-4
                     = f.select :province_id, options_for_select(ChinaCity.list, @profile.province_id), { prompt: '--省份--' }, { class: ['city-select', 'city-province'] }
-                  .form-container
+                  li.block-4
                     = f.select :city_id, options_for_select(ChinaCity.list(@profile.province_id), @profile.city_id), { prompt: '--城市--' }, { class: ['city-select', 'city-city'] }
-                  .form-container
+                  li.block-4
                     = f.select :district_id, options_for_select(ChinaCity.list(@profile.city_id), @profile.district_id), { prompt: '--地区--' }, { class: ['city-select', 'city-district'] }
             div
               span.form-label
