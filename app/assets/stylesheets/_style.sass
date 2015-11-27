@@ -417,9 +417,12 @@
   .wrap
     h1
       float: left
-    a.watch
+    a.watch,a.unwatch
       +lovely-button ($red, $light, $base-spacing * 0.25 $base-spacing * 0.5)
       float: right
+      margin-left: 0.5em
+      position: relative
+
     .featured
       ul li
         +span-columns(4)
