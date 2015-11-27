@@ -100,8 +100,14 @@
             span.form-label
               |&nbsp;
             span.form-submit
-              a.submit-btn href="#"
-                | 保存修改
+              input.submit type="button" value="保存修改"
+              span.saving-icon
+                .fa.fa-refresh.fa-spin
+                |&nbsp;保存中
+              span.save-done
+                i.fa.fa-check
+                |&nbsp;保存成功
+
       .panel-group.change-password
         .panel-header
             |修改密码
@@ -132,6 +138,12 @@
               |&nbsp;
             span.form-summit
               input.submit-btn type="submit" href="#" value="确定修改"
+              span.saving-icon
+                .fa.fa-refresh.fa-spin
+                |&nbsp;保存中
+              span.save-done
+                i.fa.fa-check
+                |&nbsp;保存成功
 
 /* Lightbox for user photo uploading */
 .lightbox-hidder
