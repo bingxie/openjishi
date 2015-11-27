@@ -1,16 +1,20 @@
-.modal
-  label for="modal-1"
-    .modal-trigger Click for Modal
-  input#modal-1.modal-state type="checkbox" /
-  .modal-window
-    .modal-inner
-      label.modal-close for="modal-1"
-      .user-photo-uploader
-        = form_for @profile, url: avatar_upload_path, validate: true, remote: true, html: { multipart: true , method: :post} do |f|
-          .formgroup
-            = f.file_field :avatar
-            = f.submit '确定上传'
-        .crop_image_form
+/ .modal
+/   label for="modal-1"
+/     .modal-trigger Click for Modal
+
+/   input#modal-1.modal-state type="checkbox" /
+
+/   .modal-window
+/     .modal-inner
+/       label.modal-close for="modal-1"
+
+
+/       .user-photo-uploader
+/         = form_for @profile, url: avatar_upload_path, validate: true, remote: true, html: { multipart: true , method: :post} do |f|
+/           .formgroup
+/             = f.file_field :avatar
+/             = f.submit '确定上传'
+/         .crop_image_form
 
 .my-account
   .wrap
@@ -42,8 +46,34 @@
       .my-panel
         .my-avatar
           = @profile.decorate.avatar_img(:medium)
-          a.fa.fa-file-image-o.upload-photo href="#" data-featherlight=".user-photo-uploader"
-            |更新头像
+
+
+          .modal.upload-photo
+            label for="photo-uploader"
+              div
+                .fa.fa-file-image-o
+                |更新头像
+            input#photo-uploader.modal-state type="checkbox" /
+
+            .modal-window
+              .modal-inner
+                label.modal-close for="photo-uploader"
+                .user-photo-uploader
+                  = form_for @profile, url: avatar_upload_path, validate: true, remote: true, html: { multipart: true , method: :post} do |f|
+                    .formgroup
+                      .drop-zone
+                        h3
+                          |点击此处选择本地照片
+
+                        p.smaller
+                          |图片体积需小于1M, 支持Jpg, Gif, Png格式
+                        span
+                          i.fa.fa-refresh.fa-spin
+                          |&nbsp;上传中
+                        = f.file_field :avatar
+                      = f.submit '确定上传'
+                  .crop_image_form
+
         .my-information
           h3
             = @profile.name

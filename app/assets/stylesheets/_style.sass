@@ -678,7 +678,7 @@ section
       margin-bottom: 1em
       .my-avatar
         position: relative
-        a.upload-photo
+        .upload-photo
           display: none
           +lovely-button($dark, $light, $base-padding)
           opacity: 0.1
@@ -686,7 +686,11 @@ section
           right: 1em
           top: 1em
           &:hover
-            opacity: 0.9
+            opacity: 1
+          .modal-window
+            color: $dark
+          .croparea
+            margin-bottom: 1em
       .my-information
         text-align: center
       padding: 1em
@@ -712,8 +716,26 @@ section
   width: 1px
   overflow: hidden
 
-.user-photo-uploader
-  // width: em(600)
+.drop-zone
+  background-color: $light-dark
+  color: $dark
+  cursor: pointer
+  padding: 2em 0
+  margin-bottom: 1em
+  position: relative
+  width: 100%
+  text-align: center
+
+#profile_avatar
+  cursor: pointer
+  height: 100%
+  right: 0
+  opacity: 0
+  position: absolute
+  top: 0
+  width: 100%
+
+
 
 
 /* ------ My Account Message ------ */
@@ -994,7 +1016,3 @@ section
       font-size: 0.875em
       line-height: $base-line-height * 1.5
       +link-color-fixer($light-gray)
-
-
-.user-photo-uploader
-  width: 600px
