@@ -36,7 +36,10 @@ function init_form(formId) {
   $(formId + ' .save-done').hide();
 
   $(formId).submit(function(){
-    $(formId + " .saving-icon").fadeIn('slow');
+    // no front end validation errors
+    if($(formId).find('label.error').length == 0) {
+      $(formId + " .saving-icon").fadeIn('slow');
+    }
   });
 
   $(formId + ' input').focus(() => {
