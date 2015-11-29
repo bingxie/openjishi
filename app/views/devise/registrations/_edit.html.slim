@@ -3,17 +3,17 @@
     span.form-label
       |输入当前密码
     span.form-input
-      = f.password_field :current_password, autocomplete: "off"
+      = f.password_field :current_password, autocomplete: "off", error: 'down'
   div
     span.form-label
       |输入新密码
     span.form-input
-      = f.password_field :password, autocomplete: "off", validate: true
+      = f.password_field :password, autocomplete: "off", validate: true, error: 'down'
   div
     span.form-label
       |再次输入新密码
     span.form-input
-      = f.password_field :password_confirmation, autocomplete: "off", validate: true
+      = f.password_field :password_confirmation, autocomplete: "off", validate: true, error: 'down'
   div
     span.form-label
       |&nbsp;

@@ -30,7 +30,5 @@ module LensmoWeb
       g.assets false
       g.helper false
     end
-
-    config.error_message_position = 'up'
   end
 end

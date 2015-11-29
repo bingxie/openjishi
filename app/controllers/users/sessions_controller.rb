@@ -1,7 +1,6 @@
 module Users
   class SessionsController < Devise::SessionsController
     # before_filter :configure_sign_in_params, only: [:create]
-    before_action :error_message_on, only: [:new, :create]
 
     # GET /resource/sign_in
     # def new

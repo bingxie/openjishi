@@ -6,9 +6,6 @@ module Users
     # override
     before_action :authenticate_scope!, only: [:success, :edit, :update]
 
-    before_action :error_message_down, only: [:edit, :update]
-    before_action :error_message_on, only: [:new]
-
     # GET /resource/sign_up
     # def new
     #   super

@@ -13,10 +13,10 @@ ClientSideValidations::Config.disabled_validators = []
 #
 ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
   unless html_tag =~ /^<label/
-    if Rails.application.config.error_message_position == 'up'
-      %{<div class="field_with_errors"><label for="#{instance.send(:tag_id)}" class="error message">#{instance.error_message.first}</label>#{html_tag}</div>}.html_safe
-    else
+    if html_tag.include?('error="down"')
       %{<div class="field_with_errors">#{html_tag}<label for="#{instance.send(:tag_id)}" class="error message">#{instance.error_message.first}</label></div>}.html_safe
+    else
+      %{<div class="field_with_errors"><label for="#{instance.send(:tag_id)}" class="error message">#{instance.error_message.first}</label>#{html_tag}</div>}.html_safe
     end
   else
     %{<div class="field_with_errors">#{html_tag}</div>}.html_safe
