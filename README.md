@@ -5,17 +5,21 @@
 
 2. rake db:migrate
 
-3. gem install foreman
+3. rake db:seed
 
-4. foreman start
+4. gem install foreman
 
-5. visit: http://localhost:3000
+5. foreman start
+
+6. visit: http://localhost:3000
 
 ## Test
 
+rake test
+
 ### Feature test:
 
-
+rake test test/features
 
 ## Bitters:
 Scss: /app/assets/stylesheets/base
