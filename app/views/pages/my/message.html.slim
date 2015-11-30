@@ -49,31 +49,42 @@
                   |标题或者是链接
     .right
       .message-panel.wrap
-        .message-group
-          ul
-            li
-              div.single-message
-                img.user-icon src="http://placehold.it/80x80"
-                .message-content
-                  div
-                    span.username
-                      |凝固的黎明
-                    span.message-date
-                      |1周 以前
-                    a.message-reply-btn href="#" alt="回复"
-                      |回复
-                  p
-                    |你好, 请问你的尼康70 200还在吗? 我在北京郊区，如果是顺丰快递的话需要多久能够送到，大概多少钱? 谢谢。
-            li
-              div.single-message.message-reply
-                img.user-icon src="http://placehold.it/80x80"
-                .message-content
-                  div
-                    span.username
-                      |凝固的黎明
-                    span.message-date
-                      |1周 以前
-                    a.message-reply-btn href="#" alt="回复"
-                      |回复
-                  p
-                    |你好, 请问你的尼康70 200还在吗? 我在北京郊区，如果是顺丰快递的话需要多久能够送到，大概多少钱? 谢谢。
+        - 4.times do
+          .message-group
+            strong
+              |来自
+              a href="#"
+               |凝固的黎明
+            ul
+              li
+                div.single-message
+                  img.user-icon src="http://placehold.it/80x80"
+                  .message-content
+                    div
+                      span.username
+                        |凝固的黎明
+                      span.message-date
+                        |1周 以前
+                      a.message-delete-btn href="#" alt="回复"
+                        |删除
+                      a.message-reply-btn href="#" alt="回复"
+                        |回复
+                    p
+                      |你好, 请问你的尼康70 200还在吗? 我在北京郊区，如果是顺丰快递的话需要多久能够送到，大概多少钱? 谢谢。
+                    ul
+                      - 3.times do
+                        li
+                          div.single-message
+                            img.user-icon src="http://placehold.it/80x80"
+                            .message-content
+                              div
+                                span.username
+                                  |凝固的黎明
+                                span.message-date
+                                  |1周 以前
+                                a.message-delete-btn href="#" alt="回复"
+                                  |删除
+                                a.message-reply-btn href="#" alt="回复"
+                                  |回复
+                              p
+                                |你好, 请问你的尼康70 200还在吗? 我在北京郊区，如果是顺丰快递的话需要多久能够送到，大概多少钱? 谢谢。

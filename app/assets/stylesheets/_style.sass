@@ -747,19 +747,20 @@ section
   padding: 1em
   border: $base-border
   .message-group
-    border-bottom: 1px solid $light-dark
+    background-color: darken($light, 5%)
+    padding: 2em
+    border-radius: 4px
+    margin-bottom: 1em
     .message-reply
       padding-left: 2em
     .single-message
       +outer-container
-      margin-bottom: 0.5em
-      padding-bottom: 0.5em
+      padding: 1em 0
       .user-icon
         +span-columns(1)
         border-radius: 10000px
       .message-content
         +span-columns(11)
-        border-bottom: 1px solid $light-dark
         p
           margin-top: 1em
       .username
@@ -767,8 +768,9 @@ section
       .message-date
         color: lighten($dark, 25%)
         font-size: 0.825em
-      .message-reply-btn
+      .message-reply-btn, .message-delete-btn
         font-size: em(12)
+        margin-left: 1em
         float: right
 
 /* --- Feed --- */
