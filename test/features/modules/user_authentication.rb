@@ -15,6 +15,6 @@ module Modules
       assert_content user.profile.name
 
       assert_equal root_path, page.current_path
-      end
+    end
   end
 end

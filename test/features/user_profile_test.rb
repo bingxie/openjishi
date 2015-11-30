@@ -6,7 +6,7 @@ class UserProfileTest < ActionDispatch::IntegrationTest
 
   setup do
     @user = users(:bing)
-    login_as(@user, :scope => :user)
+    login_as(@user, scope: :user)
 
     Capybara.current_driver = :poltergeist
     visit user_setting_path(@user.slug)
