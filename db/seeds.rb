@@ -28,3 +28,5 @@ results.each do |row|
     BrandCategory.create(brand: brand, category: category)
   end
 end
+
+p '------------  Done!  ---------------'
