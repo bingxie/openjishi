@@ -1,11 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
+# Import categories
 c1 = Category.create(name: '数码相机', slug: 'digital-cameras')
 c1.children.create(name: '便携数码', slug: 'compact-cameras', rank:1)
 c1.children.create(name: '单反相机', slug: 'dslr', rank:2)
@@ -79,4 +72,11 @@ c11.children.create(name: '相机电池', slug: 'camera-batteries', rank:1)
 c11.children.create(name: '电池手柄', slug: 'batter-grips', rank:2)
 c11.children.create(name: '电源适配器', slug: 'charger', rank:3)
 c11.children.create(name: '充电宝', slug: 'battery-pack', rank:4)
+
+
+# Import brands
+brands_csv = File.join(Rails.root, 'db', 'csv', 'brands.csv')
+CSV.foreach(brands_csv) do |row|
+  Brand.create name: row[0], en_name: row[1], slug: row[2]
+end
 
