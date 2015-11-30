@@ -63,6 +63,9 @@ gem "font-awesome-rails"
 
 #### Functional Gems
 
+# Organise ActiveRecord model into a tree structure
+gem 'ancestry'
+
 # Easily include static pages in your Rails app
 gem 'high_voltage'
 
@@ -104,6 +107,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rails_db'
+  gem 'smarter_csv'
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

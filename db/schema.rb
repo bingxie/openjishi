@@ -11,10 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125001921) do
+ActiveRecord::Schema.define(version: 20151130051947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brand_categories", force: :cascade do |t|
+    t.integer  "brand_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "brand_categories", ["brand_id"], name: "index_brand_categories_on_brand_id", using: :btree
+  add_index "brand_categories", ["category_id"], name: "index_brand_categories_on_category_id", using: :btree
+
+  create_table "brands", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "en_name",    null: false
+    t.string   "slug",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "brands", ["slug"], name: "index_brands_on_slug", unique: true, using: :btree
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "slug",       null: false
+    t.integer  "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "ancestry"
+  end
+
+  add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+  add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -86,5 +118,7 @@ ActiveRecord::Schema.define(version: 20151125001921) do
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+  add_foreign_key "brand_categories", "brands"
+  add_foreign_key "brand_categories", "categories"
   add_foreign_key "profiles", "users"
 end
