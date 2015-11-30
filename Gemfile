@@ -63,6 +63,9 @@ gem "font-awesome-rails"
 
 #### Functional Gems
 
+# Organise ActiveRecord model into a tree structure
+gem 'ancestry'
+
 # Easily include static pages in your Rails app
 gem 'high_voltage'
 
