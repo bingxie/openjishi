@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20151130233933) do
   create_table "product_locations", force: :cascade do |t|
     t.integer  "product_id"
     t.string   "city"
-    t.string   "provice"
+    t.string   "province"
     t.string   "district"
     t.string   "address"
     t.datetime "created_at", null: false

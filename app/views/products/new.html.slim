@@ -5,12 +5,13 @@ p Find me in app/views/products/new.html.slim
   = f.text_field :title, placeholder: '例如: 尼康 70 200 2.8 9成新 120000'
 
   = f.select :parent_category, options_for_select(Category.roots.collect { |c| [c.name, c.id] })
-  = f.select :category, options_for_select(Category.first.children.collect { |c| [c.name, c.id] })
-  = f.select :brand, options_for_select(['尼康', '佳能'])
+  = f.select :category_id, options_for_select(Category.first.children.collect { |c| [c.name, c.id] })
+  = f.select :brand_id, options_for_select([['尼康','1'], ['佳能','2']])
   = f.select :quality, options_for_select(Product::QUALITIES)
 
   = f.text_field :price, placeholder: '商品价格'
   = f.text_field :description
+  = f.text_field :taobao_url, placeholder: '淘宝商品页URL'
 
   .city-group
     = f.select :province, options_for_select(ChinaCity.list, @product_form.province), { prompt: '--省份--' }, { class: ['city-select', 'city-province'] }

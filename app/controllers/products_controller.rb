@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
   def new
-    product = Product.new
-    @product_form = ProductForm.new(product)
+    @product_form = ProductForm.new()
   end
 
   def create
+    @product_form = ProductForm.new(params[:product])
+    @product_form.save
   end
 
   def show
