@@ -4,4 +4,6 @@ class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :brand
 
+  has_one :product_location, as: :location
+  has_one :delivery
 end
