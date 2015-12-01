@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def new
-    @product = Product.new
+    product = Product.new
+    @product_form = ProductForm.new(product)
   end
 
   def create

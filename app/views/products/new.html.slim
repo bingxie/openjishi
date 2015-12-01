@@ -1,7 +1,7 @@
 h1 Products#new
 p Find me in app/views/products/new.html.slim
 
-= form_for @product, validate: true, html: { multipart: true} do |f|
+= form_for @product_form, url: products_path, validate: true, html: { multipart: true} do |f|
   = f.text_field :title
   = f.text_field :category
   = f.text_field :brand
