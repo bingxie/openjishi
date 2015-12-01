@@ -12,6 +12,7 @@ p Find me in app/views/products/new.html.slim
   = f.text_field :price, placeholder: '商品价格'
   = f.text_field :description
   = f.text_field :taobao_url, placeholder: '淘宝商品页URL'
+  = f.text_field :tag_list
 
   .city-group
     = f.select :province, options_for_select(ChinaCity.list, @product_form.province), { prompt: '--省份--' }, { class: ['city-select', 'city-province'] }
@@ -28,7 +29,5 @@ p Find me in app/views/products/new.html.slim
     = f.label :delivery_method, '免运费'
     = f.radio_button :delivery_method, 'f2f', checked: false
     = f.label :delivery_method, '仅限本地交易'
-
-    = f.text_field :delivery_notes
 
   = f.submit '发布商品'

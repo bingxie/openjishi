@@ -14,6 +14,7 @@ class ProductForm
   attribute :price, Decimal
   attribute :description, String
   attribute :taobao_url, String
+  attribute :tag_list, String
 
   attribute :province, String
   attribute :city, String
@@ -27,8 +28,6 @@ class ProductForm
   validates :title, presence: true
   validates :category_id, presence: true
   validates :brand_id, presence: true
-
-  validates :delivery_notes, presence: true
 
   # def delivery
   #   @delivery ||=@product.build_delivery
@@ -56,9 +55,11 @@ class ProductForm
   def persist!
     binding.pry
     ActiveRecord::Base.transaction do
-      product = Product.create(self.attributes.slice(:title, :quality, :price, :description, :taobao_url, :category_id, :brand_id))
+      product = Product.create(self.attributes.slice(:title, :quality, :price, :description, :taobao_url, :category_id, :brand_id, :tag_list))
+
       product.create_product_location(self.attributes.slice(:province, :city, :district, :address))
-      product.create_delivery(method: delivery_method, notes: delivery_notes)
+
+      product.create_delivery(method: delivery_method)
     end
   end
 end
