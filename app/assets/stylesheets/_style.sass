@@ -826,6 +826,46 @@ section
 
 
 /* Single Product */
+
+
+.preview-mode-notice
+  +outer-container
+  padding: 1em
+  border: 2px solid $red
+  margin: 1em 0
+  .flag
+    +span-columns(2)
+    background-color: $orange
+    color: $light
+    text-align: center
+    line-height: 70px
+    font-size: 24px
+  .content
+    +span-columns(7)
+  .action
+    +span-columns(3)
+    a.publish, a.edit
+      float: left
+      margin-right: 0.5em
+      +lovely-button($red, $light, $base-padding)
+
+.prd-publish-success
+  +outer-container
+  padding: 1em
+  border: 2px solid $orange
+  margin: 1em 0
+  i
+    color: $orange
+    margin-right: 0.5em
+  h3
+    float: left
+    line-height: 1.7em
+    margin: 0
+  a.my-products
+    float: right
+    +lovely-button($red, $light, $base-padding)
+
+
 .breadcrumbs
   padding: 1em 0
   .back-btn
