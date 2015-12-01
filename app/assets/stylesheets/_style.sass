@@ -852,7 +852,7 @@ section
           content: none
 
 .prd-preview-image-panel
-  +span-columns(6)
+  +span-columns(8)
 
 .slick-slider
   position:relative
@@ -909,7 +909,8 @@ section
   margin-bottom: 1em
 
 .product-info-panel
-  +span-columns(3)
+  +span-columns(4)
+  +omega()
   .price
     text-align: center
     color: $red
@@ -921,7 +922,7 @@ section
       color: $orange
       padding: 0 0.2em
   .prd-info
-    margin-bottom: 1em
+    margin-bottom: 1.5em
     span
       padding: 0.5em
       border: 1px solid #dce0e0
@@ -931,7 +932,7 @@ section
   a.taobao-link
     +lovely-button($red, $light, $base-padding)
     width: 100%
-    margin: 0 auto 1em
+    margin: 0 auto 2em
   .terms
     font-size: 0.825em
     margin-bottom: 1em
@@ -957,6 +958,21 @@ section
     text-align: center
     margin-right: 1em
 
+  .product-sharing
+    margin-top: 1em
+    ul
+      li
+        display: inline-block
+        margin-right: 0.3em
+        a
+          padding: 0.5em
+          border: $base-border
+          color: $dark
+          font-size: 1.3em
+          &:hover
+            color: $light
+            background-color: $orange
+            border-color: $orange
 
 
 
@@ -965,68 +981,39 @@ section
 .seller-information
   +span-columns(3)
   +omega()
+  .seller-icon
+    img
+      border-radius: 1000px
+    width: 5em
+    float: left
+  .seller-name
+    +span-columns(7)
+    padding: 1em
+  .seller-badge
+    ul
+      li
+        display: inline-block
+        margin-right: 0.5em
+    img
+      width: em(40)
+      border-radius: 10000px
+  .seller-rating
+    ul
+      li
+        font-size: 1em
+        color: $orange
+        display: inline-block
+  a.contact-seller
+    +lovely-button($red, $light, $base-padding)
+  .contact-panel
+    padding: 1em
+    background-color: $light-dark
+    margin: 1em 0 0
 
-// .prd-description-panel
-//   background-color: $light
-//   border: $base-border
-//   padding: 1em
-//   margin-bottom: 1em
+.prd-description-panel
+  +outer-container
+  margin: 1em 0
 
-
-
-// .prd-right-panel
-//   +span-columns(4)
-//   .panel-group
-//     background-color: $light
-//     border: $base-border
-//   .panel-mid
-//     span
-//       font-weight: bold
-//       margin-left: 1em
-//     a.taobao-link
-//       +lovely-button($red, $light, $base-spacing * 0.25 $base-spacing * 0.5)
-//       // width: 100%
-//       text-align: center
-
-//   .contact-panel
-//     background-color: $light-dark
-//     margin: 1em 0
-//     padding: 1em
-
-//   .watch-btn, .wishlist-btn
-//     +span-columns(6)
-//     +lovely-button($light, $dark, $base-padding)
-//     border-radius: 1000px
-//     border: $base-border
-//     &:hover
-//       background-color: $red
-//       color: $light
-
-// .seller-information
-//   .seller-icon
-//     +span-columns(5)
-//     img
-//       border-radius: 1000px
-//     width: em(80)
-//   .seller-name
-//     +span-columns(7)
-//     padding: 1em
-//   .seller-badge
-//     ul
-//       li
-//         display: inline-block
-//         margin-right: 0.5em
-//     img
-//       width: em(40)
-//       border-radius: 10000px
-//   .seller-rating
-//     ul
-//       li
-//         font-size: 2em
-//         color: $orange
-//         display: inline-block
-//   a.contact-seller
-//     +lovely-button($red, $light, $base-padding)
 
 
 /* WHY US */
