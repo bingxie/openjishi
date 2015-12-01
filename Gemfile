@@ -69,6 +69,9 @@ gem 'virtus'
 # Organise ActiveRecord model into a tree structure
 gem 'ancestry'
 
+# A tagging plugin for Rails applications
+gem 'acts-as-taggable-on', '~> 3.4'
+
 # Easily include static pages in your Rails app
 gem 'high_voltage'
 
