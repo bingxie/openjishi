@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   root to: "pages#show", id: 'index/home'
 
-  resources :landscapes do
-    post 'crop', :on => :member
-  end
-
-  get 'secret/show'
+  resources :products
 
   devise_for :users, controllers: { registrations: 'users/registrations',
                                     confirmations: 'users/confirmations',
@@ -22,10 +18,19 @@ Rails.application.routes.draw do
   match 'profiles/:slug/crop' => 'profiles#crop', as: :avatar_crop, via: [:put, :patch]
   match 'profiles/:slug/edit' => 'profiles#update', via: [:put, :patch]
 
+  # Static pages
   get "/pages/*id" => 'pages#show', as: :page, format: false
 
   mount ChinaCity::Engine => '/china_city'
 
+  # For demo
+  resources :landscapes do
+    post 'crop', :on => :member
+  end
+
+  get 'secret/show'
+
+  # Development Only
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

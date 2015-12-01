@@ -1,0 +1,10 @@
+h1 Products#new
+p Find me in app/views/products/new.html.slim
+
+= form_for @product, validate: true, html: { multipart: true} do |f|
+  = f.text_field :title
+  = f.text_field :category
+  = f.text_field :brand
+  = f.select :quality, options_for_select(Product::QUALITIES)
+  = f.submit '发布商品'
+forms
