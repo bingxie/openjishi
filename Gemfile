@@ -63,6 +63,9 @@ gem "font-awesome-rails"
 
 #### Functional Gems
 
+# Attributes on Steroids for Plain Old Ruby Objects
+gem 'virtus'
+
 # Organise ActiveRecord model into a tree structure
 gem 'ancestry'
 
@@ -71,7 +74,7 @@ gem 'high_voltage'
 
 gem 'china_city'
 
-#
+# User authentication
 gem 'devise', '~> 3.5', '>= 3.5.2'
 
 # Select 2
