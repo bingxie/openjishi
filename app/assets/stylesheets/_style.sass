@@ -20,6 +20,9 @@
   margin-left: 1em
   color: $green-dark
 
+.mute
+  opacity: 0.7
+
 /* -------------------------------------- */
 /*               MODULES                  */
 /* -------------------------------------- */
@@ -849,7 +852,7 @@ section
           content: none
 
 .prd-preview-image-panel
-  +span-columns(8)
+  +span-columns(6)
 
 .slick-slider
   position:relative
@@ -899,71 +902,131 @@ section
     .slick-slide
       width: 110px !important
 
-.prd-description-panel
-  background-color: $light
-  border: $base-border
-  padding: 1em
-  margin-bottom: 1em
-
 .product-status
   li
     display: inline-block
     margin-right: 1em
   margin-bottom: 1em
 
-.prd-right-panel
-  +span-columns(4)
-  .panel-group
-    background-color: $light
-    border: $base-border
-  .panel-mid
+.product-info-panel
+  +span-columns(3)
+  .price
+    text-align: center
+    color: $red
+    font-size: 2em
+  .shipping
+    margin-bottom: 1em
+    text-align: center
+    a
+      color: $orange
+      padding: 0 0.2em
+  .prd-info
+    margin-bottom: 1em
     span
-      font-weight: bold
-      margin-left: 1em
-    a.taobao-link
-      +lovely-button($red, $light, $base-spacing * 0.25 $base-spacing * 0.5)
-      // width: 100%
-      text-align: center
+      padding: 0.5em
+      border: 1px solid #dce0e0
+      font-size: 0.825em
+      display: inline-block
+      margin-right: 0.2em
+  a.taobao-link
+    +lovely-button($red, $light, $base-padding)
+    width: 100%
+    margin: 0 auto 1em
+  .terms
+    font-size: 0.825em
+    margin-bottom: 1em
+    i
+      color: $orange
+      margin-right: 0.2em
+      font-size: 1.2em
+  .offer
+    +clearfix
+    margin-bottom: 2em
+    font-size: 0.825em
+    span
+    input
+      display: inline-block
+      width: 43%
+      margin: 0 5%
+    a
+      +lovely-button($orange, $light, $base-padding)
+      width: 23%
 
-  .contact-panel
-    background-color: $light-dark
-    margin: 1em 0
-    padding: 1em
+  a.watch-btn
+    display: inline-block
+    text-align: center
+    margin-right: 1em
 
-  .watch-btn, .wishlist-btn
-    +span-columns(6)
-    +lovely-button($light, $dark, $base-padding)
-    border-radius: 1000px
-    border: $base-border
-    &:hover
-      background-color: $red
-      color: $light
+
+
+
+
 
 .seller-information
-  .seller-icon
-    +span-columns(5)
-    img
-      border-radius: 1000px
-    width: em(80)
-  .seller-name
-    +span-columns(7)
-    padding: 1em
-  .seller-badge
-    ul
-      li
-        display: inline-block
-        margin-right: 0.5em
-    img
-      width: em(40)
-      border-radius: 10000px
-  .seller-rating
-    ul
-      li
-        font-size: 2em
-        color: $orange
-        display: inline-block
-  a.contact-seller
-    +lovely-button($red, $light, $base-padding)
+  +span-columns(3)
+  +omega()
+
+// .prd-description-panel
+//   background-color: $light
+//   border: $base-border
+//   padding: 1em
+//   margin-bottom: 1em
+
+
+
+// .prd-right-panel
+//   +span-columns(4)
+//   .panel-group
+//     background-color: $light
+//     border: $base-border
+//   .panel-mid
+//     span
+//       font-weight: bold
+//       margin-left: 1em
+//     a.taobao-link
+//       +lovely-button($red, $light, $base-spacing * 0.25 $base-spacing * 0.5)
+//       // width: 100%
+//       text-align: center
+
+//   .contact-panel
+//     background-color: $light-dark
+//     margin: 1em 0
+//     padding: 1em
+
+//   .watch-btn, .wishlist-btn
+//     +span-columns(6)
+//     +lovely-button($light, $dark, $base-padding)
+//     border-radius: 1000px
+//     border: $base-border
+//     &:hover
+//       background-color: $red
+//       color: $light
+
+// .seller-information
+//   .seller-icon
+//     +span-columns(5)
+//     img
+//       border-radius: 1000px
+//     width: em(80)
+//   .seller-name
+//     +span-columns(7)
+//     padding: 1em
+//   .seller-badge
+//     ul
+//       li
+//         display: inline-block
+//         margin-right: 0.5em
+//     img
+//       width: em(40)
+//       border-radius: 10000px
+//   .seller-rating
+//     ul
+//       li
+//         font-size: 2em
+//         color: $orange
+//         display: inline-block
+//   a.contact-seller
+//     +lovely-button($red, $light, $base-padding)
 
 
 /* WHY US */
