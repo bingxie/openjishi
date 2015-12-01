@@ -56,89 +56,88 @@
       a href="#"
         |全新
 
-section
+.category-content
   .wrap
-    .category-content
-      .left-filter
-        ul
+    .left-filter
+      ul
+        li
+          .title
+            |产品分类
+        li.open
+          a href="#"
+            |数码相机
+            span.badge
+                |64
+        li.sub-category
+          a href="#"
+            |单反机身
+            span.badge
+                |64
+        li.sub-category
+          a href="#"
+            |微电机身
+            span.badge
+                |64
+        - 6.times do
           li
-            .title
-              |产品分类
-          li.open
             a href="#"
               |数码相机
               span.badge
-                  |64
-          li.sub-category
-            a href="#"
-              |单反机身
-              span.badge
-                  |64
-          li.sub-category
-            a href="#"
-              |微电机身
-              span.badge
-                  |64
-          - 6.times do
-            li
-              a href="#"
-                |数码相机
-                span.badge
-                  |64
-        ul.with-checkbox
+                |64
+      ul.with-checkbox
+        li
+          .title
+            |品牌
+        - 6.times do
           li
-            .title
-              |品牌
-          - 6.times do
-            li
-              a href="#"
-                input#nikon type="checkbox" name="nikon"
-                label for="nikon"
-                  span
-                |尼康
-                span.badge
-                  |64
+            a href="#"
+              input#nikon type="checkbox" name="nikon"
+              label for="nikon"
+                span
+              |尼康
+              span.badge
+                |64
 
-        ul.with-checkbox
+      ul.with-checkbox
+        li
+          .title
+            |更多选项
+        - 3.times do
           li
-            .title
-              |更多选项
-          - 3.times do
-            li
-              a href="#"
-                input#nikon type="checkbox" name="nikon"
-                label for="nikon"
-                  span
-                |个人卖家
-                span.badge
-                  |64
-      .prd-grid
-        .wrap
-          ul
-            - 15.times do
-              li.block-3
-                = render partial:'pages/pattern/prd_block'
+            a href="#"
+              input#nikon type="checkbox" name="nikon"
+              label for="nikon"
+                span
+              |个人卖家
+              span.badge
+                |64
+    .prd-grid
+      .wrap
+        ul
+          - 15.times do
+            li.block-3
+              = render partial:'pages/pattern/prd_block'
 
-          .pagination-buttons-container
-            .results_count
-              p
-                | 第1 – 第9 共 103 个商品
-            .pagination
-              ul.list-unstyled
-                li.active
-                  a href="#" rel="start" target="1"  1
-                li
-                  a href="#" rel="next" target="2"  2
-                li
-                  a href="#" target="3"  3
-                li
-                  a href="#" target="6"  4
-                li
-                  a href="#" target="6"  5
-                li.next.next_page
-                  a href="#" rel="next" target="2"
-                    span
-                      i.fa.fa-caret-right
+        .pagination-buttons-container
+          .results_count
+            p
+              | 第1 – 第9 共 103 个商品
+          .pagination
+            ul.list-unstyled
+              li.active
+                a href="#" rel="start" target="1"  1
+              li
+                a href="#" rel="next" target="2"  2
+              li
+                a href="#" target="3"  3
+              li
+                a href="#" target="6"  4
+              li
+                a href="#" target="6"  5
+              li.next.next_page
+                a href="#" rel="next" target="2"
+                  span
+                    i.fa.fa-caret-right
 
 
 

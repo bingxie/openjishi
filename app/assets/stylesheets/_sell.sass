@@ -1,64 +1,152 @@
-fieldset
-  select
-    height: 40px
-    border-radius: $base-border-radius
-    border: $base-border
-    width: 100%
-
-.panel-upper, .panel-lower
-  background-color: $light
-  margin-bottom: 1em
-  border: $base-border
-  border-radius: $base-border-radius
-  box-shadow: $base-box-shadow
-  padding: 0 1em
-  .fieldset-label
-    padding: 0.5em 1em
-    +lovely-label($red, 1em)
-    margin-left: 1em
-
 .sellform
   padding: 1em 0
+  margin-bottom: 2em
   +span-columns(8)
   +shift(2)
+  .panel
+    .panel-title
+      padding: 0.5em 1em
+      font-size: 1.1em
+      background-color: $dark
+      color: $light
+      label
+        font-size: 0.825em
+        color: $light-dark
+    .panel-content
+      +outer-container
+      border: $base-border
+      border-top: 0
+      padding: 1em
+      background-color: $light
+      margin-bottom: 1em
+      // 分类部分
+      .main-category, .sub-category, .brand
+        +span-columns(4)
+        +omega(3n)
+      .sub-category, .brand
+        display: none
+      // 商品信息
+      .price, .condition
+        +span-columns(6)
+        +omega(2n)
+      //图片上传
+      .mask
+        text-align: center
+        background-color: $light-dark
+        padding: 1em
+      //商品信息
+      .input-tags
+        span
+          border: $base-border
+          border-radius: 1000px
+          padding: 0.2em 0.7em
+          margin-right: 1em
+          font-size: 0.825em
+          &:hover
+            border-color: $orange
+          i
+            margin-left: 0.2em
+      //快递信息
+      .city
+        +span-columns(4)
+      .address
+        +span-columns(8)
+        +omega()
+      .shipping-methode
+        .shipping-methode-radio-button
+          span
+            display: inline-block
+            margin-right: 1em
+        .note
+          display: none
+          font-size: 0.825em
+          background-color: $light-dark
+          padding: 1em
+          margin-top: 1em
+          width: 200px
+          position: relative
+          i
+            font-size: 3em
+            color: $light-dark
+            position: absolute
+            top: -23px
+            left: 25px
+      //店铺信息
+      .shop-name
+        +span-columns(6)
+        span
+          font-size: 0.825em
+          opacity: 0.7
+      .hint-panel
+        +span-columns(6)
+        padding: 1em
+        background-color: $orange
+        color: $light
+  a.sell-preview
+    +lovely-button($red, $light, $base-spacing * 0.5 $base-spacing * 1.5)
 
-.formgroup
-  +clearfix
-  padding: 1em 0 0 0
-  .main-category, .sub-category, .brand,.price, .condition, .city,.shipping-methode
-    +span-columns(4)
-  .address, .shipping-comment
-    +span-columns(8)
-    // +clearfix
 
-.carrier .note
-  font-size: 0.825em
-  display: none
-  margin-top: 1em
-  max-width: 15em
-  padding: 1em
-  background-color: $light-gray
-  position: relative
-  i.fa.fa-caret-up
-    color: $light-gray
-    position: absolute
-    top: -15px
-    left: 24px
-    font-size: 2em
+// fieldset
+//   select
+//     height: 40px
+//     border-radius: $base-border-radius
+//     border: $base-border
+//     width: 100%
 
-.image-uploader
-  padding: 2em
-  background-color: $light-gray
-  text-align: center
-  height: 10em
+// .panel-upper, .panel-lower
+//   background-color: $light
+//   margin-bottom: 1em
+//   border: $base-border
+//   border-radius: $base-border-radius
+//   box-shadow: $base-box-shadow
+//   padding: 0 1em
+//   .fieldset-label
+//     padding: 0.5em 1em
+//     +lovely-label($red, 1em)
+//     margin-left: 1em
 
-.shipping-methode
-  .shipping-methode-radio-button
-    span
-      display: block
-      padding: 0.5em 0
+// .sellform
+//   padding: 1em 0
+//   +span-columns(8)
+//   +shift(2)
+
+// .formgroup
+//   +clearfix
+//   padding: 1em 0 0 0
+//   .main-category, .sub-category, .brand,.price, .condition, .city,.shipping-methode
+//     +span-columns(4)
+//   .address, .shipping-comment
+//     +span-columns(8)
+//     // +clearfix
+
+// .carrier .note
+//   font-size: 0.825em
+//   display: none
+//   margin-top: 1em
+//   max-width: 15em
+//   padding: 1em
+//   background-color: $light-gray
+//   position: relative
+//   i.fa.fa-caret-up
+//     color: $light-gray
+//     position: absolute
+//     top: -15px
+//     left: 24px
+//     font-size: 2em
+
+// .image-uploader
+//   padding: 2em
+//   background-color: $light-gray
+//   text-align: center
+//   height: 10em
+
+// .shipping-methode
+//   .shipping-methode-radio-button
+//     span
+//       display: block
+//       padding: 0.5em 0
 
 
-a.sell-preview
-  +lovely-button($red, $light, $base-spacing * 0.5 $base-spacing * 1.5)
-  margin: 1em 0
+// a.sell-preview
+//   +lovely-button($red, $light, $base-spacing * 0.5 $base-spacing * 1.5)
+//   margin: 1em 0

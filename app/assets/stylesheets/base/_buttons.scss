@@ -2,8 +2,7 @@
   appearance: none;
   background-color: $red;
   border: 0;
-  border-radius: $base-border-radius;
-  border-bottom: 1px solid shade($red, 15%);
+  border-bottom: 1px solid $red-dark;
   color: #fff;
   cursor: pointer;
   display: inline-block;
