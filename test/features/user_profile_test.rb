@@ -27,8 +27,7 @@ class UserProfileTest < ActionDispatch::IntegrationTest
       click_button '确定修改'
     end
 
-    # wait_for_ajax
-    logout(:user)
+    user_logout
 
     login_user_with_password(@user, '87654321')
   end
