@@ -62,25 +62,8 @@
             label 请描述您要出售的商品
             = f.text_area :description, cols: 20, rows: 6
           .formgroup
-            label 为你的商品打上标签, 能够大大增加被搜索到的频率, 输入后回车即可显示在下边
-            = f.text_field :tag_list
-            .input-tags
-              span
-                |尼康
-                a href="#"
-                  i.fa.fa-remove
-              span
-                |D810
-                a href="#"
-                  i.fa.fa-remove
-              span
-                |单反
-                a href="#"
-                  i.fa.fa-remove
-              span
-                |近全新
-                a href="#"
-                  i.fa.fa-remove
+            label 为你的商品打上标签, 能够大大增加被搜索到的频率, 输入后按空格键或者逗号即可
+            = f.select :tag_list, options_for_select(["尼康"], ["尼康"]), {prompt: ""}, {:multiple => true }
 
       .panel
         .panel-title

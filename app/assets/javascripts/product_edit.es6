@@ -20,5 +20,15 @@ $().ready(() => {
       $('#product_brand_id').html(data).change();
     });
   });
+
+  $("#product_tag_list").select2({
+    tags:true,
+    tokenSeparators: [",", " ", "，"],
+    // selectOnBlur: true,
+    // formatNoMatches: () => {
+    //   return '';
+    // },
+    dropdownCssClass: 'select2-hidden',
+  });
 })
 

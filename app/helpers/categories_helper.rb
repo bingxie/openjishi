@@ -1,4 +1,4 @@
-module CategoryHelper
+module CategoriesHelper
   def parent_category_options
     Category.roots.collect { |c| [c.name, c.id] }
   end

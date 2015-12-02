@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  include CategoryHelper
+  include CategoriesHelper
 
   def show
     if params[:parent_category_id]
