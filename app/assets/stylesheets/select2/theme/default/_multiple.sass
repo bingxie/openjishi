@@ -1,6 +1,6 @@
 .select2-selection--multiple
   background-color: white
-  border: 1px solid #aaa
+  border: 1px solid $light-dark
   border-radius: 4px
   cursor: text
   .select2-selection__rendered
@@ -20,20 +20,23 @@
     margin-top: 5px
     margin-right: 10px
   .select2-selection__choice
-    background-color: #e4e4e4
-    border: 1px solid #aaa
-    border-radius: 4px
+    background-color: $orange
+    color: $light
+    border-radius: $base-border-radius
     cursor: default
     float: left
     margin-right: 5px
-    margin-top: 5px
-    padding: 0 5px
+    margin-top: 10px
+    padding: 2px 8px
   .select2-selection__choice__remove
-    color: #999
+    float: right
+    color: $light
     cursor: pointer
     display: inline-block
+    font-size: 16px
+    line-height: 1
     font-weight: bold
-    margin-right: 2px
+    margin: 0 0 0 5px
     &:hover
       color: #333
 
@@ -50,7 +53,7 @@
 
 &.select2-container--focus
   .select2-selection--multiple
-    border: solid black 1px
+    border: solid $dark 1px
     outline: 0
 
 &.select2-container--disabled

@@ -70,14 +70,30 @@
           |快递信息
         .panel-content
           .formgroup
-            .city.city-group
-              label
-                | 城市
-              input name="city" placeholder="城市" required="" type="text" /
-            .address.nomargin
-              label
-                | 地址
-              = f.text_field :address, placeholder: '地址'
+            .wrap
+              .city.city-group.panel-3
+                label
+                  | 城市
+                select#province name="province"
+                  option value="1"  广东
+                  option value="2"  山东
+              .city.city-group.panel-3
+                label
+                  | 城市
+                select#city name="city"
+                  option value="1"  深圳
+                  option value="2"  广州
+              .city.city-group.panel-3
+                label
+                  | 城市
+                select#city name="city"
+                  option value="1"  深圳
+                  option value="2"  广州
+            .wrap
+              .address.nomargin
+                label
+                  | 地址
+                = f.text_field :address, placeholder: '地址'
             .shipping-methode
               label
                 | 快递方式
