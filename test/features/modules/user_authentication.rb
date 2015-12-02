@@ -16,5 +16,10 @@ module Modules
 
       assert_equal root_path, page.current_path
     end
+
+    def user_logout
+      Capybara.reset_sessions!
+      visit destroy_user_session_url
+    end
   end
 end

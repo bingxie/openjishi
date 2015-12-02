@@ -63,15 +63,21 @@ gem "font-awesome-rails"
 
 #### Functional Gems
 
+# Attributes on Steroids for Plain Old Ruby Objects
+gem 'virtus'
+
 # Organise ActiveRecord model into a tree structure
 gem 'ancestry'
+
+# A tagging plugin for Rails applications
+gem 'acts-as-taggable-on', '~> 3.4'
 
 # Easily include static pages in your Rails app
 gem 'high_voltage'
 
 gem 'china_city'
 
-#
+# User authentication
 gem 'devise', '~> 3.5', '>= 3.5.2'
 
 # Select 2
