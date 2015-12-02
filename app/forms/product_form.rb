@@ -19,7 +19,6 @@ class ProductForm
   attribute :address, String
 
   attribute :delivery_method, String
-  attribute :delivery_notes, String
 
   attribute :price_in_province, Decimal
   attribute :price_out_province, Decimal
@@ -60,13 +59,12 @@ class ProductForm
   private
 
   def persist!
-    binding.pry
     ActiveRecord::Base.transaction do
       product = Product.create(self.attributes.slice(:title, :quality, :price, :description, :taobao_url, :category_id, :brand_id, :tag_list))
 
       product.create_product_location(self.attributes.slice(:province, :city, :district, :address))
 
-      product.create_delivery(method: delivery_method)
+      product.create_delivery(method: delivery_method, price_in_province: price_in_province, price_out_province: price_out_province)
     end
   end
 end
