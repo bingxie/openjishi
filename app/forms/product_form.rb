@@ -41,7 +41,9 @@ class ProductForm
   validates :category_id, presence: true
   validates :brand_id, presence: true
 
-  validates :delivery_method, presence: true
+  validates :delivery_method, :inclusion => { :in => [Delivery::EXPRESS, Delivery::COD, Delivery::FREE, Delivery::F2F] }
+  validates :price_in_province, numericality: { less_than: 999 }
+  validates :price_out_province, numericality: { less_than: 999 }
 
   def self.model_name
     ActiveModel::Name.new(self, nil, "Product")

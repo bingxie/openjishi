@@ -87,16 +87,16 @@
                 | 快递方式
               .shipping-methode-radio-button
                 span.carrier for="radios-0"
-                  = f.radio_button :delivery_method, 'express', checked: false
+                  = f.radio_button :delivery_method, Delivery::EXPRESS, checked: false
                   |快递
                 span for="radios-1"
-                  = f.radio_button :delivery_method, 'cod', checked: false
+                  = f.radio_button :delivery_method, Delivery::COD, checked: false
                   |买家到付
                 span for="radios-2"
-                  = f.radio_button :delivery_method, 'free', checked: false
+                  = f.radio_button :delivery_method, Delivery::FREE, checked: false
                   |免运费
                 span for="radios-3"
-                  = f.radio_button :delivery_method, 'f2f', checked: false
+                  = f.radio_button :delivery_method, Delivery::F2F, checked: false
                   |仅限本地交易
               #express_note.note
                 i.fa.fa-caret-up
