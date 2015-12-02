@@ -33,23 +33,23 @@ zh-CN:
         product:
           attributes:
             title:
-              blank: "标题不能为空"
+              blank: "请输入商品标题"
               too_long:
                 other: 标题太长（最长为 %{count} 个字）
             price:
-              blank: '价格不能为空'
+              blank: '请输入商品价格'
               not_a_number: "请输入数字"
               less_than: 价格必须小于 %{count}
             description:
-              blank: 商品描述不能为空
+              blank: 请填写商品描述，详尽的商品表述能够帮您尽快售出此商品。
               too_long:
                 other: 商品描述太长（最长为 %{count} 个字）
             province:
-              blank: 省份不能为空
+              blank: 请选择省份
             city:
-              blank: 城市不能为空
+              blank: 请选择城市
             district:
-              blank: 地区不能为空
+              blank: 请选择地区
             address:
               too_long:
                 other: 地址太长（最长为 %{count} 个字）
