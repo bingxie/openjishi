@@ -10,15 +10,15 @@
             .main-category
               label
                 | 主分类
-              = f.select :parent_category, options_for_select(Category.roots.collect { |c| [c.name, c.id] })
+              = f.select :parent_category, options_for_select(parent_category_options)
             .sub-category
               label
                 | 子分类
-              = f.select :category_id, options_for_select(Category.first.children.collect { |c| [c.name, c.id] })
+              = f.select :category_id, options_for_select(sub_category_options(Category.first))
             .brand
               label
                 | 品牌
-              = f.select :brand_id, options_for_select([['尼康','1'], ['佳能','2']])
+              = f.select :brand_id, options_for_select(brand_options(Category.first.children.first))
       .panel
         .panel-title
           |商品信息

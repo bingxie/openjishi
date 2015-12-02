@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def new
     @product_form = ProductForm.new()
   end

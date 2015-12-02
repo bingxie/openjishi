@@ -1,18 +1,7 @@
 $().ready(() => {
   $.fn.select2.amd.require(['select2/compat/matcher'], oldMatcher => {
-    $("#profile_province_id").select2({
+    $("#profile_province_id, #profile_city_id, #profile_district_id").select2({
       width: 'resolve',
-      language: "zh-CN",
-      matcher: oldMatcher(matchChinese)
-    });
-
-    $("#profile_city_id").select2({
-      width: 'resolve',
-      language: "zh-CN",
-      matcher: oldMatcher(matchChinese)
-    });
-
-    $("#profile_district_id").select2({
       language: "zh-CN",
       matcher: oldMatcher(matchChinese)
     });
