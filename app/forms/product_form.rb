@@ -21,6 +21,10 @@ class ProductForm
   attribute :delivery_method, String
   attribute :delivery_notes, String
 
+  attribute :price_in_province, Decimal
+  attribute :price_out_province, Decimal
+
+
   # Validation
   validates :title, presence: true
   validates :title, length: { maximum: 50 }

@@ -35,7 +35,7 @@
             .condition
               label
                 | 成色
-              = f.select :quality, options_for_select(Product::QUALITIES)
+              = f.select :quality, options_for_select(Product::QUALITIES, ['new90'])
           .formgroup
             label
               |淘宝链接
@@ -110,16 +110,16 @@
                 span for="radios-3"
                   = f.radio_button :delivery_method, 'f2f', checked: false
                   |仅限本地交易
-              .note
+              #express_note.note
                 i.fa.fa-caret-up
                 p
                  | 快递费用
                 span
                   | 省内
-                  input name="" type="number"
+                  = f.text_field :price_in_province
                 span
                   | 省外
-                  input name="" type="number"
+                  = f.text_field :price_out_province
         .panel
           .panel-title
             |店铺信息

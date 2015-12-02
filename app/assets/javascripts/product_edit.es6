@@ -30,5 +30,13 @@ $().ready(() => {
     // },
     dropdownCssClass: 'select2-hidden',
   });
+
+  $('input:radio[name="product[delivery_method]"]').change((event) => {
+    if($(event.currentTarget).val() === 'express') {
+      $("#express_note").show();
+    } else {
+      $("#express_note").hide();
+    }
+  });
 })
 
