@@ -21,6 +21,11 @@ $().ready(() => {
     });
   });
 
+  $("#product_price, #product_price_in_province, #product_price_out_province").keyup( (event) => {
+    let price = $(event.currentTarget)
+    price.val(price.val().replace(/[^0-9\.]/g,''));
+  });
+
   $("#product_tag_list").select2({
     tags:true,
     tokenSeparators: [",", " ", "，"],
@@ -34,6 +39,7 @@ $().ready(() => {
   $('input:radio[name="product[delivery_method]"]').change((event) => {
     if($(event.currentTarget).val() === 'express') {
       $("#express_note").show();
+      $("#product_price_in_province, #product_price_out_province").enableClientSideValidations();
     } else {
       $("#express_note").hide();
     }
