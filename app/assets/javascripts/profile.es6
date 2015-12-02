@@ -1,20 +1,4 @@
 $().ready(() => {
-  $.fn.select2.amd.require(['select2/compat/matcher'], oldMatcher => {
-    $("#profile_province_id, #profile_city_id, #profile_district_id").select2({
-      width: 'resolve',
-      language: "zh-CN",
-      matcher: oldMatcher(matchChinese)
-    });
-  });
-
-  $( "#profile_city_id").on('china_city:load_data_completed',() => {
-    $("#profile_city_id").trigger('change');
-  });
-
-  $( "#profile_district_id").on('china_city:load_data_completed',() => {
-    $("#profile_district_id").trigger('change');
-  });
-
   init_form("#change_password");
   init_form("#edit_profile_info");
   init_form("#avatar_upload");
