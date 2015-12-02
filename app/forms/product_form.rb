@@ -2,9 +2,6 @@ class ProductForm
   include Virtus.model
   include ActiveModel::Model
 
-  # delegate :method, :notes, to: :delivery, prefix: true
-  # delegate :province, :city, :district, :address, to: :location
-
   attr_accessor :parent_category
 
   attribute :title, String
@@ -26,16 +23,22 @@ class ProductForm
 
   # Validation
   validates :title, presence: true
+  validates :title, length: { maximum: 50 }
+  validates :price, presence: true
+  validates :price, numericality: { less_than: 999999 }
+  validates :description, presence: true
+  validates :description, length: { maximum: 500 }
+
+  validates :province, presence: true
+  validates :city, presence: true
+  validates :district, presence: true
+
+  validates :address, length: { maximum: 100 }
+
   validates :category_id, presence: true
   validates :brand_id, presence: true
 
-  # def delivery
-  #   @delivery ||=@product.build_delivery
-  # end
-
-  # def location
-  #   @location ||=@product.build_product_location
-  # end
+  validates :delivery_method, presence: true
 
   def self.model_name
     ActiveModel::Name.new(self, nil, "Product")
