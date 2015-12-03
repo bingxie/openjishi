@@ -1,0 +1,5 @@
+<% @images.each do |pi| %>
+  <div class="img-thumbnail">
+    <%= image_tag pi.image.url(:thumb), alt: pi.image.url(:thumb) %>
+  </div>
+<% end %>

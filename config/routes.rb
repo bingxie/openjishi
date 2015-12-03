@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: "pages#show", id: 'index/home'
 
-  resources :products
+  resources :products, only: [:new, :create]
+
+  resources :product_images, only: [:index, :create]
 
   resources :categories, only: [:show]
 
