@@ -8,6 +8,10 @@ class ProductsController < ApplicationController
   def create
     @product_form = ProductForm.new(params[:product])
     @product_form.save
+
+    if @product_form.store_name
+      current_user.store.update_attributes(name: @product_form.store_name)
+    end
   end
 
 end

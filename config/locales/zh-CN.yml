@@ -59,7 +59,8 @@ zh-CN:
             price_out_province:
               not_a_number: "请输入数字"
               less_than: 价格必须小于 %{count}
-
+            store_name:
+              blank: "请输入店铺名称"
 
 
 

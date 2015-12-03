@@ -23,6 +23,8 @@ class ProductForm
   attribute :price_in_province, Decimal
   attribute :price_out_province, Decimal
 
+  attribute :store_name, String
+
 
   # Validation
   validates :title, presence: true
@@ -44,6 +46,8 @@ class ProductForm
   validates :delivery_method, :inclusion => { :in => [Delivery::EXPRESS, Delivery::COD, Delivery::FREE, Delivery::F2F] }
   validates :price_in_province, numericality: { less_than: 999 }
   validates :price_out_province, numericality: { less_than: 999 }
+
+  validates :store_name, presence: true
 
   def self.model_name
     ActiveModel::Name.new(self, nil, "Product")

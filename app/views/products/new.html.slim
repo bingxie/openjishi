@@ -65,7 +65,7 @@
             = f.text_area :description, cols: 20, rows: 6
           .formgroup
             label 为你的商品打上标签, 能够大大增加被搜索到的频率, 输入后按空格键或者逗号即可
-            = f.select :tag_list, options_for_select(["尼康"], ["尼康"]), {prompt: ""}, {:multiple => true }
+            = f.select :tag_list, options_for_select(["尼康"], ["尼康"]), {}, {:multiple => true }
 
       .panel
         .panel-title
@@ -110,23 +110,24 @@
                 span
                   | 省外
                   = f.text_field :price_out_province
-        .panel
-          .panel-title
-            |店铺信息
-          .panel-content
-            .formgroup
-              .shop-name
-                label
-                  | 第一次卖东西? 给自己的店铺起个名字吧
-                input name="city" placeholder="凝固的黎明 的摄影器材店" required="" type="text" /
-                span
-                  |稍后你可以在帐号管理中管理自己的店铺
-              .hint-panel
-                h4
-                  |每个人都可以开店铺
-                p
-                  |爱折腾的器材党们少不了买来卖去，把自己的设备都挂出来，闹不好很快就找到买家了
+        - unless current_user.store.name
+          .panel
+            .panel-title
+              |店铺信息
+            .panel-content
+              .formgroup
+                .shop-name
+                  label
+                    | 第一次卖东西? 给自己的店铺起个名字吧
+                  = f.text_field :store_name, value: "#{current_user.profile.name} 的摄影器材店"
+                  span
+                    |稍后你可以在帐号管理中管理自己的店铺
+                .hint-panel
+                  h4
+                    |每个人都可以开店铺
+                  p
+                    |爱折腾的器材党们少不了买来卖去，把自己的设备都挂出来，闹不好很快就找到买家了
 
       a.sell-preview href="#" 预览商品
-      = f.submit '发布商品'
+      = f.submit '预览商品'
 
