@@ -161,6 +161,8 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0)
+    dropzonejs-rails (0.7.2)
+      rails (> 3.1)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -458,6 +460,7 @@ DEPENDENCIES
   devise (~> 3.5, >= 3.5.2)
   dotenv-rails
   draper (~> 2.1.0)
+  dropzonejs-rails
   email_validator
   featherlight
   font-awesome-rails
