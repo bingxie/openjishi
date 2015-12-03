@@ -14,6 +14,8 @@ $(document).ready(function(){
       previewsContainer: ".dropzone-previews",
       // dictDefaultMessage: '拖拽图片到这里',
       dictRemoveFile: '删除',
+      dictMaxFilesExceeded: '图片上传失败, 最多上传20张',
+      dictFileTooBig: '图片上传失败, 尺寸需小于2M',
     });
 
     dropzone.on("success", function(file, response) {

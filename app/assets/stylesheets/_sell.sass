@@ -84,3 +84,56 @@
         color: $light
   a.sell-preview
     +lovely-button($red, $light, $base-spacing * 0.5 $base-spacing * 1.5)
+
+
+//Reset Dropzon styles
+.dropzone
+  border: 0
+  padding: 0
+  background: 0
+  .dz-preview
+    margin: 9px
+    .dz-image
+      width: 80px
+      height: 80px
+      border-radius: 0
+    .dz-details
+      .dz-size
+        display: none
+      .dz-filename
+        display: none
+    .dz-progress
+      border-radius: 3px
+      width: 70px
+      height: 10px
+      left: 5px
+      right: 0
+      margin: 0
+      .dz-upload
+        background: $orange
+    .dz-error-message
+      text-align: center
+      background: $red
+      font-size: 12px
+      width: 100px
+      padding: 5px
+      top: -55px
+      left: -10px
+      border-radius: 0
+      &:after
+        top: 45px
+        left: 45px
+        border-top: 6px solid $red
+        border-bottom: 0
+    .dz-error-mark, .dz-success-mark
+      top: 25px
+      left: 25px
+      margin: 0
+      svg
+        width: 35px
+        height: 35px
+    .dz-remove
+      font-size: 12px
+      margin-top: 10px
+    .server_file_id
+      display: none
