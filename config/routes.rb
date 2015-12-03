@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :products, only: [:new, :create]
 
-  resources :product_images, only: [:index, :create]
+  resources :product_images, only: [:index, :create, :destroy]
 
   resources :categories, only: [:show]
 

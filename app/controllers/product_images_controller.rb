@@ -14,6 +14,12 @@ class ProductImagesController < ApplicationController
     end
   end
 
+  def destroy
+    # TODO check current user
+    ProductImage.destroy(params[:id])
+    render json: { message: "success"}, status: 200
+  end
+
   private
 
   def image_params

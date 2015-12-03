@@ -14,12 +14,19 @@ $(document).ready(function(){
       dictRemoveFile: '删除',
     });
 
-    dropzone.on("success", function(file) {
+    dropzone.on("success", function(file, response) {
+      console.log(response);
+      $(file.previewTemplate).append('<span class="hidden server_file_id">'+response.fileID+'</span>');
       // this.removeFile(file);
       // $.getScript("/product_images");  # refresh upload file list
     });
 
     dropzone.on("removedfile", function(file) {
+      var fileID = $(file.previewTemplate).children('.server_file_id').text();
+      $.ajax({
+        url: "/product_images/" + fileID,
+        type: 'DELETE',
+      });
       console.log('file removed');
     });
   }
