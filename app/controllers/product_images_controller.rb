@@ -6,6 +6,7 @@ class ProductImagesController < ApplicationController
 
   def create
     @image = ProductImage.new(image_params)
+    @image.user_id = current_user.id
 
     if @image.save
       render json: { message: "success", fileID: @image.id }, status: 200

@@ -27,4 +27,6 @@
 //= require 'refills/modal'
 //= require 'refills/accordion_tabs'
 
+//= require turbolinks
 //= require_tree .
+

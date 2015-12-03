@@ -1,6 +1,6 @@
 .wrap
   .sellform
-    = form_for @product_form, validate: true, html: { multipart: true} do |f|
+    = form_for @product_form, validate: true, html: { multipart: true, class: "dropzone"} do |f|
       h2 发布新商品
       .panel
         .panel-title
@@ -46,13 +46,15 @@
           |上传商品图片, 建议至少提供5张, 尽可能详细
         .panel-content
           .formgroup
-            input#fileupload data-url="server/php/" multiple="" name="files[]" type="file" /
-            .mask
+            .mask.dz-message
               h2
                 |上传图片
               p
                 |您可以直接拖拽图片之此区域
               a href="#" 或 从本地电脑选择
+            .dropzone-previews
+            .fallback
+              = file_field_tag "product_image[image]", type: :file
 
       .panel
         .panel-title
