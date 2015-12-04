@@ -37,18 +37,20 @@
                 | 成色
               = f.select :quality, options_for_select(Product::QUALITIES, ['new90'])
           .formgroup
-            label
+            label.no-after
               |淘宝链接
             = f.text_field :taobao_url, placeholder: '例如: http://world.taobao.com/item/43463175759.htm'
 
       .panel
         .panel-title
-          |上传商品图片, 建议至少提供5张, 尽可能详细
+          |上传商品图片
         .panel-content
           .formgroup
             .mask.dz-message
               h2
                 |上传图片
+              p
+                |最多可以上传20张图片, 每张尺寸不超过2M.
               p
                 |您可以直接拖拽图片之此区域
               a href="#" 或 从本地电脑选择
@@ -114,22 +116,22 @@
                   | 省外
                   = f.text_field :price_out_province
         - unless current_user.store.name
-          .panel
-            .panel-title
-              |店铺信息
-            .panel-content
-              .formgroup
-                .shop-name
-                  label
-                    | 第一次卖东西? 给自己的店铺起个名字吧
-                  = f.text_field :store_name, value: "#{current_user.profile.name} 的摄影器材店"
-                  span
-                    |稍后你可以在帐号管理中管理自己的店铺
-                .hint-panel
-                  h4
-                    |每个人都可以开店铺
-                  p
-                    |爱折腾的器材党们少不了买来卖去，把自己的设备都挂出来，闹不好很快就找到买家了
+      .panel
+        .panel-title
+          |店铺信息
+        .panel-content
+          .formgroup
+            .shop-name
+              label
+                | 第一次卖东西? 给自己的店铺起个名字吧
+              = f.text_field :store_name, value: "#{current_user.profile.name} 的摄影器材店"
+              span
+                |稍后你可以在帐号管理中管理自己的店铺
+            .hint-panel
+              h4
+                |每个人都可以开店铺
+              p
+                |爱折腾的器材党们少不了买来卖去，把自己的设备都挂出来，闹不好很快就找到买家了
 
       a.sell-preview href="#" 预览商品
       = f.submit '预览商品'

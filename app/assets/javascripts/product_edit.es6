@@ -31,7 +31,7 @@ $().ready(() => {
   // Tags with select2
   $("#product_tag_list").select2({
     tags:true,
-    tokenSeparators: [",", " ", "，"],
+    tokenSeparators: [",", "，"],
     // selectOnBlur: true,
     // formatNoMatches: () => {
     //   return '';
