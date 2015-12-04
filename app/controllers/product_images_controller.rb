@@ -16,9 +16,13 @@ class ProductImagesController < ApplicationController
   end
 
   def destroy
-    # TODO check current user
-    ProductImage.destroy(params[:id])
-    render json: { message: "success"}, status: 200
+    image = ProductImage.find(params[:id])
+    if image && image.user_id == current_user.id
+      ProductImage.destroy(params[:id])
+      render json: { message: "success"}, status: 200
+    else
+      render json: { error: "not owner"}, status: 400
+    end
   end
 
   private
