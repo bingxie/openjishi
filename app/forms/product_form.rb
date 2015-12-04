@@ -25,6 +25,8 @@ class ProductForm
 
   attribute :store_name, String
 
+  attribute :form_token, String
+
 
   # Validation
   validates :title, presence: true
@@ -50,6 +52,11 @@ class ProductForm
   validates :store_name, presence: true, allow_blank: true
 
   validate :max_tag_size
+
+  def initialize(params = nil, form_token = nil)
+    super(params)
+    self.form_token = form_token
+  end
 
   def self.model_name
     ActiveModel::Name.new(self, nil, "Product")
@@ -85,6 +92,8 @@ class ProductForm
       product.create_product_location(self.attributes.slice(:province, :city, :district, :address))
 
       product.create_delivery(method: delivery_method, price_in_province: price_in_province, price_out_province: price_out_province)
+
+      ProductImage.where(form_token: self.form_token).update_all(product_id: product.id)
     end
   end
 end

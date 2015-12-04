@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product_form = ProductForm.new(params[:product])
+    @product_form = ProductForm.new(params[:product], params[:authenticity_token])
 
 
     if @product_form.store_name

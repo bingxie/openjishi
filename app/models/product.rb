@@ -8,4 +8,6 @@ class Product < ActiveRecord::Base
 
   has_one :product_location
   has_one :delivery
+
+  has_many :product_images
 end
