@@ -84,10 +84,12 @@
                 label
                   | 地址
                 = f.text_field :address, placeholder: '地址'
-            .shipping-methode
+            .shipping-method
               label
                 | 快递方式
-              .shipping-methode-radio-button
+              label for="product_delivery_method" class="error message"
+                | 请选择快递方式
+              .shipping-method-radio-button
                 span.carrier for="radios-0"
                   = f.radio_button :delivery_method, Delivery::EXPRESS, checked: false
                   |快递

@@ -43,11 +43,13 @@ class ProductForm
   validates :category_id, presence: true
   validates :brand_id, presence: true
 
-  validates :delivery_method, :inclusion => { :in => [Delivery::EXPRESS, Delivery::COD, Delivery::FREE, Delivery::F2F] }
-  validates :price_in_province, numericality: { less_than: 999 }
-  validates :price_out_province, numericality: { less_than: 999 }
+  validates :delivery_method, :inclusion => { :in => [Delivery::EXPRESS, Delivery::COD, Delivery::FREE, Delivery::F2F], message: '请选择一种快递方式' }
+  validates :price_in_province, numericality: { less_than: 999 }, allow_blank: true
+  validates :price_out_province, numericality: { less_than: 999 }, allow_blank: true
 
-  validates :store_name, presence: true
+  validates :store_name, presence: true, allow_blank: true
+
+  validate :max_tag_size
 
   def self.model_name
     ActiveModel::Name.new(self, nil, "Product")
@@ -63,6 +65,18 @@ class ProductForm
   end
 
   private
+
+  def max_tag_size
+    messages = []
+
+    messages << "最多10个标签" if tag_list.count > 2
+
+    self.tag_list.each do |tag|
+      messages << "#{tag} 长度超过10个字" if tag.length > 10
+    end
+
+    errors[:tag_list] = messages.join(',') unless messages.empty?
+  end
 
   def persist!
     ActiveRecord::Base.transaction do

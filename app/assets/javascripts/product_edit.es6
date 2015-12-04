@@ -7,6 +7,7 @@ $().ready(() => {
     });
   });
 
+  // Category and Brand selection
   $("#product_parent_category").on("change", () => {
     let parentCategoryId = $("#product_parent_category").val();
     $.get("/categories/show?parent_category_id=" + parentCategoryId, (data) => {
@@ -21,11 +22,13 @@ $().ready(() => {
     });
   });
 
+  // Number only input
   $("#product_price, #product_price_in_province, #product_price_out_province").keyup( (event) => {
     let price = $(event.currentTarget)
     price.val(price.val().replace(/[^0-9\.]/g,''));
   });
 
+  // Tags with select2
   $("#product_tag_list").select2({
     tags:true,
     tokenSeparators: [",", " ", "，"],
@@ -36,13 +39,24 @@ $().ready(() => {
     dropdownCssClass: 'select2-hidden',
   });
 
+  // Express prices
   $('input:radio[name="product[delivery_method]"]').change((event) => {
+    $('.shipping-method .error.message').hide();
     if($(event.currentTarget).val() === 'express') {
       $("#express_note").show();
       $("#product_price_in_province, #product_price_out_province").enableClientSideValidations();
     } else {
       $("#express_note").hide();
     }
+  });
+
+  $('#new_product input[type=submit]').click(() => {
+    window.ClientSideValidations.callbacks.form.after = function(form, eventData) {
+      if ($('input:radio[name="product[delivery_method]"]:checked').length === 0) {
+        $('.shipping-method .error.message').show();
+        return false;
+      }
+    };
   });
 })
 
