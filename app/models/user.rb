@@ -2,8 +2,10 @@ class User < ActiveRecord::Base
   HASHIDS = Hashids.new("oh my user salt")
 
   has_one :profile, dependent: :destroy, autosave: true
-  accepts_nested_attributes_for :profile
+  has_one :store, dependent: :destroy, autosave: true
+
   before_create :build_default_profile
+  before_create :build_default_store
 
   validates :email, email: { message: :bad_email }
 
@@ -30,6 +32,11 @@ class User < ActiveRecord::Base
 
   def build_default_profile
     build_profile
+    true
+  end
+
+  def build_default_store
+    build_store
     true
   end
 end

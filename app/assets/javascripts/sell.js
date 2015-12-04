@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-   $('input[type="radio"]').change(function() {
+   $('input[name="radios"]').change(function() {
        if($(this).attr('id') == 'carrier') {
             $('.note').show();
        }

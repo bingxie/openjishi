@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   name: MyString1
   slug: MyString1
   rank: 1
@@ -9,3 +10,4 @@ two:
   name: MyString2
   slug: MyString2
   rank: 1
+  ancestry: 1

@@ -1,24 +1,45 @@
 .sellform
+  label:after
+    content: '*'
+    color: $red
+    margin-left: 0.2em
+  label.no-after:after
+    content: none
+
   padding: 1em 0
   margin-bottom: 2em
   +span-columns(8)
   +shift(2)
   .panel
+    background-color: $light
+    border: $base-border
+    margin-bottom: 1em
     .panel-title
-      padding: 0.5em 1em
-      font-size: 1.1em
-      background-color: $dark
+      // padding: 0.5em 1em
+      // font-size: 1.1em
+      background-color: $red
       color: $light
+      display: inline-block
+      padding: 0.5em 2em
+      margin-left: 2em
+      border-radius: 0 0 3px 3px
       label
         font-size: 0.825em
         color: $light-dark
     .panel-content
       +outer-container
-      border: $base-border
+      // border: $base-border
       border-top: 0
       padding: 1em
       background-color: $light
-      margin-bottom: 1em
+      .field_with_errors
+        position: relative
+        label.error
+          position: absolute
+          right: 0
+          top: -22px
+          &:after
+            content: none
       // 分类部分
       .main-category, .sub-category, .brand
         +span-columns(4)
@@ -46,14 +67,20 @@
             border-color: $orange
           i
             margin-left: 0.2em
+      .error.max
+        display: none
+      .error.length
+        display: none
       //快递信息
       .city
         +span-columns(4)
       .address
         +span-columns(8)
         +omega()
-      .shipping-methode
-        .shipping-methode-radio-button
+      .shipping-method
+        .error
+          display: none
+        .shipping-method-radio-button
           span
             display: inline-block
             margin-right: 1em
@@ -86,67 +113,54 @@
     +lovely-button($red, $light, $base-spacing * 0.5 $base-spacing * 1.5)
 
 
-// fieldset
-//   select
-//     height: 40px
-//     border-radius: $base-border-radius
-//     border: $base-border
-//     width: 100%
-
-// .panel-upper, .panel-lower
-//   background-color: $light
-//   margin-bottom: 1em
-//   border: $base-border
-//   border-radius: $base-border-radius
-//   box-shadow: $base-box-shadow
-//   padding: 0 1em
-//   .fieldset-label
-//     padding: 0.5em 1em
-//     +lovely-label($red, 1em)
-//     margin-left: 1em
-
-// .sellform
-//   padding: 1em 0
-//   +span-columns(8)
-//   +shift(2)
-
-// .formgroup
-//   +clearfix
-//   padding: 1em 0 0 0
-//   .main-category, .sub-category, .brand,.price, .condition, .city,.shipping-methode
-//     +span-columns(4)
-//   .address, .shipping-comment
-//     +span-columns(8)
-//     // +clearfix
-
-// .carrier .note
-//   font-size: 0.825em
-//   display: none
-//   margin-top: 1em
-//   max-width: 15em
-//   padding: 1em
-//   background-color: $light-gray
-//   position: relative
-//   i.fa.fa-caret-up
-//     color: $light-gray
-//     position: absolute
-//     top: -15px
-//     left: 24px
-//     font-size: 2em
-
-// .image-uploader
-//   padding: 2em
-//   background-color: $light-gray
-//   text-align: center
-//   height: 10em
-
-// .shipping-methode
-//   .shipping-methode-radio-button
-//     span
-//       display: block
-//       padding: 0.5em 0
-
-
-// a.sell-preview
-//   +lovely-button($red, $light, $base-spacing * 0.5 $base-spacing * 1.5)
-//   margin: 1em 0
+//Reset Dropzon styles
+.dropzone
+  border: 0
+  padding: 0
+  background: 0
+  .dz-preview
+    margin: 9px
+    .dz-image
+      width: 80px
+      height: 80px
+      border-radius: 0
+    .dz-details
+      .dz-size
+        display: none
+      .dz-filename
+        display: none
+    .dz-progress
+      border-radius: 3px
+      width: 70px
+      height: 10px
+      left: 5px
+      right: 0
+      margin: 0
+      .dz-upload
+        background: $orange
+    .dz-error-message
+      text-align: center
+      background: $red
+      font-size: 12px
+      width: 100px
+      padding: 5px
+      top: -55px
+      left: -10px
+      border-radius: 0
+      &:after
+        top: 45px
+        left: 45px
+        border-top: 6px solid $red
+        border-bottom: 0
+    .dz-error-mark, .dz-success-mark
+      top: 25px
+      left: 25px
+      margin: 0
+      svg
+        width: 35px
+        height: 35px
+    .dz-remove
+      font-size: 12px
+      margin-top: 10px
+    .server_file_id
+      display: none

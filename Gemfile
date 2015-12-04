@@ -95,6 +95,8 @@ gem 'hashids'
 gem "paperclip", "~> 4.3"
 gem 'paperclip-qiniu', :github => 'lidaobing/paperclip-qiniu'
 
+gem 'dropzonejs-rails'
+
 # Decorators/View-Models for Rails Applications
 gem 'draper', '~> 2.1.0'
 

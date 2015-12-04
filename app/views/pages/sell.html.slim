@@ -91,21 +91,30 @@
 
     .panel
       .panel-title
-        |快递信息
+        |商品所在地
       .panel-content
         .formgroup
-          .city
-            label
-              | 城市
-            input name="city" placeholder="城市" required="" type="text" /
+          .wrap
+            .city.panel-3
+              label
+                | 城市
+              input name="city" placeholder="城市" required="" type="text" /
+            .city.panel-3
+              label
+                | 城市
+              input name="city" placeholder="城市" required="" type="text" /
+            .city.panel-3
+              label
+                | 城市
+              input name="city" placeholder="城市" required="" type="text" /
           .address.nomargin
             label
               | 地址
             input#address name="address" placeholder="地址" required="" type="text" /
-          .shipping-methode
+          .shipping-method
             label
               | 快递方式
-            .shipping-methode-radio-button
+            .shipping-method-radio-button
               span.carrier for="radios-0"
                 input#carrier name="radios" type="radio" value="1" /
                 |快递

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root to: "pages#show", id: 'index/home'
 
-  resources :products
+  resources :products, only: [:new, :create, :show]
+
+  resources :product_images, only: [:index, :create, :destroy]
+
+  resources :categories, only: [:show]
 
   devise_for :users, controllers: { registrations: 'users/registrations',
                                     confirmations: 'users/confirmations',

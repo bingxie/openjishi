@@ -24,7 +24,10 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
     end
 
     assert_equal sign_up_success_path, page.current_path
-    assert_equal User.find_by(email: email).profile.name, 'test_user'
+
+    new_user = User.find_by(email: email)
+    assert_equal new_user.profile.name, 'test_user'
+    assert_equal new_user.store.show_name, 'test_user'
 
     assert_content email
 

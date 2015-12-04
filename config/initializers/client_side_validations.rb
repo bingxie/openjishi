@@ -12,14 +12,18 @@ ClientSideValidations::Config.disabled_validators = []
 # <label for="#{instance.send(:tag_id)}" class="message"></label>
 #
 ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
-  unless html_tag =~ /^<label/
-    if html_tag.include?('error="down"')
-      %{<div class="field_with_errors">#{html_tag}<label for="#{instance.send(:tag_id)}" class="error message">#{instance.error_message.first}</label></div>}.html_safe
-    else
-      %{<div class="field_with_errors"><label for="#{instance.send(:tag_id)}" class="error message">#{instance.error_message.first}</label>#{html_tag}</div>}.html_safe
-    end
+  if html_tag.include?('type="hidden"')
+    html_tag.html_safe
   else
-    %{<div class="field_with_errors">#{html_tag}</div>}.html_safe
+    unless html_tag =~ /^<label/
+      if html_tag.include?('error="down"')
+        %{<div class="field_with_errors">#{html_tag}<label for="#{instance.send(:tag_id)}" class="error message">#{instance.error_message.first}</label></div>}.html_safe
+      else
+        %{<div class="field_with_errors"><label for="#{instance.send(:tag_id)}" class="error message">#{instance.error_message.first}</label>#{html_tag}</div>}.html_safe
+      end
+    else
+      %{<div class="field_with_errors">#{html_tag}</div>}.html_safe
+    end
   end
 end
 
