@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  QUALITIES = { '全新': :new100 , '九成新': :new90, '八成新': :new80 }
+  QUALITIES = { "全新": :new100, "极新": :new95, "较新": :new90, "良好": :new80, "一般": :new70 }
 
   acts_as_taggable
 

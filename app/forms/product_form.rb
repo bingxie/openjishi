@@ -27,12 +27,11 @@ class ProductForm
 
   attribute :form_token, String
 
-
   # Validation
   validates :title, presence: true
   validates :title, length: { maximum: 50 }
   validates :price, presence: true
-  validates :price, numericality: { less_than: 999999 }
+  validates :price, numericality: { less_than: 999_999 }
   validates :description, presence: true
   validates :description, length: { maximum: 500 }
 
@@ -45,7 +44,11 @@ class ProductForm
   validates :category_id, presence: true
   validates :brand_id, presence: true
 
-  validates :delivery_method, :inclusion => { :in => [Delivery::EXPRESS, Delivery::COD, Delivery::FREE, Delivery::F2F], message: '请选择一种快递方式' }
+  validates :delivery_method, inclusion:
+            {
+              in: [Delivery::EXPRESS, Delivery::COD, Delivery::FREE, Delivery::F2F],
+              message: '请选择一种快递方式'
+            }
   validates :price_in_province, numericality: { less_than: 999 }, allow_blank: true
   validates :price_out_province, numericality: { less_than: 999 }, allow_blank: true
 
@@ -78,7 +81,7 @@ class ProductForm
 
     messages << "最多10个标签" if tag_list.count > 10
 
-    self.tag_list.each do |tag|
+    tag_list.each do |tag|
       messages << "#{tag} 长度超过6个字" if tag.length > 6
     end
 
@@ -87,13 +90,15 @@ class ProductForm
 
   def persist!
     ActiveRecord::Base.transaction do
-      product = Product.create(self.attributes.slice(:title, :quality, :price, :description, :taobao_url, :category_id, :brand_id, :tag_list))
+      product = Product.create(attributes.slice(:title, :quality, :price, :description,
+                                                :taobao_url, :category_id, :brand_id, :tag_list))
 
-      product.create_product_location(self.attributes.slice(:province, :city, :district, :address))
+      product.create_product_location(attributes.slice(:province, :city, :district, :address))
 
-      product.create_delivery(method: delivery_method, price_in_province: price_in_province, price_out_province: price_out_province)
+      product.create_delivery(method: delivery_method, price_in_province: price_in_province,
+                              price_out_province: price_out_province)
 
-      ProductImage.where(form_token: self.form_token).update_all(product_id: product.id)
+      ProductImage.where(form_token: form_token).update_all(product_id: product.id)
     end
   end
 end

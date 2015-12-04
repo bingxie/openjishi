@@ -9,11 +9,10 @@ class ProductImagesController < ApplicationController
     image.user_id = current_user.id
     image.form_token = params[:authenticity_token]
 
-
     if image.save
       render json: { message: "success", fileID: image.id }, status: 200
     else
-      render json: { error: image.errors.full_messages.join(',')}, status: 400
+      render json: { error: image.errors.full_messages.join(',') }, status: 400
     end
   end
 
@@ -21,9 +20,9 @@ class ProductImagesController < ApplicationController
     image = ProductImage.find(params[:id])
     if image && image.user_id == current_user.id
       ProductImage.destroy(params[:id])
-      render json: { message: "success"}, status: 200
+      render json: { message: "success" }, status: 200
     else
-      render json: { error: "not owner"}, status: 400
+      render json: { error: "not owner" }, status: 400
     end
   end
 

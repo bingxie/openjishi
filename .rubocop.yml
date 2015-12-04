@@ -27,3 +27,6 @@ Metrics/MethodLength:
 
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false

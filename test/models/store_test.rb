@@ -1,11 +1,10 @@
 require 'test_helper'
 
 class StoreTest < ActiveSupport::TestCase
-
   class ShowNameTest < StoreTest
     test "use user name as store name" do
       user = users(:bing)
-      store = user.create_store()
+      store = user.create_store
 
       assert_equal user.profile.name, store.show_name
     end
@@ -16,5 +15,4 @@ class StoreTest < ActiveSupport::TestCase
       assert_equal 'My Camera', store.show_name
     end
   end
-
 end
