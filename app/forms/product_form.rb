@@ -69,10 +69,10 @@ class ProductForm
   def max_tag_size
     messages = []
 
-    messages << "最多10个标签" if tag_list.count > 2
+    messages << "最多10个标签" if tag_list.count > 10
 
     self.tag_list.each do |tag|
-      messages << "#{tag} 长度超过10个字" if tag.length > 10
+      messages << "#{tag} 长度超过6个字" if tag.length > 6
     end
 
     errors[:tag_list] = messages.join(',') unless messages.empty?

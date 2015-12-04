@@ -39,6 +39,19 @@ $().ready(() => {
     dropdownCssClass: 'select2-hidden',
   });
 
+  $("#product_tag_list").on("change", (e) => {
+    $('.error.length, .error.max').hide();
+
+    let tags = $(e.currentTarget).val();
+    if (tags.length > 10) {
+      $('.error.max').show();
+    }
+
+    if (tags.pop().length > 6) {
+      $('.error.length').show();
+    };
+  });
+
   // Express prices
   $('input:radio[name="product[delivery_method]"]').change((event) => {
     $('.shipping-method .error.message').hide();
@@ -51,11 +64,12 @@ $().ready(() => {
   });
 
   $('#new_product input[type=submit]').click(() => {
-    window.ClientSideValidations.callbacks.form.after = function(form, eventData) {
+    window.ClientSideValidations.callbacks.form.after = (form, eventData) => {
+      // Validate delivery method
       if ($('input:radio[name="product[delivery_method]"]:checked').length === 0) {
         $('.shipping-method .error.message').show();
         return false;
-      }
+      };
     };
   });
 })

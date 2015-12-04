@@ -65,6 +65,8 @@
             = f.text_area :description, cols: 20, rows: 6
           .formgroup
             label 为你的商品打上标签, 能够大大增加被搜索到的频率, 输入后按空格键或者逗号即可
+            = f.label :tag_list, '最多输入10个标签' ,class: ['error', 'message', 'max']
+            = f.label :tag_list, '每个标签最长为6个字' ,class: ['error', 'message', 'length']
             = f.select :tag_list, options_for_select(["尼康"], ["尼康"]), {}, {:multiple => true }
 
       .panel
@@ -87,8 +89,7 @@
             .shipping-method
               label
                 | 快递方式
-              label for="product_delivery_method" class="error message"
-                | 请选择快递方式
+              = f.label :delivery_method, '请选择快递方式' ,class: ['error', 'message']
               .shipping-method-radio-button
                 span.carrier for="radios-0"
                   = f.radio_button :delivery_method, Delivery::EXPRESS, checked: false
