@@ -1,0 +1,55 @@
+.my-account-container
+  .wrap
+    .panel-3
+      .my-panel
+        .my-avatar
+          img src="http://placehold.it/400x400" alt=""
+          a.fa.fa-file-image-o.upload-photo href="#"
+            |更新头像
+        .my-information
+          h3
+            |凝固的黎明
+          p.join-date
+            |2015年6月 加入
+          p
+            a href="#"
+              |编辑帐号信息
+      .panel-group
+        .panel-header
+          |板板标题
+        .panel-mid
+          ul
+            - 8.times do
+              li
+                a href="#"
+                  |标题或者是链接
+    .panel-9
+      ul.accordion-tabs
+        li.tab-header-and-content
+          a.is-active.tab-link href="javascript:void(0)"  我的收藏
+          .tab-content
+            .prd-grid
+              ul
+                - 10.times do
+                  li
+                    .panel-2
+                      a.prd-thumbnail href="#"
+                        img src="http://placehold.it/120x120"
+                    .panel-8
+                      a.prd-title href="#"
+                        |近全新, 尼康顶级金圈超广14-28/f2.8, 入手不足三个月, 从来没出家门
+                    .panel-2
+                      .prd-price
+                        |¥12000
+                      a.unwatch-btn href="#"
+                        |取消收藏
+
+
+        li.tab-header-and-content
+          a.tab-link href="javascript:void(0)"  我的收藏
+          .tab-content
+            .prd-grid
+              ul
+                - 10.times do
+                  li.block-4
+                    = render partial:'pages/pattern/prd_block'

@@ -91,7 +91,7 @@
   .tab-content {
     background: $tab-content-background;
     display: none;
-    padding: $base-spacing $gutter;
+    padding: 1em;
     width: 100%;
 
     @include media($tab-mode) {

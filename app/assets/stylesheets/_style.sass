@@ -649,72 +649,81 @@ section
           padding: $base-padding
 
 /* ------ My Account ------ */
-.my-account
+.my-nav
   background: $dark
+  padding: 1em 0
   ul
     li
       display: inline-block
-      width: 4em
       text-align: center
       padding-top: 0.5em
       margin: 0 2em
       a
-        width: 4em
         display: inline-block
         color: $light
-        .fa
-          font-size: 1.5em
-        &:hover
-          color: $light-dark
+        i
+          margin-right: 0.5em
+        &:hover,
         &.active
-          border-bottom: 3px solid $red
+          color: $orange
+
 
 .my-account-container
   padding: 2em 0
-  .left
-    +span-columns(3)
-    .my-panel
-      border: $base-border
-      background-color: $light
-      margin-bottom: 1em
-      .my-avatar
-        position: relative
-        .upload-photo
-          display: none
-          +lovely-button($dark, $light, $base-padding)
-          opacity: 0.1
-          position: absolute
-          right: 1em
-          top: 1em
-          &:hover
-            opacity: 1
-          .modal-window
-            color: $dark
-          .croparea
-            margin-bottom: 1em
-      .my-information
-        text-align: center
-      padding: 1em
-      .panel-title
-        background-color: $dark
-        padding: $base-padding
-        color: $light
+  .my-panel
+    border: $base-border
+    background-color: $light
+    margin-bottom: 1em
+    .my-avatar
+      position: relative
+      .upload-photo
+        display: none
+        +lovely-button($dark, $light, $base-padding)
+        opacity: 0.1
+        position: absolute
+        right: 1em
+        top: 1em
+        &:hover
+          opacity: 1
+        .modal-window
+          color: $dark
+        .croparea
+          margin-bottom: 1em
+    .my-information
+      text-align: center
+    padding: 1em
+    .panel-title
+      background-color: $dark
+      padding: $base-padding
+      color: $light
+  .my-account-username
+    input
+      width: 30%
+      float: left
+      margin-right: 1em
+  .my-account-menu
+    margin-bottom: 1em
+    ul
+      li
+        display: inline-block
+        margin-right: 1.5em
+        a
+          +lovely-link($dark, $red, $base-padding)
+  .prd-grid
+    ul li
+      +clearfix
+      padding: 1em 0
+      border-top: 1px solid $light-dark
+      .prd-thumbnail
+      .prd-title
+      .prd-price
+        font-size: 1.2em
+        color: $red
+        font-weight: bold
+        margin-bottom: 1em
+      .unwatch-btn
+        font-size: 12px
 
-  .right
-    +span-columns(9)
-    .my-account-username
-      input
-        width: 30%
-        float: left
-        margin-right: 1em
-    .my-account-menu
-      margin-bottom: 1em
-      ul
-        li
-          display: inline-block
-          margin-right: 1.5em
-          a
-            +lovely-link($dark, $red, $base-padding)
 
 .lightbox-hidder
   position: absolute
@@ -830,6 +839,7 @@ section
 
 .preview-mode-notice
   +outer-container
+  background-color: $light
   padding: 1em
   border: 2px solid $red
   margin: 1em 0
@@ -851,6 +861,7 @@ section
 
 .prd-publish-success
   +outer-container
+  background-color: $light
   padding: 1em
   border: 2px solid $orange
   margin: 1em 0
