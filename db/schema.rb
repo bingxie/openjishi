@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130051947) do
+ActiveRecord::Schema.define(version: 20151201052512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,18 @@ ActiveRecord::Schema.define(version: 20151130051947) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "deliveries", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "method",             null: false
+    t.decimal  "price_in_province"
+    t.decimal  "price_out_province"
+    t.text     "notes"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "deliveries", ["product_id"], name: "index_deliveries_on_product_id", using: :btree
+
   create_table "landscapes", force: :cascade do |t|
     t.string   "name"
     t.string   "picture_file_name"
@@ -73,6 +85,45 @@ ActiveRecord::Schema.define(version: 20151130051947) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "product_images", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "product_images", ["product_id"], name: "index_product_images_on_product_id", using: :btree
+
+  create_table "product_locations", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "city"
+    t.string   "province"
+    t.string   "district"
+    t.string   "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "product_locations", ["product_id"], name: "index_product_locations_on_product_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "title",                     null: false
+    t.decimal  "price",       default: 0.0, null: false
+    t.string   "quality"
+    t.text     "description",               null: false
+    t.string   "taobao_url"
+    t.integer  "category_id"
+    t.integer  "brand_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "products", ["brand_id"], name: "index_products_on_brand_id", using: :btree
+  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
@@ -88,6 +139,26 @@ ActiveRecord::Schema.define(version: 20151130051947) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -120,5 +191,10 @@ ActiveRecord::Schema.define(version: 20151130051947) do
 
   add_foreign_key "brand_categories", "brands"
   add_foreign_key "brand_categories", "categories"
+  add_foreign_key "deliveries", "products"
+  add_foreign_key "product_images", "products"
+  add_foreign_key "product_locations", "products"
+  add_foreign_key "products", "brands"
+  add_foreign_key "products", "categories"
   add_foreign_key "profiles", "users"
 end

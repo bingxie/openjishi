@@ -24,4 +24,5 @@
 //= require featherlight
 //= require cropper
 //= require 'refills/modal'
+//= require 'refills/accordion_tabs'
 //= require_tree .

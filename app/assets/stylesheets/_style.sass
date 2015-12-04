@@ -20,6 +20,9 @@
   margin-left: 1em
   color: $green-dark
 
+.mute
+  opacity: 0.7
+
 /* -------------------------------------- */
 /*               MODULES                  */
 /* -------------------------------------- */
@@ -646,72 +649,81 @@ section
           padding: $base-padding
 
 /* ------ My Account ------ */
-.my-account
+.my-nav
   background: $dark
+  padding: 1em 0
   ul
     li
       display: inline-block
-      width: 4em
       text-align: center
       padding-top: 0.5em
       margin: 0 2em
       a
-        width: 4em
         display: inline-block
         color: $light
-        .fa
-          font-size: 1.5em
-        &:hover
-          color: $light-dark
+        i
+          margin-right: 0.5em
+        &:hover,
         &.active
-          border-bottom: 3px solid $red
+          color: $orange
+
 
 .my-account-container
   padding: 2em 0
-  .left
-    +span-columns(3)
-    .my-panel
-      border: $base-border
-      background-color: $light
-      margin-bottom: 1em
-      .my-avatar
-        position: relative
-        .upload-photo
-          display: none
-          +lovely-button($dark, $light, $base-padding)
-          opacity: 0.1
-          position: absolute
-          right: 1em
-          top: 1em
-          &:hover
-            opacity: 1
-          .modal-window
-            color: $dark
-          .croparea
-            margin-bottom: 1em
-      .my-information
-        text-align: center
-      padding: 1em
-      .panel-title
-        background-color: $dark
-        padding: $base-padding
-        color: $light
+  .my-panel
+    border: $base-border
+    background-color: $light
+    margin-bottom: 1em
+    .my-avatar
+      position: relative
+      .upload-photo
+        display: none
+        +lovely-button($dark, $light, $base-padding)
+        opacity: 0.1
+        position: absolute
+        right: 1em
+        top: 1em
+        &:hover
+          opacity: 1
+        .modal-window
+          color: $dark
+        .croparea
+          margin-bottom: 1em
+    .my-information
+      text-align: center
+    padding: 1em
+    .panel-title
+      background-color: $dark
+      padding: $base-padding
+      color: $light
+  .my-account-username
+    input
+      width: 30%
+      float: left
+      margin-right: 1em
+  .my-account-menu
+    margin-bottom: 1em
+    ul
+      li
+        display: inline-block
+        margin-right: 1.5em
+        a
+          +lovely-link($dark, $red, $base-padding)
+  .prd-grid
+    ul li
+      +clearfix
+      padding: 1em 0
+      border-top: 1px solid $light-dark
+      .prd-thumbnail
+      .prd-title
+      .prd-price
+        font-size: 1.2em
+        color: $red
+        font-weight: bold
+        margin-bottom: 1em
+      .unwatch-btn
+        font-size: 12px
 
-  .right
-    +span-columns(9)
-    .my-account-username
-      input
-        width: 30%
-        float: left
-        margin-right: 1em
-    .my-account-menu
-      margin-bottom: 1em
-      ul
-        li
-          display: inline-block
-          margin-right: 1.5em
-          a
-            +lovely-link($dark, $red, $base-padding)
 
 .lightbox-hidder
   position: absolute
@@ -823,6 +835,48 @@ section
 
 
 /* Single Product */
+
+
+.preview-mode-notice
+  +outer-container
+  background-color: $light
+  padding: 1em
+  border: 2px solid $red
+  margin: 1em 0
+  .flag
+    +span-columns(2)
+    background-color: $orange
+    color: $light
+    text-align: center
+    line-height: 70px
+    font-size: 24px
+  .content
+    +span-columns(7)
+  .action
+    +span-columns(3)
+    a.publish, a.edit
+      float: left
+      margin-right: 0.5em
+      +lovely-button($red, $light, $base-padding)
+
+.prd-publish-success
+  +outer-container
+  background-color: $light
+  padding: 1em
+  border: 2px solid $orange
+  margin: 1em 0
+  i
+    color: $orange
+    margin-right: 0.5em
+  h3
+    float: left
+    line-height: 1.7em
+    margin: 0
+  a.my-products
+    float: right
+    +lovely-button($red, $light, $base-padding)
+
+
 .breadcrumbs
   padding: 1em 0
   .back-btn
@@ -899,52 +953,90 @@ section
     .slick-slide
       width: 110px !important
 
-.prd-description-panel
-  background-color: $light
-  border: $base-border
-  padding: 1em
-  margin-bottom: 1em
-
 .product-status
   li
     display: inline-block
     margin-right: 1em
   margin-bottom: 1em
 
-.prd-right-panel
+.product-info-panel
   +span-columns(4)
-  .panel-group
-    background-color: $light
-    border: $base-border
-  .panel-mid
+  +omega()
+  .price
+    text-align: center
+    color: $red
+    font-size: 2em
+  .shipping
+    margin-bottom: 1em
+    text-align: center
+    a
+      color: $orange
+      padding: 0 0.2em
+  .prd-info
+    margin-bottom: 1.5em
     span
-      font-weight: bold
-      margin-left: 1em
-    a.taobao-link
-      +lovely-button($red, $light, $base-spacing * 0.25 $base-spacing * 0.5)
-      // width: 100%
-      text-align: center
+      padding: 0.5em
+      border: 1px solid #dce0e0
+      font-size: 0.825em
+      display: inline-block
+      margin-right: 0.2em
+  a.taobao-link
+    +lovely-button($red, $light, $base-padding)
+    width: 100%
+    margin: 0 auto 2em
+  .terms
+    font-size: 0.825em
+    margin-bottom: 1em
+    i
+      color: $orange
+      margin-right: 0.2em
+      font-size: 1.2em
+  .offer
+    +clearfix
+    margin-bottom: 2em
+    font-size: 0.825em
+    span
+    input
+      display: inline-block
+      width: 43%
+      margin: 0 5%
+    a
+      +lovely-button($orange, $light, $base-padding)
+      width: 23%
 
-  .contact-panel
-    background-color: $light-dark
-    margin: 1em 0
-    padding: 1em
+  a.watch-btn
+    display: inline-block
+    text-align: center
+    margin-right: 1em
 
-  .watch-btn, .wishlist-btn
-    +span-columns(6)
-    +lovely-button($light, $dark, $base-padding)
-    border-radius: 1000px
-    border: $base-border
-    &:hover
-      background-color: $red
-      color: $light
+  .product-sharing
+    margin-top: 1em
+    ul
+      li
+        display: inline-block
+        margin-right: 0.3em
+        a
+          padding: 0.5em
+          border: $base-border
+          color: $dark
+          font-size: 1.3em
+          &:hover
+            color: $light
+            background-color: $orange
+            border-color: $orange
+
+
+
+
 
 .seller-information
+  +span-columns(3)
+  +omega()
   .seller-icon
-    +span-columns(5)
     img
       border-radius: 1000px
-    width: em(80)
+    width: 5em
+    float: left
   .seller-name
     +span-columns(7)
     padding: 1em
@@ -959,11 +1051,20 @@ section
   .seller-rating
     ul
       li
-        font-size: 2em
+        font-size: 1em
         color: $orange
         display: inline-block
   a.contact-seller
     +lovely-button($red, $light, $base-padding)
+  .contact-panel
+    padding: 1em
+    background-color: $light-dark
+    margin: 1em 0 0
+
+.prd-description-panel
+  +outer-container
+  margin: 1em 0
+
 
 
 /* WHY US */

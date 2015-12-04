@@ -15,6 +15,35 @@
       a href="#"
         |尼康单反机身D810
 
+//商品预览模式
+.wrap
+  .preview-mode-notice
+    .flag
+      |预览模式
+    .content
+      h3
+        |您的商品还未正式发布
+      p
+        |请在这里预览，确定所有的信息都正确再发布,此商品信息已经保存到您的”未发布商品”列表中
+    .action
+      a.publish href="#"
+        |正式发布
+      a.edit href="#"
+        |编辑商品
+//商品发布成功
+.wrap
+  .prd-publish-success
+    h3
+      i.fa.fa-check-circle
+      |您的商品已经发布成功，您可以在&nbsp;
+      a href="#"
+        |我的商品
+      |&nbsp;中进行管理
+    a.my-products href="#"
+      |查看我的商品
+
+
+
 .wrap
   h2
     |近全新, 尼康顶级金圈超广14-28/f2.8, 入手不足三个月, 从来没出家门
@@ -35,123 +64,270 @@
       span
         |北京,朝阳
 .wrap
-  .prd-preview-image-panel
-    .prd-preview-image-large
-      div
-        a href="#"
-          img src="http://placehold.it/800x500?text=第一名!"
-      div
-        a href="#"
-          img src="http://placehold.it/800x500?text=第二名!"
-      div
-        a href="#"
-          img src="http://placehold.it/800x500?text=第三名!"
-      div
-        a href="#"
-          img src="http://placehold.it/800x500?text=第四名!"
-      div
-        a href="#"
-          img src="http://placehold.it/800x500?text=第五名!"
-    .prd-preview-image-thumbnail
-      div
-        img src="http://placehold.it/100x100?text=一"
-      div
-        img src="http://placehold.it/100x100?text=二"
-      div
-        img src="http://placehold.it/100x100?text=三"
-      div
-        img src="http://placehold.it/100x100?text=四"
-      div
-        img src="http://placehold.it/100x100?text=五"
-    .prd-description-panel
-      p
-        |SWC/M: CF版本标刚头，通透完美无暇，非环保玻璃。比后期的905镜头要好。
-      p
-        | 镜片完美无暇，无灰无霉无雾无伤。光圈叶片干燥没有漏油，快门完全准确。整个机身很新，除了后背接口，此外没有任何露白或伤痕。取景器通透完美。
-      p
-        |图中的取景器已经换成新款903型取景器。完美成色的取景器.A12后背也是黑色,不少掉漆,但是一切正常.
-      p
-        |不接刀不包邮
+  .panel-9
+    .wrap
+      .prd-preview-image-panel
+        .prd-preview-image-large
+          div
+            a href="#"
+              img src="http://placehold.it/800x500?text=第一名!"
+          div
+            a href="#"
+              img src="http://placehold.it/800x500?text=第二名!"
+          div
+            a href="#"
+              img src="http://placehold.it/800x500?text=第三名!"
+          div
+            a href="#"
+              img src="http://placehold.it/800x500?text=第四名!"
+          div
+            a href="#"
+              img src="http://placehold.it/800x500?text=第五名!"
+        .prd-preview-image-thumbnail
+          div
+            img src="http://placehold.it/100x100?text=一"
+          div
+            img src="http://placehold.it/100x100?text=二"
+          div
+            img src="http://placehold.it/100x100?text=三"
+          div
+            img src="http://placehold.it/100x100?text=四"
+          div
+            img src="http://placehold.it/100x100?text=五"
 
-  .prd-right-panel
-    .panel-group
-      .panel-mid
-        p
-          |价格
-          span
+      .panel-group.product-info-panel
+        .panel-mid
+          .price
             |¥12000
-        p
-          |成色
-          span
-            |9成新
-        p
-          |运费
-          span
-            |卖家到付
-        p
-          |地点
-          span
-            |北京, 朝阳区
-        a.taobao-link href="#"
-          |前往淘宝购买
-        .contact-panel
-          p
-            |联系方式
-          p
-            .fa.fa-qq
-            |15019807
-          p
-            .fa.fa-wechat
-            |suncrimson
-          p
-            .fa.fa-phone
-            |13811659681
-        .wrap
+          .shipping
+            |运费至
+            a href="#"
+              |北京
+            |- 20元
+          div.prd-info
+            span
+              |广东，深圳
+            span
+              |90%新
+            span
+              |卖家到付
+          .terms
+            p
+              i.fa.fa-check-circle
+              |商家保修 (
+              a href="#"
+                |查看详情
+              |)
+            p
+              i.fa.fa-check-circle
+              |3天包退7天包换 (
+              a href="#"
+                |查看详情
+              |)
+          a.taobao-link href="#"
+            |前往淘宝购买
+          .offer
+            span
+              |快速议价
+            input type="number"
+            a href="#"
+              |确定
+
           a.watch-btn href="#"
             .fa.fa-star
-              |关注
-          a.wishlist-btn href="#"
-            .fa.fa-heart
-              |加入愿望清单
-        p
-        p.fa.fa-star
-          |有15个人关注了此物品
-    .panel-group.seller-information
-      .panel-mid
-        .wrap
-          div.seller-icon
-            a href="#" alt="#"
-              img src="http://placehold.it/120x120"
-          div.seller-name
-            h4
-              |北京数码菜园子
+              |收藏
+          span.smaller.mute
+            |有15个人关注了此物品
+          .product-sharing
             p
-                |2015年6月入驻
-        .seller-badge
-          ul
-            li
-              img src="http://placehold.it/80x80"
-            li
-              img src="http://placehold.it/80x80"
-            li
-              img src="http://placehold.it/80x80"
-        .seller-rating
-          ul
-            li
-              .fa.fa-star
-            li
-              .fa.fa-star
-            li
-              .fa.fa-star
-            li
-              .fa.fa-star
-            li
-              .fa.fa-star
+              strong
+                |分享链接
+            ul
+              li
+                a href="#"
+                  div.fa.fa-wechat
+              li
+                a href="#"
+                  div.fa.fa-weibo
+              li
+                a href="#"
+                  div.fa.fa-envelope
+
+    ul.accordion-tabs.prd-description-panel
+      li.tab-header-and-content
+        a.is-active.tab-link href="javascript:void(0)"  详细说明
+        .tab-content
+          p
+            |SWC/M: CF版本标刚头，通透完美无暇，非环保玻璃。比后期的905镜头要好。
+          p
+            | 镜片完美无暇，无灰无霉无雾无伤。光圈叶片干燥没有漏油，快门完全准确。整个机身很新，除了后背接口，此外没有任何露白或伤痕。取景器通透完美。
+          p
+            |图中的取景器已经换成新款903型取景器。完美成色的取景器.A12后背也是黑色,不少掉漆,但是一切正常.
+          p
+            |不接刀不包邮
+      li.tab-header-and-content
+        a.tab-link href="javascript:void(0)"  产品规格
+        .tab-content
+          table
+            tbody
+              tr
+                th
+                  a#11011.c27.fs22 data-selenium="specHeaderLink" name="11011"  Performance
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Focal Length
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | 24mm
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Aperture
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | Maximum: f/1.4
+                  br>/
+                  | Minimum: f/22
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Camera Mount Type
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | Canon EF
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Format Compatibility
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | 35mm Film / Full-Frame Digital Sensor
+                  br>/
+                  | DSLR (APS-C Sensor)
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Angle of View
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | 84.1°
+                  br>/
+                  | APS-C Picture Angle: 57.6°
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Minimum Focus Distance
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | 9.84"&nbsp;(24.99 cm)
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Elements/Groups
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | 13/12
+          table
+            tbody
+              tr
+                th
+                  a#23001.c27.fs22 data-selenium="specHeaderLink" name="23001"  Features
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Image Stabilization
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | No
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Autofocus
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | No
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Tripod Collar
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | No
+          table
+            tbody
+              tr
+                th
+                  a#11501.c27.fs22 data-selenium="specHeaderLink" name="11501"  Physical
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Filter Thread
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | Front:77 mm
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Dimensions (DxL)
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | Approx. 3.27 x 3.84" (83 x 97.5 mm)
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Weight
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  span.notSpecfMon Not Specified By Manufacturer
+          table
+            tbody
+              tr
+                th
+                  a#shipping.c27.fs22 data-selenium="specHeaderLink" name="shipping"  Packaging Info
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Package Weight
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | 2.2 lb
+              tr
+                td.specTopic.c28.fs14.bold data-selenium="specTopic"
+                  | Box Dimensions (LxWxH)
+                td.specDetail.c28.fs14 data-selenium="specDetail"
+                  | 8.8 x 6.7 x 4.6"
+
+      li.tab-header-and-content
+        a.tab-link href="javascript:void(0)"  店铺条款
+        .tab-content
+          p Donec mattis mauris gravida metus laoreet non rutrum sem viverra. Aenean nibh libero, viverra vel vestibulum in, porttitor ut sapien. Phasellus tempor lorem id justo ornare tincidunt. Nulla faucibus, purus eu placerat fermentum, velit mi iaculis nunc, bibendum tincidunt ipsum justo eu mauris. Nulla facilisi. Vestibulum vel lectus ac purus tempus suscipit nec sit amet eros. Nullam fringilla, enim eu lobortis dapibus, quam magna tincidunt nibh, sit amet imperdiet dolor justo congue turpis.
+      li.tab-header-and-content
+        a.tab-link href="javascript:void(0)" 相关产品
+        .tab-content
+          p Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus dui urna.
+
+  .panel-group.seller-information
+    .panel-mid
+      .wrap
+        div.seller-icon
+          a href="#" alt="#"
+            img src="http://placehold.it/120x120"
+        div.seller-name
+          h4
+            |北京数码菜园子
+          p
+              |2015年6月入驻
+      .seller-badge
+        ul
+          li
+            img src="http://placehold.it/80x80"
+          li
+            img src="http://placehold.it/80x80"
+          li
+            img src="http://placehold.it/80x80"
+      .seller-rating
+        ul
+          li
+            .fa.fa-star
+          li
+            .fa.fa-star
+          li
+            .fa.fa-star
+          li
+            .fa.fa-star
+          li
+            .fa.fa-star
+      p
+        a href="#"
+          |2175个评价
+      a.contact-seller href="#"
+        |站内消息
+      .contact-panel
         p
-          a href="#"
-            |2175个评价
-        a.contact-seller href="#"
-          |联系卖家
+          |联系方式
+        p
+          .fa.fa-qq
+          |15019807
+        p
+          .fa.fa-wechat
+          |suncrimson
+        p
+          .fa.fa-phone
+          |13811659681
+
 
 .prd-grid
   .wrap
