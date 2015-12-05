@@ -1,9 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  brand: one
-  category: two
+  brand: nikon
+  category: compact-cameras
 
 two:
-  brand: two
-  category: two
+  brand: nikon
+  category: dslr
+
+three:
+  brand: nikon
+  category: dslr-lenses
+
+four:
+  brand: canon
+  category: dslr
+
+five:
+  brand: canon
+  category: dslr-lenses
+
+six:
+  brand: kenko
+  category: mirroless-lenses
