@@ -1,33 +1,80 @@
-.wrap
-  .panel
-    .panel-8
-      h2 我的店铺设置
-      ul.accordion-tabs.shop-setting
-        li.tab-header-and-content
-          a.is-active.tab-link href="javascript:void(0)"  全部评价 （312)
-          .tab-content
-            .feedback-group
-              .product-image
+.my-account-container
+  .wrap
+    .panel-3
+      .my-panel
+        .my-avatar
+          img src="http://placehold.it/400x400" alt=""
+          a.fa.fa-file-image-o.upload-photo href="#" data-featherlight=".user-photo-uploader"
+            |更新头像
+        .my-information
+          h3
+            |凝固的黎明
+          p.join-date
+            |2015年6月 加入
+          p
+            a href="#"
+              |编辑帐号信息
+      .panel-group
+        .panel-header
+          |板板标题
+        .panel-mid
+          ul
+            - 8.times do
+              li
                 a href="#"
-                  img src="http://placehold.it/200x200"
-              .feedback-content
-                .rating
-                  i.fa.fa-star
-                  i.fa.fa-star
-                  i.fa.fa-star
-                  i.fa.fa-star
-                  i.fa.fa-star
-                .product-title
-                  |产品标题信息在这里产品标题信息在这里产品标题信息在这里产品标题信息在这里产品标题信息在这里产品标题信息在这里
-                span.purchase-date
-                  |2015年9月15日
+                  |标题或者是链接
+    .panel-9
+      .panel-group
+        .panel-header
+          |我的评价
+        .panel-mid
+          ul.accordion-tabs
+            li.tab-header-and-content
+              a.is-active.tab-link href="javascript:void(0)"  全部评价 （312)
+              .tab-content
+                - 10.times do
+                  .feedback-group
+                    .product-image
+                      a href="#"
+                        img src="http://placehold.it/200x200"
+                    .feedback-content
+                      .rating
+                        .rating-star-upper style="width: 91%"               
+                        .rating-star-lower
+                      .product-title 
+                        a href="#" alt="产品标题"
+                          |产品标题信息在这里产品标题信息在这里产品标题信息在这里产品标题信息在这里产品标题信息在这里产品标题信息在这里
+                      .buyer
+                        a href="#" alt="邻居家大胖"
+                          |邻居家大胖
+                      .purchase-date
+                        |2015年9月15日
+                .pagination-buttons-container
+                  .results_count
+                    p
+                      | 第1 – 第9 共 103 条评论
+                  .pagination
+                    ul.list-unstyled
+                      li.active
+                        a href="#" rel="start" target="1"  1
+                      li
+                        a href="#" rel="next" target="2"  2
+                      li
+                        a href="#" target="3"  3
+                      li
+                        a href="#" target="6"  4
+                      li
+                        a href="#" target="6"  5
+                      li.next.next_page
+                        a href="#" rel="next" target="2"
+                          span
+                            i.fa.fa-caret-right
 
-
-
-        li.tab-header-and-content
-          a.tab-link href="javascript:void(0)" 做为卖家(127)
-          .tab-content
-        li.tab-header-and-content
-          a.tab-link href="javascript:void(0)"  做为买家
-          .tab-content
-            p Donec mattis mauris gravida metus laoreet non rutrum sem viverra. Aenean nibh libero, viverra vel vestibulum in, porttitor ut sapien. Phasellus tempor lorem id justo ornare tincidunt. Nulla faucibus, purus eu placerat fermentum, velit mi iaculis nunc, bibendum tincidunt ipsum justo eu mauris. Nulla facilisi. Vestibulum vel lectus ac purus tempus suscipit nec sit amet eros. Nullam fringilla, enim eu lobortis dapibus, quam magna tincidunt nibh, sit amet imperdiet dolor justo congue turpis.
+            li.tab-header-and-content
+              a.tab-link href="javascript:void(0)" 做为卖家(127)
+              .tab-content
+                
+            li.tab-header-and-content
+              a.tab-link href="javascript:void(0)"  做为买家
+              .tab-content
+                p Donec mattis mauris gravida metus laoreet non rutrum sem viverra. Aenean nibh libero, viverra vel vestibulum in, porttitor ut sapien. Phasellus tempor lorem id justo ornare tincidunt. Nulla faucibus, purus eu placerat fermentum, velit mi iaculis nunc, bibendum tincidunt ipsum justo eu mauris. Nulla facilisi. Vestibulum vel lectus ac purus tempus suscipit nec sit amet eros. Nullam fringilla, enim eu lobortis dapibus, quam magna tincidunt nibh, sit amet imperdiet dolor justo congue turpis.

@@ -1,37 +1,54 @@
-.feed-nav
+.my-account-container
   .wrap
-    ul
-      li
-        a.active href="#"
+    .panel-3
+      .my-panel
+        .my-avatar
+          img src="http://placehold.it/400x400" alt=""
+          a.fa.fa-file-image-o.upload-photo href="#" data-featherlight=".user-photo-uploader"
+            |更新头像
+        .my-information
+          h3
+            |凝固的黎明
+          p.join-date
+            |2015年6月 加入
           p
-            |关注队列
-      li
-        a href="#"
-          p
-            |愿望清单
-      li
-        a href="#"
-          p
-            |最近查看
-.feed
-  .wrap
-    a.feed-manage-btn href="#"
-      i.fa.fa-cog
-      |&nbsp;管理关注条件
-  .wrap
-    .feed-manage-panel
-      ul
-        - 4.times do
-          li
-            i.fa.fa-search
             a href="#"
-              |尼康 镜头
-            a.remove href="#"
-              |&nbsp;删除
-  .wrap
-    ul
-      - 18.times do
-        li.block-4
-          = render partial:'pages/pattern/prd_block'
+              |编辑帐号信息
+      .panel-group
+        .panel-header
+          |板板标题
+        .panel-mid
+          ul
+            - 8.times do
+              li
+                a href="#"
+                  |标题或者是链接
+    .panel-9
+      .panel-group
+        .panel-header
+          |我的收藏
+        .panel-mid
+          ul.accordion-tabs
+            li.tab-header-and-content
+              a.is-active.tab-link href="javascript:void(0)"  我收藏的商品 （312)
+              .tab-content
+                a.feed-manage-btn href="#"
+                  i.fa.fa-cog
+                  |&nbsp;管理关注条件
+                .wrap
+                  .feed-manage-panel
+                    ul
+                      - 4.times do
+                        li
+                          i.fa.fa-search
+                          a href="#"
+                            |尼康 镜头
+                          a.remove href="#"
+                            |&nbsp;删除
+                .wrap
+                  ul
+                    - 18.times do
+                      li.block-3
+                        = render partial:'pages/pattern/prd_block'
 
 

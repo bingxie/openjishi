@@ -1,19 +1,20 @@
-.wrap.breadcrumbs
-  a.fa.fa-arrow-circle-left.back-btn href="#"
-    |&nbsp;返回搜索结果
-  ul
-    li
-      a href="#"
-        |数码相机
-    li
-      a href="#"
-        |单反相机
-    li
-      a href="#"
-        |尼康
-    li
-      a href="#"
-        |尼康单反机身D810
+.wrap
+  .breadcrumbs
+    a.fa.fa-arrow-circle-left.back-btn href="#"
+      |&nbsp;返回搜索结果
+    ul
+      li
+        a href="#"
+          |数码相机
+      li
+        a href="#"
+          |单反相机
+      li
+        a href="#"
+          |尼康
+      li
+        a href="#"
+          |尼康单反机身D810
 
 //商品预览模式
 .wrap
@@ -24,22 +25,33 @@
       h3
         |您的商品还未正式发布
       p
-        |请在这里预览，确定所有的信息都正确再发布,此商品信息已经保存到您的”未发布商品”列表中
+        |请确定所有的信息都正确再发布,此商品已经保存到您的”未发布商品”列表中.
     .action
       a.publish href="#"
         |正式发布
       a.edit href="#"
-        |编辑商品
+        |修改
+//完善店铺信息
+.wrap
+  .update-shop-info
+    span
+      i.fa.fa-check-circle
+      |您的店铺信息还不完善，完整的店铺信息会帮你更快地卖出商品。你可以在&nbsp;
+      a href="#"
+        |店铺设置
+      |&nbsp;中进行管理
+    a.action href="#"
+      |完善店铺信息
 //商品发布成功
 .wrap
   .prd-publish-success
-    h3
+    span
       i.fa.fa-check-circle
       |您的商品已经发布成功，您可以在&nbsp;
       a href="#"
         |我的商品
       |&nbsp;中进行管理
-    a.my-products href="#"
+    a.action href="#"
       |查看我的商品
 
 
@@ -55,14 +67,6 @@
         a href="#"
           |北京菜园子数码
         |发布
-    li
-      .fa.fa-heart
-      span
-        |9成新
-    li
-      .fa.fa-map-marker
-      span
-        |北京,朝阳
 .wrap
   .panel-9
     .wrap

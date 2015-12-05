@@ -1,6 +1,32 @@
 /* My Feedback */
 .feedback-group
+  +outer-container
+  margin: 1em 0
   .product-image
     +span-columns(2)
   .feedback-content
     +span-columns(10)
+    .rating
+      width: 70px
+      margin-bottom: 0.5em
+      position: relative
+      .rating-star-upper,
+      .rating-star-lower
+        height: 14px
+        width: 100%
+        background-image: image-url("rating-star.png")
+      .rating-star-upper
+        position: absolute
+      .rating-star-lower
+        background-position-y: 14px
+    .product-title
+      margin-bottom: 0.5em
+    .buyer
+      font-size: 0.825em
+      margin-bottom: 0.5em
+      a
+        color: $orange
+    .purchase-date
+      font-size: 0.825em
+
+
