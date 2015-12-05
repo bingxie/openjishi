@@ -112,6 +112,8 @@ group :development, :test do
   gem 'pry-rails'
   # Pry navigation commands via byebug
   gem 'pry-byebug'
+
+  gem 'ffaker'
 end
 
 group :development do
