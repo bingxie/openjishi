@@ -1,14 +1,35 @@
-$().ready(() => {
-  $('#reset_password input[type=password]').focus(() => {
-    $('label.error.confirmation').hide();
-  });
+var confirmationError = {
+  init: () => {
+    confirmationError.passwordFocus();
+    confirmationError.formSubmit();
+  },
 
-  $('#reset_password input[type=submit]').click(() => {
+  passwordFocus: () => {
+    $('#reset_password input[type=password]').focus(confirmationError.hideError);
+  },
+
+  formSubmit: () => {
+    $('#reset_password input[type=submit]').click(confirmationError.onSubmit);
+  },
+
+  onSubmit: () => {
     if ($('#user_password').val() != $('#user_password_confirmation').val()) {
-      $('label.error.confirmation').show();
+      confirmationError.showError();
       return false;
     } else {
-      $('label.error.confirmation').hide();
+      confirmationError.hideError();
     }
-  });
+  },
+
+  hideError: () => {
+    $('label.error.confirmation').hide();
+  },
+
+  showError: () => {
+    $('label.error.confirmation').show();
+  },
+};
+
+$(document).on("page:change", () => {
+  if($(".passwords.edit").length > 0) confirmationError.init();
 });
