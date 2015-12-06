@@ -12,8 +12,6 @@
 //= require featherlight
 //= require cropper
 //= require dropzone
-//= require 'refills/modal'
-//= require 'refills/accordion_tabs'
 
 //= require turbolinks
 //= require init
