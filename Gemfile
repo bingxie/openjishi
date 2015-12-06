@@ -69,6 +69,9 @@ gem 'virtus'
 # Organise ActiveRecord model into a tree structure
 gem 'ancestry'
 
+# AASM - State machines for Ruby classes
+gem 'aasm'
+
 # A tagging plugin for Rails applications
 gem 'acts-as-taggable-on', '~> 3.4'
 

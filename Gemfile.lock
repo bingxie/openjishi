@@ -36,6 +36,7 @@ GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
+    aasm (4.5.0)
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
       actionview (= 4.2.4)
@@ -444,6 +445,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   activerecord-colored_log_subscriber
   acts-as-taggable-on (~> 3.4)
   ancestry
