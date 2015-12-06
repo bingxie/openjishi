@@ -2,7 +2,7 @@ $(document).ready(function(){
   // disable auto discover
   Dropzone.autoDiscover = false;
 
-  if ($('.dropzone').length) {
+  if ($('#new_product.dropzone').length) {
 
     var dropzone = new Dropzone (".dropzone", {
       url: "/product_images",
