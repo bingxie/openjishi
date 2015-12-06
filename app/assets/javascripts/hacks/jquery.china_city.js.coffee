@@ -7,7 +7,7 @@
         next_selects = selects.slice(selects.index(@) + 1) # empty all children city
         $("option:gt(0)", next_selects).remove()
         if next_selects.first()[0] and $this.val() and !$this.val().match(/--.*--/) # init next child
-          next_selects.first().find('option').remove()  # bing: fix bug
+          next_selects.first().find('option').remove()  # Bing: fix bug
           $.get "/china_city/#{$(@).val()}", (data) ->
             data = data.data if data.data?
             next_selects.first()[0].options.add(new Option(option[0], option[1])) for option in data
