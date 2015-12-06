@@ -3,7 +3,7 @@ $().ready(() => {
     $("#product_parent_category, #product_category_id, #product_brand_id, #product_quality").select2({
       width: 'resolve',
       language: "zh-CN",
-      matcher: oldMatcher(matchChinese)
+      matcher: oldMatcher(select2ChinaCity.matchChinese)
     });
   });
 

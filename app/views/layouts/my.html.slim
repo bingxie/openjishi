@@ -3,7 +3,7 @@
 doctype html
 html
   = render partial: "shared/html_head"
-  body
+  body class="#{controller_name} #{action_name}"
       /*Header*/
       = render partial: "layouts/header"
       = render partial: "layouts/my_nav"
