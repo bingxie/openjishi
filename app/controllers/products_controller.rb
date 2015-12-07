@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
     @product_form = ProductForm.new
   end
 
+  def edit
+  end
+
   def create
     @product_form = ProductForm.new(params[:product], params[:authenticity_token])
 

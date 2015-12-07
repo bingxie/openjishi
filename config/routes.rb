@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "pages#show", id: 'index/home'
 
-  resources :products, only: [:new, :create, :show] do
+  resources :products, only: [:new, :edit, :create, :show] do
     get 'preview', on: :member
   end
 

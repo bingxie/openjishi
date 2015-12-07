@@ -101,7 +101,10 @@ gem 'hashids'
 gem "paperclip", "~> 4.3"
 gem 'paperclip-qiniu', :github => 'lidaobing/paperclip-qiniu'
 
+# file uploads with image previews
 gem 'dropzonejs-rails'
+
+gem 'rails-timeago', '~> 2.0'
 
 # Decorators/View-Models for Rails Applications
 gem 'draper', '~> 2.1.0'

@@ -1,6 +1,9 @@
 class ProductCell < Cell::ViewModel
   include Cell::Slim
 
+  include ActionView::Helpers::DateHelper
+  include Rails::Timeago::Helper
+
   property :description
 
   def breadcrumbs

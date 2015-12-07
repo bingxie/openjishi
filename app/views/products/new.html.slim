@@ -125,6 +125,7 @@
               label
                 | 第一次卖东西? 给自己的店铺起个名字吧
               = f.text_field :store_name, value: "#{current_user.profile.name} 的摄影器材店"
+              = f.hidden_field :store_id, value: current_user.store.id
               span
                 |稍后你可以在帐号管理中管理自己的店铺
             .hint-panel

@@ -12,8 +12,9 @@
 //= require featherlight
 //= require cropper
 //= require dropzone
+//= require rails-timeago
+//= require locales/jquery.timeago.zh-CN.js
 
 //= require turbolinks
 //= require init
 //= require_tree .
-

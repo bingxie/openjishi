@@ -11,5 +11,4 @@
     .action
       a.publish href="#"
         |正式发布
-      a.edit href="#"
-        |修改
+      = link_to "修改", edit_product_path(model), class: "edit"

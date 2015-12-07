@@ -8,6 +8,8 @@ class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :brand
 
+  belongs_to :store
+
   has_one :product_location
   has_one :delivery
 

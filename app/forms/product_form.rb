@@ -24,6 +24,7 @@ class ProductForm
   attribute :price_out_province, Decimal
 
   attribute :store_name, String
+  attribute :store_id, Integer
 
   attribute :form_token, String
 
@@ -53,6 +54,7 @@ class ProductForm
   validates :price_out_province, numericality: { less_than: 999 }, allow_blank: true
 
   validates :store_name, presence: true, allow_blank: true
+  validates :store_id, presence: true
 
   validate :max_tag_size
 
@@ -89,8 +91,9 @@ class ProductForm
 
   def persist!
     ActiveRecord::Base.transaction do
-      product = Product.create(attributes.slice(:title, :quality, :price, :description,
-                                                :taobao_url, :category_id, :brand_id, :tag_list))
+      product_params = attributes.slice(:title, :quality, :price, :description, :store_id,
+                                        :taobao_url, :category_id, :brand_id, :tag_list)
+      product = Product.create(product_params)
 
       product.create_product_location(attributes.slice(:province, :city, :district, :address))
 
