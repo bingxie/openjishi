@@ -99,6 +99,8 @@ class ProductForm
                               price_out_province: price_out_province)
 
       ProductImage.where(form_token: form_token).update_all(product_id: product.id)
+
+      product.preview!
     end
   end
 end

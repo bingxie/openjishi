@@ -47,6 +47,8 @@ class CreateProductTest < ActionDispatch::IntegrationTest
       assert_equal new_product.product_location.province, '370000'
       assert_equal new_product.delivery.method, 'express'
       assert_equal new_product.delivery.price_in_province, 10
+
+      assert_equal new_product.preview?, true
     end
   end
 end
