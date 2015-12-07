@@ -34,4 +34,22 @@ class ProductCell < Cell::ViewModel
   def seller_info
     render
   end
+
+  private
+
+  def parent_category_name
+    model.category.parent.name
+  end
+
+  def sub_category_name
+    model.category.name
+  end
+
+  def brand_name
+    model.brand.name
+  end
+
+  def title
+    model.title
+  end
 end
