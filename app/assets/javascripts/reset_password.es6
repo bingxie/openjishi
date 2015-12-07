@@ -31,5 +31,5 @@ var confirmationError = {
 };
 
 $(document).on("page:change", () => {
-  if($(".passwords.edit").length > 0) confirmationError.init();
+  if($(".c-users-passwords.a-edit").length > 0) confirmationError.init();
 });

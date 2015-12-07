@@ -32,6 +32,6 @@ var select2ChinaCity = {
 };
 
 $(document).on("page:change", () => {
-  if($(".profiles.edit").length > 0) select2ChinaCity.init();
-  if($(".products.new").length > 0) select2ChinaCity.init();
+  if($(".c-profiles.a-edit").length > 0) select2ChinaCity.init();
+  if($(".c-products.a-new").length > 0) select2ChinaCity.init();
 });
