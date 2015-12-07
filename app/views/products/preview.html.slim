@@ -1,3 +1,15 @@
-h2 Preview #{@product.title}
+= cell(:product, @product).(:breadcrumbs)
 
-= cell(:product, @product)
+= cell(:product, @product).(:preview_notice)
+
+= cell(:product, @product).(:title_line)
+
+.wrap
+  .panel-9
+    .wrap
+      = cell(:product, @product).(:image_panel)
+      = cell(:product, @product).(:info_panel)
+
+    = cell(:product, @product).(:description_panel)
+
+  = cell(:product, @product).(:seller_info)
