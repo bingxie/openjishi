@@ -56,6 +56,9 @@ gem 'email_validator'
 # Use Unicorn as the app server
 gem 'unicorn'
 
+gem 'cells', "~> 4.0.3"
+gem 'cells-slim'
+
 # Slim templates generator
 gem "slim-rails"
 

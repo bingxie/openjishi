@@ -114,6 +114,12 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    cells (4.0.3)
+      tilt (>= 1.4, < 3)
+      uber (~> 0.0.9)
+    cells-slim (0.0.3)
+      cells (~> 4.0.0.beta6)
+      slim (~> 3.0)
     childprocess (0.5.6)
       ffi (~> 1.0, >= 1.0.11)
     china_city (0.0.4)
@@ -415,6 +421,7 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uber (0.0.15)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -455,6 +462,8 @@ DEPENDENCIES
   bourbon
   byebug
   capybara
+  cells (~> 4.0.3)
+  cells-slim
   china_city
   client_side_validations!
   coffee-rails
