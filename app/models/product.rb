@@ -14,11 +14,20 @@ class Product < ActiveRecord::Base
   has_many :product_images
 
   aasm no_direct_assignment: true do
-    state :preview, initial: true
+    state :draft, initial: true
+    state :preview
     state :published
+    state :holding
+    state :sold
+    state :archive
+    # state :deleted
+
+    event :preview do
+      transitions from: :draft, to: :preview
+    end
 
     event :publish do
-      transitions :from => :preview, :to => :published
+      transitions from: :preview, to: :published
     end
   end
 end
