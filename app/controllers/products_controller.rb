@@ -12,13 +12,17 @@ class ProductsController < ApplicationController
       current_user.store.update_attributes(name: @product_form.store_name)
     end
 
-    if @product_form.save
-      render action: 'show'
+    if product = @product_form.save
+      redirect_to preview_product_path(product)
     else
-      render action: 'new'
+      render action: :new
     end
   end
 
   def show
+  end
+
+  def preview
+    @product = Product.find(params[:id])
   end
 end

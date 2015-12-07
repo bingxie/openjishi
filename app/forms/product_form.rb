@@ -68,7 +68,6 @@ class ProductForm
   def save
     if valid?
       persist!
-      true
     else
       false
     end
@@ -101,6 +100,8 @@ class ProductForm
       ProductImage.where(form_token: form_token).update_all(product_id: product.id)
 
       product.preview!
+
+      return product
     end
   end
 end

@@ -5,7 +5,7 @@ class CreateProductTest < ActionDispatch::IntegrationTest
     @user = users(:bing)
     login_as(@user, scope: :user)
 
-    Capybara.current_driver = :poltergeist
+    Capybara.current_driver = :selenium
   end
 
   test 'create new product' do
@@ -40,9 +40,10 @@ class CreateProductTest < ActionDispatch::IntegrationTest
 
       click_button '预览商品'
 
-      # assert_equal product_path, page.current_path
-
       new_product = Product.last
+
+      assert_equal preview_product_path(new_product), page.current_path
+
       assert_equal new_product.price, 3688
       assert_equal new_product.product_location.province, '370000'
       assert_equal new_product.delivery.method, 'express'
