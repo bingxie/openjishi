@@ -1,9 +1,4 @@
 class ProductImagesController < ApplicationController
-  def index
-    @images = ProductImage.all
-    @image = ProductImage.new
-  end
-
   def create
     image = ProductImage.new(image_params)
     image.user_id = current_user.id
