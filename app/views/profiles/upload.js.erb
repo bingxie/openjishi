@@ -5,5 +5,5 @@
   $('#avatar_upload').hide();
   $('#crop_image_form').html('<%= escape_javascript(render :partial => 'crop') %>');
   load_avatar_cropper();
-  init_form("#avatar_crop");
+  init_form_with_save_icons("#avatar_crop");
 <% end %>

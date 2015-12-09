@@ -1,10 +1,5 @@
-$().ready(() => {
-  init_form("#change_password");
-  init_form("#edit_profile_info");
-  init_form("#avatar_upload");
-});
-
-function init_form(formId) {
+// init a form with save icons
+function init_form_with_save_icons(formId) {
   $(formId + ' .saving-icon').hide();
   $(formId + ' .save-done').hide();
 
@@ -39,3 +34,11 @@ function load_avatar_cropper() {
     }
   });
 }
+
+$(document).on("page:change", () => {
+  if($(".c-profiles.a-edit").length > 0) {
+    init_form_with_save_icons("#change_password");
+    init_form_with_save_icons("#edit_profile_info");
+    init_form_with_save_icons("#avatar_upload");
+  }
+});

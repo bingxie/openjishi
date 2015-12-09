@@ -5,7 +5,7 @@ class CreateProductTest < ActionDispatch::IntegrationTest
     @user = users(:bing)
     login_as(@user, scope: :user)
 
-    Capybara.current_driver = :selenium
+    Capybara.current_driver = :poltergeist
   end
 
   test 'create new product' do
