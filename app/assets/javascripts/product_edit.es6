@@ -1,15 +1,11 @@
 $().ready(() => {
-  $.fn.select2.amd.require(['select2/compat/matcher'], oldMatcher => {
-    $("#product_parent_category, #product_category_id, #product_brand_id, #product_quality").select2({
-      width: 'resolve',
-      language: "zh-CN",
-      matcher: oldMatcher(select2ChinaCity.matchChinese)
-    });
-  });
+  // Init select2 with chinese match
+  select2CnMatcher.init($("#product_parent_category, #product_category_id, #product_brand_id, #product_quality"));
 
   // Category and Brand selection
   $("#product_parent_category").on("change", () => {
     let parentCategoryId = $("#product_parent_category").val();
+    // TODO URL should be configed
     $.get("/categories/show?parent_category_id=" + parentCategoryId, (data) => {
       $('#product_category_id').html(data).change();
     });
@@ -39,6 +35,7 @@ $().ready(() => {
     dropdownCssClass: 'select2-hidden',
   });
 
+  // Tags validation
   $("#product_tag_list").on("change", (e) => {
     $('.error.length, .error.max').hide();
 
@@ -63,6 +60,7 @@ $().ready(() => {
     }
   });
 
+  // Shipping method validation
   $('#new_product input[type=submit]').click(() => {
     window.ClientSideValidations.callbacks.form.after = (form, eventData) => {
       // Validate delivery method
