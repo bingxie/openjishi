@@ -91,7 +91,7 @@
             .shipping-method
               label
                 | 快递方式
-              = f.label :delivery_method, '请选择快递方式' ,class: ['error', 'message']
+              = f.label :delivery_method, '请选择快递方式' ,class: ['error', 'message', 'delivery_method']
               .shipping-method-radio-button
                 span.carrier for="radios-0"
                   = f.radio_button :delivery_method, Delivery::EXPRESS, checked: false
