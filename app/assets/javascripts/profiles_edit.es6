@@ -3,7 +3,7 @@ function init_form_with_save_icons(formId) {
   $(formId + ' .saving-icon').hide();
   $(formId + ' .save-done').hide();
 
-  $(formId).submit(function(){
+  $(formId).submit(() => {
     // no front end validation errors
     if($(formId).find('label.error').length == 0) {
       $(formId + " .saving-icon").fadeIn('slow');

@@ -1,18 +1,18 @@
 const confirmationError = {
-  init: () => {
+  init() {
     confirmationError.passwordFocus();
     confirmationError.formSubmit();
   },
 
-  passwordFocus: () => {
+  passwordFocus() {
     $('#reset_password input[type=password]').focus(confirmationError.hideError);
   },
 
-  formSubmit: () => {
+  formSubmit() {
     $('#reset_password input[type=submit]').click(confirmationError.onSubmit);
   },
 
-  onSubmit: () => {
+  onSubmit() {
     if ($('#user_password').val() != $('#user_password_confirmation').val()) {
       confirmationError.showError();
       return false;
@@ -21,11 +21,11 @@ const confirmationError = {
     }
   },
 
-  hideError: () => {
+  hideError() {
     $('label.error.confirmation').hide();
   },
 
-  showError: () => {
+  showError() {
     $('label.error.confirmation').show();
   },
 };
