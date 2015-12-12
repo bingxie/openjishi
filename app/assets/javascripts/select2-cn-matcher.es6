@@ -1,6 +1,6 @@
-var select2CnMatcher = (() => {
+const select2CnMatcher = (() => {
   // private
-  let matchChinese = (term, text) => {
+  const matchChinese = (term, text) => {
     let mod, hanzi, inFull, inShort;
     mod = simplePinyin(text);
     hanzi = text.toUpperCase().indexOf(term.toUpperCase()) == 0;
@@ -10,7 +10,7 @@ var select2CnMatcher = (() => {
   };
 
   // public
-  let init = (selects) => {
+  const init = (selects) => {
     $.fn.select2.amd.require(['select2/compat/matcher'], oldMatcher => {
       selects.select2({
         width: 'resolve',

@@ -1,4 +1,4 @@
-var select2ChinaCity = {
+const select2ChinaCity = {
   init: () => {
     select2CnMatcher.init($(".city-select.city-province, .city-select.city-city, .city-select.city-district"));
 

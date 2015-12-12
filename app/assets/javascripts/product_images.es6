@@ -1,10 +1,10 @@
-$(document).ready(function(){
+$(document).ready(() => {
   // disable auto discover
   Dropzone.autoDiscover = false;
 
   if ($('#new_product.dropzone').length) {
 
-    var dropzone = new Dropzone (".dropzone", {
+    const dropzone = new Dropzone (".dropzone", {
       url: "/product_images",
       maxFilesize: 2, // set the maximum file size to 2 MB
       paramName: "product_image[image]", // Rails expects the file upload to be something like model[field_name]
@@ -18,13 +18,12 @@ $(document).ready(function(){
       dictFileTooBig: '图片上传失败, 尺寸需小于2M',
     });
 
-    dropzone.on("success", function(file, response) {
-      console.log(response);
+    dropzone.on("success", (file, response) => {
       $(file.previewTemplate).append('<span class="hidden server_file_id">'+response.fileID+'</span>');
     });
 
-    dropzone.on("removedfile", function(file) {
-      var fileID = $(file.previewTemplate).children('.server_file_id').text();
+    dropzone.on("removedfile", (file) => {
+      const fileID = $(file.previewTemplate).children('.server_file_id').text();
       $.ajax({
         url: "/product_images/" + fileID,
         type: 'DELETE',

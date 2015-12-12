@@ -1,4 +1,4 @@
-var confirmationError = {
+const confirmationError = {
   init: () => {
     confirmationError.passwordFocus();
     confirmationError.formSubmit();

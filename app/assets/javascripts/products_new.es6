@@ -1,4 +1,4 @@
-var newProductForm = {
+const newProductForm = {
   init: () => {
     newProductForm.initSelect2();
     newProductForm.categoryDropdown();
