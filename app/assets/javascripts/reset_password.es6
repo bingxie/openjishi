@@ -14,10 +14,10 @@ const confirmationError = {
 
   onSubmit() {
     if ($('#user_password').val() != $('#user_password_confirmation').val()) {
-      confirmationError.showError();
+      confirmationError.showError(); //
       return false;
     } else {
-      confirmationError.hideError();
+      confirmationError.hideError(); //
     }
   },
 

@@ -1,44 +1,60 @@
-// init a form with save icons
-function init_form_with_save_icons(formId) {
-  $(formId + ' .saving-icon').hide();
-  $(formId + ' .save-done').hide();
+function formWithSaveIcons(formId) {
+  const savingHide = () => {
+    $(formId + ' .saving-icon').hide();
+  };
 
-  $(formId).submit(() => {
-    // no front end validation errors
-    if($(formId).find('label.error').length == 0) {
-      $(formId + " .saving-icon").fadeIn('slow');
-    }
-  });
-
-  $(formId + ' input').focus(() => {
+  const savedHide = () => {
     $(formId + ' .save-done').hide();
-  });
-}
+  };
 
-function show_done(formId) {
-  $(formId + ' .save-done').show();
-  $(formId + ' .saving-icon').hide();
-}
+  const init = () => {
+    savingHide();
+    savedHide();
 
-function load_avatar_cropper() {
-  $('#avatar-cropbox').cropper({
-    // modal: false,
-    zoomable: false,
-    // background: false,
-    aspectRatio: 1 / 1,
-    crop: function(e) {
-      $('#crop_x').val(e.x);
-      $('#crop_y').val(e.y);
-      $('#crop_width').val(e.width);
-      $('#crop_height').val(e.height);
-    }
-  });
-}
+    $(formId).submit(() => {
+      // no front end validation errors
+      if($(formId).find('label.error').length == 0) {
+        $(formId + " .saving-icon").fadeIn('slow');
+      }
+    });
+
+    $(formId + ' input').focus(() => {
+      savedHide();
+    });
+  };
+
+  const showDone = () => {
+    $(formId + ' .save-done').show();
+    savingHide();
+  };
+
+  return {
+    init: init,
+    showDone: showDone,
+  };
+};
+
+const avatarCropper = {
+  init() {
+    $('#avatar-cropbox').cropper({
+      // modal: false,
+      zoomable: false,
+      // background: false,
+      aspectRatio: 1 / 1,
+      crop: function(e) {
+        $('#crop_x').val(e.x);
+        $('#crop_y').val(e.y);
+        $('#crop_width').val(e.width);
+        $('#crop_height').val(e.height);
+      }
+    });
+  },
+};
 
 $(document).on("page:change", () => {
   if($(".c-profiles.a-edit").length > 0) {
-    init_form_with_save_icons("#change_password");
-    init_form_with_save_icons("#edit_profile_info");
-    init_form_with_save_icons("#avatar_upload");
+    formWithSaveIcons("#change_password").init();
+    formWithSaveIcons("#edit_profile_info").init();
+    formWithSaveIcons("#avatar_upload").init();
   }
 });

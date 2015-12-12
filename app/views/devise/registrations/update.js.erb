@@ -1,8 +1,8 @@
 <% if resource.errors.empty? %>
-  show_done("#change_password");
+  formWithSaveIcons("#change_password").showDone();
 <% else %>
   $('#change_password_form').empty().append("<%= j render('edit') %>");
   $('#change_password').enableClientSideValidations();
 
-  init_form_with_save_icons("#change_password");
+  formWithSaveIcons("#change_password").init();
 <% end %>
