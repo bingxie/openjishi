@@ -1,12 +1,12 @@
 const newProductForm = {
   init() {
-    newProductForm.initSelect2();
-    newProductForm.categoryDropdown();
-    newProductForm.brandDropdown();
-    newProductForm.priceInputs();
-    newProductForm.tags();
-    newProductForm.expressPrices();
-    newProductForm.shippingMethodValidation();
+    this.initSelect2();
+    this.categoryDropdown();
+    this.brandDropdown();
+    this.priceInputs();
+    this.tags();
+    this.expressPrices();
+    this.shippingMethodValidation();
   },
 
   initSelect2() {

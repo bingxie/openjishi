@@ -1,15 +1,15 @@
 const confirmationError = {
   init() {
-    confirmationError.passwordFocus();
-    confirmationError.formSubmit();
+    this.passwordFocus();
+    this.formSubmit();
   },
 
   passwordFocus() {
-    $('#reset_password input[type=password]').focus(confirmationError.hideError);
+    $('#reset_password input[type=password]').focus(this.hideError);
   },
 
   formSubmit() {
-    $('#reset_password input[type=submit]').click(confirmationError.onSubmit);
+    $('#reset_password input[type=submit]').click(this.onSubmit);
   },
 
   onSubmit() {
