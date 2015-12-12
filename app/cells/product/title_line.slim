@@ -6,5 +6,6 @@
       .fa.fa-clock-o
       span
         = timeago_tag model.updated_at, land: "zh-CN"
-        = link_to "", "#"
-        |发布
+        |&nbsp
+        = link_to model.store.show_name, "#"
+        |&nbsp发布
