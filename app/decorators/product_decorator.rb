@@ -29,4 +29,8 @@ class ProductDecorator < Draper::Decorator
     qualities = Product::QUALITIES.invert
     qualities[model.quality.to_sym]
   end
+
+  def delivery_method
+    Delivery::DELIVERY_NAMES[delivery.method.to_sym]
+  end
 end

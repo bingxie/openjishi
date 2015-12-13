@@ -27,7 +27,6 @@ class ProductCell < Cell::ViewModel
   end
 
   def info_panel
-    @test = 'test123'
     render
   end
 
