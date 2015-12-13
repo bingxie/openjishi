@@ -3,12 +3,12 @@
     .wrap
       div.seller-icon
         a href="#" alt="#"
-          img src="http://placehold.it/120x120"
+          = model.store.user.profile.decorate.avatar_img(:thumb)
       div.seller-name
         h4
-          |北京数码菜园子
+          = model.store.show_name
         p
-            |2015年6月入驻
+          = model.store.created_at.strftime("%Y年%m月入驻")
     .seller-badge
       ul
         li
