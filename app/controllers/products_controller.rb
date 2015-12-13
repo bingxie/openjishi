@@ -28,4 +28,9 @@ class ProductsController < ApplicationController
   def preview
     @product = Product.includes(:delivery).includes(:product_location).find(params[:id]).decorate
   end
+
+  def to_taobao
+    product = Product.find(params[:id])
+    redirect_to product.taobao_url, status: 302
+  end
 end

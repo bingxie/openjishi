@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :products, only: [:new, :edit, :create, :show] do
     get 'preview', on: :member
+    get 'to_taobao', on: :member
   end
 
   resources :product_images, only: [:index, :create, :destroy]
