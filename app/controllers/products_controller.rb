@@ -26,6 +26,6 @@ class ProductsController < ApplicationController
   end
 
   def preview
-    @product = Product.find(params[:id])
+    @product = Product.includes(:delivery).includes(:product_location).find(params[:id]).decorate
   end
 end

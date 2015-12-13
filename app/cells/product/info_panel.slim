@@ -1,7 +1,7 @@
 .panel-group.product-info-panel
   .panel-mid
     .price
-      |¥12000
+      |¥#{model.price}
     .shipping
       |运费至
       a href="#"
@@ -9,15 +9,15 @@
       |- 20元
     div.prd-info
       span
-        |广东，深圳
+        |#{model.location_provice}，#{model.location_city}
       span
-        |90%新
+        |#{model.quality}
       span
-        |卖家到付
+        |#{model.delivery.method}
     .terms
       p
         i.fa.fa-check-circle
-        |商家保修 (
+        |商家保修 (#{@test}
         a href="#"
           |查看详情
         |)
