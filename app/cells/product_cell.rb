@@ -23,6 +23,7 @@ class ProductCell < Cell::ViewModel
   end
 
   def image_panel
+    @product_images = model.product_images
     render
   end
 
