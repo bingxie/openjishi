@@ -26,7 +26,12 @@ class ProductDecorator < Draper::Decorator
   end
 
   def location_city
-    ChinaCity.get(product_location.city)
+    city = ChinaCity.get(product_location.city)
+    if city == "市辖区" || city == "县"
+      ChinaCity.get(product_location.district)
+    else
+      city
+    end
   end
 
   def quality
