@@ -10,6 +10,7 @@
 
 //= require jquery.slick
 //= require featherlight
+//= require featherlight-gallery
 //= require cropper
 //= require dropzone
 //= require rails-timeago

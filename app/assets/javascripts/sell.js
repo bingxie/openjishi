@@ -27,6 +27,8 @@ $(document).ready(function(){
     centerMode: true,
     focusOnSelect: true
   });
+
+  $('.gallery').featherlightGallery();
 });
 
 
