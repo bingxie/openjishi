@@ -28,12 +28,13 @@ class ProductsController < ApplicationController
   end
 
   def preview
+    redirect_to @product if @product.published?
   end
 
   def publish
     product = Product.find(params[:id])
 
-    if product.publish
+    if product.publish!
       flash[:product_publish_success] = "success"
       redirect_to product
     end
