@@ -14,7 +14,11 @@ class ProductDecorator < Draper::Decorator
   end
 
   def price
-    model.price.to_i
+    if model.price.to_f == model.price.to_i
+      model.price.to_i.to_s
+    else
+      model.price.to_f.to_s
+    end
   end
 
   def location_provice
