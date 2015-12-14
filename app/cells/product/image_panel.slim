@@ -2,10 +2,9 @@
   .prd-preview-image-large
     - @product_images.each do |pg|
       div
-        a href="#"
+        div.prd-preview-image-large-container
           = image_tag pg.image.url(:large)
   .prd-preview-image-thumbnail
     - @product_images.each do |pg|
-      div
-        = image_tag pg.image.url(:thumb)
-
+      div.prd-preview-image-thumbnail-container
+        = image_tag pg.image.url(:medium)
