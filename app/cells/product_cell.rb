@@ -11,11 +11,11 @@ class ProductCell < Cell::ViewModel
   end
 
   def preview_notice
-    if model.preview?
-      render 'preview_notice'
-    elsif model.published?
-      render 'publish_success'
-    end
+    render
+  end
+
+  def publish_success
+    render
   end
 
   def title_line

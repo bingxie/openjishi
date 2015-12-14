@@ -1,2 +1,16 @@
-h1 Products#show
-p Find me in app/views/products/show.html.slim
+= cell(:product, @product).(:breadcrumbs)
+
+= cell(:product, @product).(:publish_success) if flash[:product_publish_success]
+
+= cell(:product, @product).(:title_line)
+
+
+.wrap
+  .panel-9
+    .wrap
+      = cell(:product, @product).(:image_panel)
+      = cell(:product, @product).(:info_panel)
+
+    = cell(:product, @product).(:description_panel)
+
+  = cell(:product, @product).(:seller_info)

@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   root to: "pages#show", id: 'index/home'
 
   resources :products, only: [:new, :edit, :create, :show] do
-    get 'preview', on: :member
-    get 'to_taobao', on: :member
+    member do
+      get 'preview'
+      get 'to_taobao'
+      put 'publish'
+    end
   end
 
   resources :product_images, only: [:index, :create, :destroy]

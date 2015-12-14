@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
+  before_action :set_product, only: [:show, :preview]
+
   def new
     @product_form = ProductForm.new
   end
@@ -26,11 +28,25 @@ class ProductsController < ApplicationController
   end
 
   def preview
-    @product = Product.includes(:delivery).includes(:product_location).find(params[:id]).decorate
+  end
+
+  def publish
+    product = Product.find(params[:id])
+
+    if product.publish
+      flash[:product_publish_success] = "success"
+      redirect_to product
+    end
   end
 
   def to_taobao
     product = Product.find(params[:id])
     redirect_to product.taobao_url, status: 302
+  end
+
+  private
+
+  def set_product
+    @product = Product.includes(:delivery).includes(:product_location).find(params[:id]).decorate
   end
 end
