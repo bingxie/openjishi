@@ -41,7 +41,6 @@ gem 'jquery-turbolinks'
 
 # Slick
 gem "jquery-slick-rails"
-
 # Featherlight.js
 gem 'featherlight'
 
@@ -56,6 +55,7 @@ gem 'email_validator'
 # Use Unicorn as the app server
 gem 'unicorn'
 
+# View components for Ruby and Rails
 gem 'cells', "~> 4.0.3"
 gem 'cells-slim'
 
@@ -89,9 +89,6 @@ gem 'devise', '~> 3.5', '>= 3.5.3'
 # Select 2
 # gem "select2-rails"
 gem "select2-rails", ">= 4.0.0", github: 'nilbus/select2-rails', branch: 'full' # for new matcher usage
-
-# JQ uploader
-gem "jquery-fileupload-rails"
 
 # For generate friendly url
 gem 'stringex'
@@ -127,7 +124,7 @@ end
 
 group :development do
   gem 'rails_db'
-  gem 'smarter_csv'
+  gem 'smarter_csv' # For seeding data
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
