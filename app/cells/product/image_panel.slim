@@ -1,0 +1,11 @@
+.prd-preview-image-panel
+  .prd-preview-image-large
+    - @product_images.each do |pg|
+      div
+        div.prd-preview-image-large-container
+          a href="#{pg.image.url(:large)}" class="gallery"
+            = image_tag pg.image.url(:large)
+  .prd-preview-image-thumbnail
+    - @product_images.each do |pg|
+      div.prd-preview-image-thumbnail-container
+        = image_tag pg.image.url(:medium)

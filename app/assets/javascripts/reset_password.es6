@@ -1,35 +1,35 @@
-var confirmationError = {
-  init: () => {
-    confirmationError.passwordFocus();
-    confirmationError.formSubmit();
+const confirmationError = {
+  init() {
+    this.passwordFocus();
+    this.formSubmit();
   },
 
-  passwordFocus: () => {
-    $('#reset_password input[type=password]').focus(confirmationError.hideError);
+  passwordFocus() {
+    $('#reset_password input[type=password]').focus(this.hideError);
   },
 
-  formSubmit: () => {
-    $('#reset_password input[type=submit]').click(confirmationError.onSubmit);
+  formSubmit() {
+    $('#reset_password input[type=submit]').click(this.onSubmit);
   },
 
-  onSubmit: () => {
+  onSubmit() {
     if ($('#user_password').val() != $('#user_password_confirmation').val()) {
-      confirmationError.showError();
+      confirmationError.showError(); //
       return false;
     } else {
-      confirmationError.hideError();
+      confirmationError.hideError(); //
     }
   },
 
-  hideError: () => {
+  hideError() {
     $('label.error.confirmation').hide();
   },
 
-  showError: () => {
+  showError() {
     $('label.error.confirmation').show();
   },
 };
 
 $(document).on("page:change", () => {
-  if($(".passwords.edit").length > 0) confirmationError.init();
+  if($(".c-users-passwords.a-edit").length > 0) confirmationError.init();
 });

@@ -1,0 +1,13 @@
+.wrap
+  .breadcrumbs
+    a.fa.fa-arrow-circle-left.back-btn href="#"
+      |&nbsp;返回搜索结果
+    ul
+      li
+        = link_to model.parent_category_name, "#"
+      li
+        = link_to model.sub_category_name, "#"
+      li
+        = link_to model.brand_name, "#"
+      li
+        = link_to model.title, "#"

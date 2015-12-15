@@ -1,8 +1,9 @@
+var editProfileForm = formWithSaveIcons("#edit_profile_info");
 <% if @profile.errors.empty? %>
-  show_done("#edit_profile_info");
+  editProfileForm.showDone();
 <% else %>
   $('#user_setting_form').empty().append("<%= j render('setting') %>");
   $('#edit_profile_info').enableClientSideValidations();
 
-  init_form("edit_profile_info");
+  editProfileForm.init();
 <% end %>

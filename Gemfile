@@ -56,6 +56,9 @@ gem 'email_validator'
 # Use Unicorn as the app server
 gem 'unicorn'
 
+gem 'cells', "~> 4.0.3"
+gem 'cells-slim'
+
 # Slim templates generator
 gem "slim-rails"
 
@@ -68,6 +71,9 @@ gem 'virtus'
 
 # Organise ActiveRecord model into a tree structure
 gem 'ancestry'
+
+# AASM - State machines for Ruby classes
+gem 'aasm'
 
 # A tagging plugin for Rails applications
 gem 'acts-as-taggable-on', '~> 3.4'
@@ -95,7 +101,10 @@ gem 'hashids'
 gem "paperclip", "~> 4.3"
 gem 'paperclip-qiniu', :github => 'lidaobing/paperclip-qiniu'
 
+# file uploads with image previews
 gem 'dropzonejs-rails'
+
+gem 'rails-timeago', '~> 2.0'
 
 # Decorators/View-Models for Rails Applications
 gem 'draper', '~> 2.1.0'
@@ -112,6 +121,8 @@ group :development, :test do
   gem 'pry-rails'
   # Pry navigation commands via byebug
   gem 'pry-byebug'
+
+  gem 'ffaker'
 end
 
 group :development do

@@ -1,13 +1,37 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+digital-cameras:
   id: 1
-  name: MyString1
-  slug: MyString1
+  name: 数码相机
+  slug: digital-cameras
+  rank: 0
+
+lenses:
+  id: 2
+  name: 镜头
+  slug: lenses
   rank: 1
 
-two:
-  name: MyString2
-  slug: MyString2
+compact-cameras:
+  name: 便携数码
+  slug: compact-cameras
   rank: 1
   ancestry: 1
+
+dslr:
+  name: 单反相机
+  slug: dslr
+  rank: 2
+  ancestry: 1
+
+dslr-lenses:
+  name: 单反镜头
+  slug: dslr-lenses
+  rank: 1
+  ancestry: 2
+
+mirroless-lenses:
+  name: 单电/微单镜头
+  slug: mirroless-lenses
+  rank: 2
+  ancestry: 2

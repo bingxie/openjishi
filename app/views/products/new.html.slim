@@ -91,7 +91,7 @@
             .shipping-method
               label
                 | 快递方式
-              = f.label :delivery_method, '请选择快递方式' ,class: ['error', 'message']
+              = f.label :delivery_method, '请选择快递方式' ,class: ['error', 'message', 'delivery_method']
               .shipping-method-radio-button
                 span.carrier for="radios-0"
                   = f.radio_button :delivery_method, Delivery::EXPRESS, checked: false
@@ -125,6 +125,7 @@
               label
                 | 第一次卖东西? 给自己的店铺起个名字吧
               = f.text_field :store_name, value: "#{current_user.profile.name} 的摄影器材店"
+              = f.hidden_field :store_id, value: current_user.store.id
               span
                 |稍后你可以在帐号管理中管理自己的店铺
             .hint-panel
@@ -133,6 +134,5 @@
               p
                 |爱折腾的器材党们少不了买来卖去，把自己的设备都挂出来，闹不好很快就找到买家了
 
-      a.sell-preview href="#" 预览商品
       = f.submit '预览商品'
 

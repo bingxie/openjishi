@@ -1,0 +1,11 @@
+.wrap
+  h2
+    = model.title
+  ul.product-status
+    li
+      .fa.fa-clock-o
+      span
+        = timeago_tag model.created_at, land: "zh-CN"
+        |&nbsp
+        = link_to model.store.show_name, "#"
+        |&nbsp发布

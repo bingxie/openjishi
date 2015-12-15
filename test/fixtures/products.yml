@@ -2,16 +2,16 @@
 
 one:
   title: MyString
-  price: 9.99
-  quality: MyString
+  price: 10
+  quality: new90
   description: MyText
-  category_id: 
-  brand_id: 
+  category_id:
+  brand_id:
 
 two:
   title: MyString
-  price: 9.99
-  quality: MyString
+  price: 19.99
+  quality: new95
   description: MyText
-  category_id: 
-  brand_id: 
+  category_id:
+  brand_id:
