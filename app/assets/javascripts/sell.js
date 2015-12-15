@@ -12,23 +12,26 @@ $(document).ready(function() {
 });
 
 $(document).ready(function(){
-  $('.prd-preview-image-large').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.prd-preview-image-thumbnail'
-  });
-  $('.prd-preview-image-thumbnail').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    asNavFor: '.prd-preview-image-large',
-    dots: true,
-    centerMode: true,
-    focusOnSelect: true
-  });
+  if($(".c-pages.a-show").length > 0) {
+    $('.prd-preview-image-large').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.prd-preview-image-thumbnail'
+    });
 
-  $('.gallery').featherlightGallery();
+    $('.prd-preview-image-thumbnail').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      asNavFor: '.prd-preview-image-large',
+      dots: true,
+      centerMode: true,
+      focusOnSelect: true
+    });
+
+    $('.gallery').featherlightGallery();
+  }
 });
 
 

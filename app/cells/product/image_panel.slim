@@ -3,7 +3,8 @@
     - @product_images.each do |pg|
       div
         div.prd-preview-image-large-container
-          = image_tag pg.image.url(:large)
+          a href="#{pg.image.url(:large)}" class="gallery"
+            = image_tag pg.image.url(:large)
   .prd-preview-image-thumbnail
     - @product_images.each do |pg|
       div.prd-preview-image-thumbnail-container
