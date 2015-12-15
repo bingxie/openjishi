@@ -24,7 +24,6 @@ class CreateProductTest < ActionDispatch::IntegrationTest
       fill_in 'product[taobao_url]', with: 'https://2.taobao.com/item.htm?id=524312732219&spm=686.1000925.0.0.Leli5e'
 
       fill_in 'product[description]', with: FFaker::LoremCN.paragraph(10)
-      # find(:xpath, "//input[@name='product[tag_list][]']").set "尼康,单反镜头,nikon,镜头"
 
       find("#product_province").select("山东省")
       find("#product_city").select("威海市")

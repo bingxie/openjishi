@@ -1,6 +1,8 @@
 class ProductDecorator < Draper::Decorator
   delegate_all
 
+  delegate :name, to: :brand, prefix: true
+
   def parent_category_name
     category.parent.name
   end
@@ -9,9 +11,9 @@ class ProductDecorator < Draper::Decorator
     category.name
   end
 
-  def brand_name
-    brand.name
-  end
+  # def brand_name
+  #   brand.name
+  # end
 
   def price
     if model.price.to_f == model.price.to_i

@@ -17,7 +17,8 @@ class ProductsController < ApplicationController
       current_user.store.update_attributes(name: @product_form.store_name)
     end
 
-    if product = @product_form.save
+    product = @product_form.save
+    if product
       redirect_to preview_product_path(product)
     else
       render action: :new
@@ -37,6 +38,8 @@ class ProductsController < ApplicationController
     if product.publish!
       flash[:product_publish_success] = "success"
       redirect_to product
+    else
+      redirect_to preview_product_path(product)
     end
   end
 

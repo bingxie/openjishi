@@ -24,4 +24,8 @@ class ProductDecoratorTest < Draper::TestCase
     assert_equal "石家庄市", @product1.location_city
     assert_equal "万州区", @product2.location_city
   end
+
+  test 'brand_name' do
+    assert_equal "尼康", @product1.brand_name
+  end
 end

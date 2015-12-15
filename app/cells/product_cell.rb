@@ -38,7 +38,4 @@ class ProductCell < Cell::ViewModel
   def seller_info
     render
   end
-
-  private
-
 end
