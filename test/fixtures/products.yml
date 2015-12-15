@@ -5,8 +5,8 @@ one:
   price: 10
   quality: new90
   description: MyText
-  category_id:
-  brand_id:
+  category: compact-cameras
+  brand: nikon
 
 two:
   title: MyString
