@@ -84,7 +84,7 @@ gem 'high_voltage'
 gem 'china_city'
 
 # User authentication
-gem 'devise', '~> 3.5', '>= 3.5.2'
+gem 'devise', '~> 3.5', '>= 3.5.3'
 
 # Select 2
 # gem "select2-rails"

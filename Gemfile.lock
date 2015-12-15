@@ -152,7 +152,7 @@ GEM
       delayed_job (>= 3.0, < 5)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (3.5.2)
+    devise (3.5.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -437,7 +437,7 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    warden (1.2.3)
+    warden (1.2.4)
       rack (>= 1.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
@@ -472,7 +472,7 @@ DEPENDENCIES
   coffee-rails
   connection_pool
   delayed_job_active_record
-  devise (~> 3.5, >= 3.5.2)
+  devise (~> 3.5, >= 3.5.3)
   dotenv-rails
   draper (~> 2.1.0)
   dropzonejs-rails
