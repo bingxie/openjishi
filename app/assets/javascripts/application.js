@@ -7,6 +7,7 @@
 //= require select2.full
 //= require select2_locale_zh-CN
 //= require simple-pinyin
+//= require jquery.detect_swipe
 
 //= require jquery.slick
 //= require featherlight
